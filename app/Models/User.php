@@ -1,44 +1,73 @@
 <?php
+require_once ('Order.php');
 
-namespace App\Models;
-
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-
-class User extends Authenticatable
+class User
 {
-    use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+	private $email;
+	private $name;
+	private $password;
+	private $m_Order;
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+	public function _construct($email, $name, $password, $m_Order){
+		$this->email = $email;
+		$this->name = $name;
+		$this->password = $password;
+		$this->m_Order = $m_Order;
+	}
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+	/**
+	 * Get the value of email
+	 */
+	public function getEmail()
+	{
+		return $this->email;
+	}
+
+	/**
+	 * Set the value of email
+	 */
+	public function setEmail($email): self
+	{
+		$this->email = $email;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of name
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * Set the value of name
+	 */
+	public function setName($name): self
+	{
+		$this->name = $name;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of m_Order
+	 */
+	public function getMOrder()
+	{
+		return $this->m_Order;
+	}
+
+	/**
+	 * Set the value of m_Order
+	 */
+	public function setMOrder($m_Order): self
+	{
+		$this->m_Order = $m_Order;
+
+		return $this;
+	}
 }
+?>
