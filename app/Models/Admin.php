@@ -1,30 +1,17 @@
 <?php
-require_once ('User.php');
 
-class Admin extends User
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Admin extends Model
 {
-
-	private $admin_code;
-
-	public function __construct()
-	{
-		$this->admin_code = $admin_code;
-	}
-
-
-	public function getAdminCode()
-	{
-		return $this->admin_code;
-	}
-
-	/**
-	 * Set the value of admin_code
-	 */
-	public function setAdminCode($admin_code): self
-	{
-		$this->admin_code = $admin_code;
-
-		return $this;
-	}
+    protected $fillable = [
+        'email',
+        'name',
+        'password',
+        'admin_code'
+    ];
+    use HasFactory;
 }
-?>
