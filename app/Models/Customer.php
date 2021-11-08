@@ -1,34 +1,19 @@
 <?php
-require_once ('User.php');
 
+namespace App\Models;
 
-class Customer extends User
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Customer extends Model
 {
+    protected $fillable = [
+        'email',
+        'name',
+        'password',
+        'phone',
+    ];
+    use HasFactory;
 
-	private $phone;
-
-	public function __construct($phone)
-	{
-		$this->phone = $phone;
-	}
-
-
-	/**
-	 * Get the value of phone
-	 */
-	public function getPhone()
-	{
-		return $this->phone;
-	}
-
-	/**
-	 * Set the value of phone
-	 */
-	public function setPhone($phone): self
-	{
-		$this->phone = $phone;
-
-		return $this;
-	}
+    
 }
-?>

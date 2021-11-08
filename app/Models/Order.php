@@ -1,57 +1,19 @@
 <?php
 
+namespace App\Models;
 
-class Order
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Order extends Model
 {
+    protected $fillable = [
+        'customer_id'
+    ];
+    use HasFactory;
 
-	private $date;
-	private $id;
-
-	public function __construct($date, $id)
-	{
-		$this->date = $date;
-		$this->id = $id;
-	}
-
-	
-
-
-
-
-	/**
-	 * Get the value of date
-	 */
-	public function getDate()
-	{
-		return $this->date;
-	}
-
-	/**
-	 * Set the value of date
-	 */
-	public function setDate($date): self
-	{
-		$this->date = $date;
-
-		return $this;
-	}
-
-	/**
-	 * Get the value of id
-	 */
-	public function getId()
-	{
-		return $this->id;
-	}
-
-	/**
-	 * Set the value of id
-	 */
-	public function setId($id): self
-	{
-		$this->id = $id;
-
-		return $this;
-	}
+    public function Customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }
-?>
