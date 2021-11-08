@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = [
-        'customer_id'
+    protected $guarded = [
+        'id',
+        'date'
     ];
     use HasFactory;
 
@@ -16,4 +17,13 @@ class Order extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+
+    protected function Payment(){
+        return $this->hasOne(Payment::class);
+    }
+
+    protected function Shipment(){
+        return $this->hasOne(Shipment::class);
+    }
+
 }
