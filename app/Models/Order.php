@@ -26,4 +26,8 @@ class Order extends Model
         return $this->hasOne(Shipment::class);
     }
 
+    protected function DetailOrder(){
+        return $this->hasMany(DetailOrder::class);
+    }
+
 }

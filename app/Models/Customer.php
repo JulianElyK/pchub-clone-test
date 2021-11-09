@@ -13,6 +13,10 @@ class Customer extends Model
         'password',
         'phone',
     ];
+
+    protected function Order(){
+        return $this->hasMany(Order::class);
+    }
     use HasFactory;
 
     
