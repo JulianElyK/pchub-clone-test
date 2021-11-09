@@ -10,5 +10,9 @@ class Product extends Model
     protected $guarded = [
         'id'
     ];
+
+    protected function DetailOrder(){
+        return $this->hasMany(DetailOrder::class);
+    }
     use HasFactory;
 }
