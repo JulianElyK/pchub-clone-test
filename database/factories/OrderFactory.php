@@ -22,7 +22,8 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'customer_id' => mt_rand(1, 5),
+            'total_price' => $this->faker->numberBetween(100000, 150000000)
         ];
     }
 }

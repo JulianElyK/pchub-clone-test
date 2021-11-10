@@ -22,7 +22,11 @@ class ShipmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'address' => $this->faker->address(),
+            'type' => 'Ninja Express',
+            'ship_date' => $this->faker->date(),
+            'arrival_date' => $this->faker->date(),
+            'order_id' => mt_rand(1, 3)
         ];
     }
 }

@@ -25,7 +25,7 @@ class AdminFactory extends Factory
             'email' => $this->faker->email(),
             'name' => $this->faker->name(),
             'password' => $this->faker->password(),
-            'admin_code' => $this->faker->mt_rand(1,10)
+            'admin_code' => mt_rand(1,10)
         ];
     }
 }
