@@ -175,6 +175,10 @@ class DatabaseSeeder extends Seeder
             'price' => 8000000
         ]);
 
+        DetailOrder::factory(20)->create();
+
+
+
         Admin::factory(5)->create();
 
     }
