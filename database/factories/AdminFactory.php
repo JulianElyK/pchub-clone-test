@@ -22,7 +22,10 @@ class AdminFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'email' => $this->faker->email(),
+            'name' => $this->faker->name(),
+            'password' => $this->faker->password(),
+            'admin_code' => mt_rand(1,10)
         ];
     }
 }

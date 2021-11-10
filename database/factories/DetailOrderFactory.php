@@ -22,7 +22,10 @@ class DetailOrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'order_id' => mt_rand(1, 3),
+            'product_id' => mt_rand(1, 10),
+            'quantity' => $this->faker->numberBetween(1, 50),
+            'price' => $this->faker->numberBetween(150000, 10000000)
         ];
     }
 }

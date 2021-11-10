@@ -22,7 +22,9 @@ class PaymentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'amount' => $this->faker->numberBetween(500000, 150000),
+            'method' => 'alfamart',
+            'order_id' => mt_rand(1, 3)
         ];
     }
 }
