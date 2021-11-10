@@ -9,6 +9,7 @@ use App\Models\Payment;
 use App\Models\Shipment;
 use App\Models\Product;
 use App\Models\DetailOrder;
+use App\Models\Admin;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,9 +29,35 @@ class DatabaseSeeder extends Seeder
             'phone' => '081325654789'
         ]);
 
+        Customer::create([
+            'email' => 'Tinus@gmail.com',
+            'name' => 'Tinus',
+            'password' => bcrypt('12345'),
+            'phone' => '081325654789'
+        ]);
+
+        Customer::create([
+            'email' => 'dave@gmail.com',
+            'name' => 'Dave',
+            'password' => bcrypt('12345'),
+            'phone' => '081325654789'
+        ]);
+
+        //Customer::factory(5)->create();
+
         Order::create([
             'customer_id' => '1',
             'total_price' => '8900000', 
+        ]);
+
+        Order::create([
+            'customer_id' => '2',
+            'total_price' => '1500000', 
+        ]);
+
+        Order::create([
+            'customer_id' => '3',
+            'total_price' => '1500000', 
         ]);
 
         Order::create([
@@ -38,10 +65,42 @@ class DatabaseSeeder extends Seeder
             'total_price' => '1500000', 
         ]);
 
+        Order::create([
+            'customer_id' => '3',
+            'total_price' => '1500000', 
+        ]);
+
+
+        //Order::factory(10)->create();
+
         Payment::create([
             'amount' => '1500000',
             'method' => 'alfamart',
             'order_id' => '1'
+        ]);
+
+        Payment::create([
+            'amount' => '1500000',
+            'method' => 'alfamart',
+            'order_id' => '2'
+        ]);
+
+        Payment::create([
+            'amount' => '1500000',
+            'method' => 'alfamart',
+            'order_id' => '3'
+        ]);
+
+        Payment::create([
+            'amount' => '1500000',
+            'method' => 'alfamart',
+            'order_id' => '4'
+        ]);
+
+        Payment::create([
+            'amount' => '1500000',
+            'method' => 'alfamart',
+            'order_id' => '5'
         ]);
 
         
@@ -54,19 +113,53 @@ class DatabaseSeeder extends Seeder
             'order_id' => '1'
         ]);
 
+        Shipment::create([
+            'address' => 'kopo permain',
+            'type' => 'Ninja Express',
+            'ship_date' => '2020-11-15 13:15:12',
+            'arrival_date' => '2020-11-20 13:15:12',
+            'order_id' => '2'
+        ]);
+
+        Shipment::create([
+            'address' => 'kopo permain',
+            'type' => 'Ninja Express',
+            'ship_date' => '2020-11-15 13:15:12',
+            'arrival_date' => '2020-11-20 13:15:12',
+            'order_id' => '3'
+        ]);
+
+        Shipment::create([
+            'address' => 'kopo permain',
+            'type' => 'Ninja Express',
+            'ship_date' => '2020-11-15 13:15:12',
+            'arrival_date' => '2020-11-20 13:15:12',
+            'order_id' => '4'
+        ]);
+
+        Shipment::create([
+            'address' => 'kopo permain',
+            'type' => 'Ninja Express',
+            'ship_date' => '2020-11-15 13:15:12',
+            'arrival_date' => '2020-11-20 13:15:12',
+            'order_id' => '5'
+        ]);
+
         Product::create([
             'compability' => '1',
             'name' => 'Ram 5 GB Kignston',
             'price' => '450000',
-            'vendor' => 'Kingston Indonesia',
+            'vendor' => 'Kingston Indonesia'
         ]);
 
         Product::create([
             'compability' => '1',
             'name' => 'Processor Intel I5 11th Gen',
             'price' => '8000000',
-            'vendor' => 'Intel Surya Indonesia',
+            'vendor' => 'Intel Surya Indonesia'
         ]);
+
+        
 
         DetailOrder::create([
             'order_id' => '1',
@@ -81,6 +174,8 @@ class DatabaseSeeder extends Seeder
             'quantity' => 2,
             'price' => 8000000
         ]);
+
+        Admin::factory(5)->create();
 
     }
 }
