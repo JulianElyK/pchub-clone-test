@@ -159,7 +159,7 @@ class DatabaseSeeder extends Seeder
             'vendor' => 'Intel Surya Indonesia'
         ]);
 
-        
+        Product::factory(10)->create();
 
         DetailOrder::create([
             'order_id' => '1',
