@@ -1,0 +1,26 @@
+/*Font*/
+@font-face {
+	font-family:raleway;
+	src: url('../fonts/Raleway/static/Raleway-Medium.ttf');
+}
+body, html{
+	font-family: raleway;
+	height : 100%;
+}
+body{ 
+	font: 14px sans-serif;
+	background-image :  url('');
+}
+.container-left {   
+  float: left;
+  width: 45%;
+  border: 1px solid black;
+}
+.container-right {
+  float: left;
+  width: 45%;
+  border: 1px solid black;
+  padding-left: 2vw;
+  position: sticky;
+  top: 1%;
+}
