@@ -30,5 +30,4 @@ Route::get('/signin', function () {
     return view('signin');
 });
 
-
 Route::post('/register', [RegisterController::class, 'store']);
