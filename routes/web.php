@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,4 @@ Route::get('/signin', function () {
     return view('signin');
 });
 
-// Route::get('/home', 'App\Http\Controllers\ShoppingController@index');
+Route::post('/register', [RegisterController::class, 'store']);
