@@ -7,20 +7,29 @@ body, html{
 	font-family: raleway;
 	height : 100%;
 }
-body{ 
+body{
 	font: 14px sans-serif;
 	background-image :  url('');
 }
-.container-left {   
-  float: left;
-  width: 45%;
-  border: 1px solid black;
+.container-left {
+    float: left;
+    margin-left: 50px;
+    margin-right: 15px;
+    margin-top: 30px;
+    width: 45%;
+    padding: 1vw;
+    border: 1px solid black;
 }
 .container-right {
-  float: left;
-  width: 45%;
-  border: 1px solid black;
-  padding-left: 2vw;
-  position: sticky;
-  top: 1%;
+    float: left;
+    margin-left: 15px;
+    margin-top: 30px;
+    width: 45%;
+    border: 1px solid black;
+    padding: 1vw;
+    position: sticky;
+    top: 1%;
+}
+.form-group{
+    padding: 0.5vw;
 }
