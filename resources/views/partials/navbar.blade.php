@@ -12,7 +12,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Community</a>
+                            <a class="nav-link" href="#">Custom PC</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Support</a>
@@ -22,6 +22,7 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    <a href="signin"><button class="btn btn-primary">Sign In</button></a>
                 </div>
             </div>
         </nav>

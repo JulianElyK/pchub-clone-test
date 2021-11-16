@@ -15,11 +15,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('Home');
+    return view('welcome', ["title"=>"Welcome to PCHub"]);
 });
 
 Route::get('/about', function () {
@@ -27,7 +23,5 @@ Route::get('/about', function () {
 });
 
 Route::get('/signin', function () {
-    return view('signin');
+    return view('signin', ["title"=>"Sign In"]);
 });
-
-Route::post('/register', [RegisterController::class, 'store']);
