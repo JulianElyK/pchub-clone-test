@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::get('/about', function () {
 Route::get('/signin', function () {
     return view('signin');
 });
+
+
+Route::post('/register', [RegisterController::class, 'store']);
