@@ -28,3 +28,5 @@ Route::get('/about', function () {
 Route::get('/signin', function () {
     return view('signin');
 });
+
+// Route::get('/home', 'App\Http\Controllers\ShoppingController@index');
