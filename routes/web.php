@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,10 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home', function () {
-    return view('Home');
+
+Route::get('/', function () {
+    return view('home', ["title" => "Home"]);
 });
 
 Route::get('/about', function () {
@@ -27,7 +26,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/signin', function () {
-    return view('signin');
+    return view('signin', ['title' => 'Signin or Register']);
 });
 
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::post('/signin', [LoginController::class, 'authenticate']);

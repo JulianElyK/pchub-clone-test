@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign In</title>
+    <title>{{ $title }}</title>
     <link rel="stylesheet" href="css/bootstrap5.css">
     <link rel="stylesheet" href="css/signin.style.css">
     

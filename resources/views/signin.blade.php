@@ -32,13 +32,18 @@
         </form>
     </div>
     <div class="container-right">
+        @if (session()->has('loginError'))
+            <div class="alret alert-danger alertdismissible fade show" role="alert">
+                {{ session('loginError') }}
+            </div>
+        @endif
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="/signin" method="post">
             @csrf
             <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" required>
+                <label>Email</label>
+                <input type="text" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Password</label>

@@ -1,4 +1,4 @@
 @extends('layouts.main')
-@section('container')
-    <p>ini Halaman Home</p>
-@endsection
+ @section('container')
+     <p>Home</p>
+ @endsection
