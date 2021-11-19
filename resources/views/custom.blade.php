@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('container')
-<h1>Custom PC</h1>
+<h1>Custom <span style="color:#0b5ed7">PC</span></h1>
 <hr class="line">
 <div class="selection">
     <div class="product">
@@ -9,9 +9,9 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHarga()" id="inputangkat"class="form-select ">
                     <option selected>--Pilih Motherboard--</option>
-                    <option value="1">One</option>
+                    <option value="1" >One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
@@ -19,12 +19,12 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p id="harga" class="harga" type="number"> </p>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -75,7 +75,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -103,7 +103,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -131,7 +131,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -159,7 +159,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -187,7 +187,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -215,7 +215,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type=number>
+                <input class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
@@ -232,4 +232,14 @@
     </div>
 </div>
 
+<script>
+function viewHarga(){
+        var hargaClick = document.getElementById("inputangkat").value;
+        var hargaProduct = 0;
+        if (hargaClick == 1){
+            hargaProduct = 10000;
+        }
+        document.getElementById("harga").innerHTML = hargaProduct;
+	}
+</script>
   @endsection
