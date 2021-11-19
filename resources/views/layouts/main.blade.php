@@ -5,16 +5,17 @@
     <title>{{$title}}</title>
     <link rel="stylesheet" href="css/bootstrap5.css">
     <link rel="stylesheet" href="css/signin.style.css">
-    
+    <link rel="stylesheet" href="css/custom.style.css">
+
 </head>
 <body>
     @include('partials.navbar')
 
     <div class="container  mt-3">
         <div class="mx-3">
-            @yield('container')    
+            @yield('container')
         </div>
-        
+
     </div>
 </body>
 </html>

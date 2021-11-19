@@ -25,3 +25,7 @@ Route::get('/about', function () {
 Route::get('/signin', function () {
     return view('signin', ["title"=>"Sign In"]);
 });
+
+Route::get('/custom', function () {
+    return view('custom', ["title"=>"Custom"]);
+});
