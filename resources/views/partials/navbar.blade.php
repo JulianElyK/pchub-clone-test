@@ -12,6 +12,7 @@
                             <a class="nav-link {{ ($title === "Home" ) ? 'active' : '' }}" href="/">Home</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                   Products
@@ -22,6 +23,9 @@
                                   <li><a class="dropdown-item" href="#">Motherboard</a></li>
                                 </ul>
                               </div>
+=======
+                            <a class="nav-link" href="custom">Custom PC</a>
+>>>>>>> cbeb2abe66db876baf272390156ea6e177a16a93
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ ($title === "Custome PC") ? 'active' : ''  }}" href="#">Custome PC</a>
@@ -31,6 +35,7 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    <a href="signin"><button class="btn btn-primary">Sign In</button></a>
                 </div>
             </div>
         </nav>

@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +14,8 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-
-
 Route::get('/', function () {
-    return view('home', ["title" => "Home"]);
+    return view('welcome', ["title"=>"Welcome to PCHub"]);
 });
 
 Route::get('/about', function () {
@@ -26,9 +23,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/signin', function () {
-    return view('signin', ['title' => 'Signin or Register']);
+    return view('signin', ["title"=>"Sign In"]);
 });
 
-Route::post('/register', [RegisterController::class, 'store']);
-
-Route::post('/signin', [LoginController::class, 'authenticate']);
+Route::get('/custom', function () {
+    return view('custom', ["title"=>"Custom"]);
+});
