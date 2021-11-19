@@ -179,7 +179,12 @@ class DatabaseSeeder extends Seeder
 
 
 
-        Admin::factory(5)->create();
+        Admin::create([
+            'email' => 'admin@gmail.com',
+            'name' => 'admin',
+            'password' => '12345',
+            'admin_code' => 1
+        ]);
 
     }
 }

@@ -9,13 +9,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Products</a>
+                            <a class="nav-link {{ ($title === "Home" ) ? 'active' : '' }}" href="/">Home</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Products
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class="dropdown-item" href="#">RAM</a></li>
+                                  <li><a class="dropdown-item" href="#">CPU</a></li>
+                                  <li><a class="dropdown-item" href="#">Motherboard</a></li>
+                                </ul>
+                              </div>
+=======
                             <a class="nav-link" href="custom">Custom PC</a>
+>>>>>>> cbeb2abe66db876baf272390156ea6e177a16a93
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Support</a>
+                            <a class="nav-link {{ ($title === "Custome PC") ? 'active' : ''  }}" href="#">Custome PC</a>
                         </li>
                     </ul>
                     <form class="d-flex">

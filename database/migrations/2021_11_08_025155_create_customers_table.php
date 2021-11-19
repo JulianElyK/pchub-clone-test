@@ -19,6 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string("name");
             $table->string("password");
             $table->string("phone");
+            $table->rememberToken();
             $table->timestamps();
         });
     }
