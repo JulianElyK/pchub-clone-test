@@ -17,6 +17,14 @@
  * limitations under the License.
  * ========================================================= */
  
+
+//FUNCTION FOR CUSTOM PC INPUTS ------>OPEN
+//pas select salah satu item maka akan set value="1"
+
+
+
+//FUNCTION FOR CUSTOM PC INPUTS <<----END
+
 !function( $ ) {
 
 	var Slider = function(element, options) {
