@@ -19,12 +19,12 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+                <input id="quantity" class="banyak" type="number" min="1">
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p id="harga" class="harga" type="number"> </p>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -227,19 +227,33 @@
     <div class="selection">
         <div class="total">
             <label>Total:</label>
+            <p class="borderHarga" >Rp  <span id="hargaTotal" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             <input type="submit" name="beli" class="btn btn-primary" value="Beli">
         </div>
     </div>
 </div>
 
 <script>
-function viewHarga(){
+    function viewHarga(){
         var hargaClick = document.getElementById("inputangkat").value;
         var hargaProduct = 0;
+        var quantityBarang = 1
         if (hargaClick == 1){
             hargaProduct = 10000;
         }
         document.getElementById("harga").innerHTML = hargaProduct;
+        document.getElementById("quantity").value = quantityBarang;
 	}
+
+
+    jQuery(document).ready(function() {
+        jQuery("input[name='quantity']").on('keyup mouseup', function() {
+            var qty = jQuery("input[name='quantity']").val(),
+            price = jQuery("input[name='harga']").attr('placeholder'),
+            newprice = price * parseInt( qty );
+        
+            jQuery("input[name='harga']").val( newprice.toFixed(2) );
+        });
+    });
 </script>
   @endsection

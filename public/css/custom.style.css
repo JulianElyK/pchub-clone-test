@@ -58,10 +58,19 @@ h1{
 
 .price-size{
     width: 80%;
+
 }
 
 .harga{
     width: 90px;
+}
+
+.borderHarga{
+    border-width:1px;  
+    border-style:solid;
+    padding:5px;
+    border-color: #CDD0CB;
+    background-color: #E8EAE6;
 }
 
 .total{
