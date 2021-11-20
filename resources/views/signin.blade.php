@@ -2,6 +2,11 @@
 
 @section('container')
     <div class="container-left">
+        @if (session()->has('success'))
+            <div class="alret alert-danger alertdismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <h2>Register</h2>
         <p>Please fill this form to create an account.</p>
         <form action="/register" method="post">

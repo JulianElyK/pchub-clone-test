@@ -40,18 +40,16 @@ class RegisterController extends Controller
         //$validate = $request->validate
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:customers',
             'password' => 'required|min:3|max:255',
             'phone' =>'min:11'
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['password'] = md5($validatedData['password']);
 
         Customer::create($validatedData);
 
-        $request->session()->flash('success', 'Registration successfully, Please Log In!');
-
-        return redirect('/signin');
+        return back()->with('success', 'Registration successfully, Please Log In!');
     }
 
     /**
