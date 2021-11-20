@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,10 @@ Route::get('/about', function () {
 Route::get('/signin', function () {
     return view('signin', ["title"=>"Sign In"]);
 });
+
+Route::post('/signin', [LoginController::class, 'authenticate']);
+Route::get('/signout', [LoginController::class, 'signout']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/custom', function () {
     return view('custom', ["title"=>"Custom"]);
