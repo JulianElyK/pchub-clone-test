@@ -7,8 +7,16 @@ h1{
     text-align: center;
 }
 
+.judul{
+    color: white;
+}
+
 .line{
     border-top: 5px solid blue;
+}
+
+label{
+    color: white;
 }
 
 .selection{
@@ -66,7 +74,7 @@ h1{
 }
 
 .borderHarga{
-    border-width:1px;  
+    border-width:1px;
     border-style:solid;
     padding:5px;
     border-color: #CDD0CB;

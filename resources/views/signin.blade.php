@@ -7,8 +7,8 @@
                 {{ session('success') }}
             </div>
         @endif
-        <h2>Register</h2>
-        <p>Please fill this form to create an account.</p>
+        <h2 class="h2-regis">Register</h2>
+        <p class="p-regis">Please fill this form to create an account.</p>
         <form action="/register" method="post">
             @csrf
             <div class="form-group">
@@ -42,8 +42,8 @@
                 {{ session('loginError') }}
             </div>
         @endif
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+        <h2 class="h2-in">Login</h2>
+        <p class="p-in">Please fill in your credentials to login.</p>
         <form action="/signin" method="post">
             @csrf
             <div class="form-group">

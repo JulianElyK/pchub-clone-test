@@ -18,10 +18,12 @@
                             <a class="nav-link {{ ($title === "Custome") ? 'active' : ''  }}" href="#">Custome PC</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <div class="cari">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
                     @if (Session::get('id') != '')
                         <div class="dropdown">
                             <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,9 +36,11 @@
                             </ul>
                         </div>
                     @else
-                        <a href="signin"><button class="btn btn-primary">Sign In</button></a>
+                        <div class="register">
+                            <a href="signin"><button class="btn btn-primary">Sign In</button></a>
+                        </div>
                     @endif
-                    
+
                 </div>
             </div>
         </nav>
