@@ -39,13 +39,19 @@ body{
 }
 
 .cari{
-    width: 70%;
+    margin-left: 10px;
+    width: 55%;
     margin-top: 1vw;
     float: left;
 }
 
 .register{
-    float: left;
+    float: right;
+}
+
+.member{
+    margin-top: 1vw;
+    float: right;
 }
 
 .h2-regis,.p-regis,.h2-in,.p-in{

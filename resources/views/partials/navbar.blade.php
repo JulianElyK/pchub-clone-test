@@ -25,15 +25,17 @@
                         </form>
                     </div>
                     @if (Session::get('id') != '')
-                        <div class="dropdown">
-                            <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Session::get('name') }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
+                        <div class="member">
+                            <div class="dropdown">
+                                <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Session::get('name') }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
                         </div>
                     @else
                         <div class="register">
