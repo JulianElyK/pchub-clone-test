@@ -35,7 +35,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        
         //
+        $validateData = $request->validate([
+            'name' => 'required',
+            'compability' => 'required',
+            'price' => 'required',
+            'vendor' => 'required',
+            'image' => 'image|file|max:3072',
+            'category' => 'required'
+        ]);
+
+        $validateData['image'] = $request->file('image')->store('product-images');
+        
+        Product::create($validateData);
+        
+        return redirect()->intended('/')->with('addSuccess', 'Add Product Has Succesfully');
     }
 
     /**
