@@ -21,8 +21,12 @@ Route::get('/', function () {
     return view('welcome', ["title"=>"Welcome to PCHub"]);
 });
 
+Route::get('/product', function () {
+    return view('product', ["title"=>"Products"]);
+});
+
 Route::get('/about', function () {
-    return view('about');
+    return view('about', ["title"=>"Products"]);
 });
 
 Route::get('/signin', function () {
