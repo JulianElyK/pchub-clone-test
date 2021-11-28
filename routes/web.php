@@ -50,3 +50,5 @@ Route::post('/addproducts', [ProductController::class, 'store']);
 Route::get('/detail', function () {
     return view('detailproduct', ["title" => "Detail Product"]);
 });
+
+Route::get('/showproduct', [ProductController::class, 'index']);

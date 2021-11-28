@@ -149,17 +149,19 @@ class DatabaseSeeder extends Seeder
             'compability' => '1',
             'name' => 'Ram 5 GB Kignston',
             'price' => '450000',
-            'vendor' => 'Kingston Indonesia'
+            'vendor' => 'Kingston Indonesia',
+            'category' => 'RAM'
+            
         ]);
 
         Product::create([
             'compability' => '1',
             'name' => 'Processor Intel I5 11th Gen',
             'price' => '8000000',
-            'vendor' => 'Intel Surya Indonesia'
+            'vendor' => 'Intel Surya Indonesia',
+            'category' => 'Prosesor'
         ]);
 
-        Product::factory(10)->create();
 
         DetailOrder::create([
             'order_id' => '1',
