@@ -84,3 +84,65 @@ label{
 .total{
     float: right;
 }
+
+/* .header-product{
+
+} */
+
+.img-product {
+    width: 300px;
+    float: left;
+    margin-top: 2vw;
+    margin-left: 4vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+}
+
+.img-product img{
+    width: 100%;
+}
+
+.info-product {
+    float: left;
+    color: white;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-right: 4vw;
+}
+
+.desc-product{
+    clear: left;
+    color: white;
+    margin-left: 4vw;
+    margin-top: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+}
+
+.konten{
+    display: flex;
+}
+
+.konten div{
+    margin-left: 2vw;
+}
+
+.konten-quantity {
+    margin: 1vw;
+    height: 50px;
+    width: 20%;
+    float: left;
+}
+
+.konten-quantity-size {
+    width: 100%;
+}
+
+.konten-beli{
+    margin-top: 0.8vw;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+    display: flex;
+}
