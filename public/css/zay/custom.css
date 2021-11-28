@@ -4,7 +4,8 @@
 
 .main-product{
     margin: 1vw;
-    color:white;
+    color:black;
+    background-color:white;
     text-align: center;
 }
 
@@ -12,4 +13,8 @@
     width: 210px;
     float: left;
     margin-top: 1vw;
+}
+
+.clear{
+    clear: left;
 }

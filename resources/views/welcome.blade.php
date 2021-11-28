@@ -86,27 +86,28 @@
 </div>
 <!-- End Banner Hero -->
 
-<div class="main-product" style="color:black; background-color:white;">
+<div class="main-product">
     <h2> Our Products</h2>
-    <div class="product1" style="background-color:white;">
+    <div class="product1">
         <a href="#"><img src="img/RAZER BLADE 15.jpg" alt="" width="80%"/></a>
         <h4>Laptop</h4>
     </div>
-    <div class="product1" style="background-color:white;">
+    <div class="product1">
         <a href="#"><img src="img/ROG Strix XG35VQ.jpg" alt="" width="80%"/></a>
         <h4>Monitor</h4>
     </div>
-    <div class="product1" style="background-color:white;">
+    <div class="product1">
         <a href="#"><img src="img/Cooler Master MasterBox 540.png" alt="" width="80%"/></a>
         <h4>&nbsp CPU</h4>
     </div>
-    <div class="product1" style="background-color:white;">
+    <div class="product1">
         <a href="#"><img src="img/rakit_pc.jpg" alt="" width="80%"/></a>
         <h4>&nbsp Build PC</h4>
     </div>
-    <div class="product1" style="background-color:white;">
+    <div class="product1">
         <a href="#"><img src="img/ROG Centurion.jpg" alt="" width="100%"/></a>
         <h4>Accessories</h4>
     </div>
+    <div class="clear"></div>
 </div>
 @endsection
