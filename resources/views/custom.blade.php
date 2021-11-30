@@ -19,7 +19,7 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <p id="quantity" class="banyak" type="number"></p>
+                <b id="quantity" class="banyak" type="number" style="color:white"></b>
                 <div>
                     <input type="button" value="quantityUp" onclick="addUp()">
                     <input type="button" value="quantityDown" onclick="addDown()">
@@ -238,14 +238,17 @@
 </div>
 
 <script>
+    var hargaProduct = 0;
     function viewHarga(){
         var hargaClick = document.getElementById("inputangkat").value;
-        var hargaProduct = 0;
         var quantityBarang = 1
         if (hargaClick == 1){
             hargaProduct = 10000;
+        }else if (hargaClick == 2){
+            hargaProduct = 15000;
         }
         document.getElementById("harga").innerHTML = hargaProduct;
+        document.getElementById("harga").value = hargaProduct;
         document.getElementById("quantity").innerHTML = quantityBarang;
         document.getElementById("quantity").value = quantityBarang;
 	}
@@ -253,25 +256,29 @@
     function addUp(){
         var updateQuantity = document.getElementById("quantity").value;
         var updateHarga = document.getElementById("harga").value;
+        hargaProduct = 10000;
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
-            updateHarga = updateHarga + updateHarga;
+            updateHarga = updateHarga + hargaProduct;
         }
         document.getElementById("quantity").innerHTML = updateQuantity;
         document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateQuantity;
+        document.getElementById("harga").innerHTML = updateHarga;
+        document.getElementById("harga").value = updateHarga;
     }
 
     function addDown(){
         var updateQuantity = document.getElementById("quantity").value;
         var updateHarga = document.getElementById("harga").value;
+        hargaProduct = 10000;
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;
-            updateHarga = updateHarga - updateHarga;
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - hargaProduct;
         }
         document.getElementById("quantity").innerHTML = updateQuantity;
         document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateQuantity;
+        document.getElementById("harga").innerHTML = updateHarga;
+        document.getElementById("harga").value = updateHarga;
     }
 
 </script>
