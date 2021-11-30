@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('container')
-<h1>Custom <span style="color:#0b5ed7">PC</span></h1>
+<h1 class="judul">Custom <span style="color:#0b5ed7">PC</span></h1>
 <hr class="line">
 <div class="selection">
     <div class="product">
@@ -56,7 +56,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -112,7 +112,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -140,7 +140,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -196,7 +196,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -224,7 +224,7 @@
         </div>
         <div class="price">
             <div class="price-size">
-                <input class="harga" type=number>
+                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -251,28 +251,17 @@
 	}
 
 
-    function addUp(){
-        var updateQuantity = document.getElementById("quantity").value;
-        var updateHarga = document.getElementById("harga").value;
-        if (updateQuantity != null ){
-            updateQuantity = updateQuantity + 1;
-            updateHarga = updateHarga + updateHarga;
-        }
-        document.getElementById("quantity").innerHTML = updateQuantity;
-        document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateQuantity;
-	}
 
-    function addDown(){
-        var updateQuantity = document.getElementById("quantity").value;
-        var updateHarga = document.getElementById("harga").value;
-        if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;
-            updateHarga = updateHarga - updateHarga;
-        }
-        document.getElementById("quantity").innerHTML = updateQuantity;
-        document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateQuantity;
-	}
+
+    jQuery(document).ready(function() {
+        jQuery("input[name='quantity']").on('keyup mouseup', function() {
+            var qty = jQuery("input[name='quantity']").val(),
+            price = jQuery("input[name='harga']").attr('placeholder'),
+            newprice = price * parseInt( qty );
+
+            jQuery("input[name='harga']").val( newprice.toFixed(2) );
+        });
+    });
+
 </script>
   @endsection

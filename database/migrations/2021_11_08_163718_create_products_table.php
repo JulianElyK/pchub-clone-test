@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('compability');
             $table->string('name');
             $table->integer('price');
+            $table->string('category');
+            $table->string('image');
             $table->string('vendor');
             $table->timestamps();
         });

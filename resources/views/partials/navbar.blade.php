@@ -9,34 +9,40 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {{ ($title === "Home" ) ? 'active' : '' }}" href="/">Home</a>
+                            <a class="nav-link {{ ($title === "Product" ) ? 'active' : '' }}" href="product">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="custom">Custom PC</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ ($title === "Custome") ? 'active' : ''  }}" href="#">Custome PC</a>
+                            <a class="nav-link {{ ($title === "About") ? 'active' : ''  }}" href="about">About</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <div class="cari">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
                     @if (Session::get('id') != '')
-                        <div class="dropdown">
-                            <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Session::get('name') }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
+                        <div class="member">
+                            <div class="dropdown">
+                                <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Session::get('name') }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
                         </div>
                     @else
-                        <a href="signin"><button class="btn btn-primary">Sign In</button></a>
+                        <div class="register">
+                            <a href="signin"><button class="btn btn-primary">Sign In</button></a>
+                        </div>
                     @endif
-                    
+
                 </div>
             </div>
         </nav>

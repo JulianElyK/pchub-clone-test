@@ -82,4 +82,10 @@ class CustomerController extends Controller
     {
         //
     }
+
+    public static function getCustomer($id){
+        $customer = Customer::where('id', $id)->first();
+        dd($customer->name);
+        return $customer->name;
+    }
 }

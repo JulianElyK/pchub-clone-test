@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -17,15 +18,19 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome', ["title"=>"Welcome to PCHub"]);
+    return view('welcome', ["title" => "Welcome to PCHub"]);
+});
+
+Route::get('/product', function () {
+    return view('product', ["title" => "Products"]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', ["title" => "Products"]);
 });
 
 Route::get('/signin', function () {
-    return view('signin', ["title"=>"Sign In"]);
+    return view('signin', ["title" => "Sign In"]);
 });
 
 Route::post('/signin', [LoginController::class, 'authenticate']);
@@ -33,5 +38,17 @@ Route::get('/signout', [LoginController::class, 'signout']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/custom', function () {
-    return view('custom', ["title"=>"Custom"]);
+    return view('custom', ["title" => "Custom"]);
 });
+
+Route::get('/addproducts', function () {
+    return view('addproducts', ["title" => "Add Products"]);
+});
+
+Route::post('/addproducts', [ProductController::class, 'store']);
+
+Route::get('/detail', function () {
+    return view('detailproduct', ["title" => "Detail Product"]);
+});
+
+Route::get('/showproduct', [ProductController::class, 'index']);
