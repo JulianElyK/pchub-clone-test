@@ -51,4 +51,4 @@ Route::get('/detail', function () {
     return view('detailproduct', ["title" => "Detail Product"]);
 });
 
-Route::get('/showproduct', [ProductController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index']);
