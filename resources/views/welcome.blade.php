@@ -101,7 +101,7 @@
         <h4>&nbsp CPU</h4>
     </div>
     <div class="product1">
-        <a href="#"><img src="img/rakit_pc.jpg" alt="" width="80%"/></a>
+        <a href="/custom"><img src="img/rakit_pc.jpg" alt="" width="80%"/></a>
         <h4>&nbsp Build PC</h4>
     </div>
     <div class="product1">
