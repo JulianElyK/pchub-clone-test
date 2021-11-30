@@ -19,7 +19,11 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input id="quantity" class="banyak" type="number" min="1">
+                <p id="quantity" class="banyak" type="number"></p>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUp()">
+                    <input type="button" value="quantityDown" onclick="addDown()">
+                </div>
             </div>
         </div>
         <div class="price">
@@ -242,8 +246,11 @@
             hargaProduct = 10000;
         }
         document.getElementById("harga").innerHTML = hargaProduct;
+        document.getElementById("quantity").innerHTML = quantityBarang;
         document.getElementById("quantity").value = quantityBarang;
 	}
+
+
 
 
     jQuery(document).ready(function() {
@@ -255,5 +262,6 @@
             jQuery("input[name='harga']").val( newprice.toFixed(2) );
         });
     });
+
 </script>
   @endsection
