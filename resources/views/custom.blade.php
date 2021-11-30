@@ -250,18 +250,29 @@
         document.getElementById("quantity").value = quantityBarang;
 	}
 
+    function addUp(){
+        var updateQuantity = document.getElementById("quantity").value;
+        var updateHarga = document.getElementById("harga").value;
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateHarga;
+        }
+        document.getElementById("quantity").innerHTML = updateQuantity;
+        document.getElementById("quantity").value = updateQuantity;
+        document.getElementById("harga").innerHTML = updateQuantity;
+    }
 
-
-
-    jQuery(document).ready(function() {
-        jQuery("input[name='quantity']").on('keyup mouseup', function() {
-            var qty = jQuery("input[name='quantity']").val(),
-            price = jQuery("input[name='harga']").attr('placeholder'),
-            newprice = price * parseInt( qty );
-
-            jQuery("input[name='harga']").val( newprice.toFixed(2) );
-        });
-    });
+    function addDown(){
+        var updateQuantity = document.getElementById("quantity").value;
+        var updateHarga = document.getElementById("harga").value;
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateHarga;
+        }
+        document.getElementById("quantity").innerHTML = updateQuantity;
+        document.getElementById("quantity").value = updateQuantity;
+        document.getElementById("harga").innerHTML = updateQuantity;
+    }
 
 </script>
   @endsection
