@@ -19,7 +19,11 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input id="quantity" class="banyak" type="number" min="1">
+                <p id="quantity" class="banyak" type="number"></p>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUp()">
+                    <input type="button" value="quantityDown" onclick="addDown()">
+                </div>
             </div>
         </div>
         <div class="price">
@@ -242,18 +246,33 @@
             hargaProduct = 10000;
         }
         document.getElementById("harga").innerHTML = hargaProduct;
+        document.getElementById("quantity").innerHTML = quantityBarang;
         document.getElementById("quantity").value = quantityBarang;
 	}
 
 
-    jQuery(document).ready(function() {
-        jQuery("input[name='quantity']").on('keyup mouseup', function() {
-            var qty = jQuery("input[name='quantity']").val(),
-            price = jQuery("input[name='harga']").attr('placeholder'),
-            newprice = price * parseInt( qty );
-        
-            jQuery("input[name='harga']").val( newprice.toFixed(2) );
-        });
-    });
+    function addUp(){
+        var updateQuantity = document.getElementById("quantity").value;
+        var updateHarga = document.getElementById("harga").value;
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateHarga;
+        }
+        document.getElementById("quantity").innerHTML = updateQuantity;
+        document.getElementById("quantity").value = updateQuantity;
+        document.getElementById("harga").innerHTML = updateQuantity;
+	}
+
+    function addDown(){
+        var updateQuantity = document.getElementById("quantity").value;
+        var updateHarga = document.getElementById("harga").value;
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateHarga;
+        }
+        document.getElementById("quantity").innerHTML = updateQuantity;
+        document.getElementById("quantity").value = updateQuantity;
+        document.getElementById("harga").innerHTML = updateQuantity;
+	}
 </script>
   @endsection
