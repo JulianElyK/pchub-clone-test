@@ -50,3 +50,12 @@ Route::get('/detail', function () {
 });
 
 Route::get('/product', [ProductController::class, 'index']);
+
+Route::get('/addproducts', function () {
+    $level = Session::get('user');
+    if($level == "admin"){
+        return view('addproducts', ["title" => "Add Products"]);
+    }else{
+        return redirect()->back();
+    }
+});

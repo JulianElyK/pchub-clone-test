@@ -42,22 +42,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $model = $request->session()->get('user');
+        if($model === "admin"){
+            $validateData = $request->validate([
+                'name' => 'required',
+                'compability' => 'required',
+                'price' => 'required',
+                'vendor' => 'required',
+                'image' => 'image|file|max:3072',
+                'category' => 'required'
+            ]);
+    
+            $validateData['image'] = $request->file('image')->store('product-images');
+            
+            Product::create($validateData);
+            
+            return redirect()->intended('/')->with('addSuccess', 'Add Product Has Succesfully');
+        }
+        return redirect()->intended('/')->with('addSuccess', 'Add prdoucts was Error');
         
-        //
-        $validateData = $request->validate([
-            'name' => 'required',
-            'compability' => 'required',
-            'price' => 'required',
-            'vendor' => 'required',
-            'image' => 'image|file|max:3072',
-            'category' => 'required'
-        ]);
-
-        $validateData['image'] = $request->file('image')->store('product-images');
-        
-        Product::create($validateData);
-        
-        return redirect()->intended('/')->with('addSuccess', 'Add Product Has Succesfully');
     }
 
     /**
