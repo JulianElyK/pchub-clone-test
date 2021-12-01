@@ -18,6 +18,12 @@ class ProductController extends Controller
         return view('product', ['product' => $product, 'title' => 'Product']);
     }
 
+    public function getAll()
+    {
+        $product = Product::all();
+        return view('custom', ['product' => $product, 'title' => 'Custom Your PC']);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
