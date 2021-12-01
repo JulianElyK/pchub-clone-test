@@ -37,9 +37,7 @@ Route::post('/signin', [LoginController::class, 'authenticate']);
 Route::get('/signout', [LoginController::class, 'signout']);
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/custom', function () {
-    return view('custom', ["title" => "Custom"]);
-});
+Route::get('/custom', [ProductController::class, 'getAll']);
 
 Route::get('/addproducts', function () {
     return view('addproducts', ["title" => "Add Products"]);
