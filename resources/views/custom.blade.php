@@ -50,7 +50,6 @@
                             <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
                         @endif
                     @endforeach
-                    <option value="3">Three</option>
                 </select>
             </div>
         </div>
@@ -76,9 +75,11 @@
             <div class="item-size">
                 <select class="form-select">
                     <option selected>--Pilih RAM--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                    @if ($item->category == "RAM")
+                        <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
+                    @endif
+                @endforeach
                 </select>
             </div>
         </div>
