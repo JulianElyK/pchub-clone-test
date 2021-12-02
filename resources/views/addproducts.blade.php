@@ -26,6 +26,10 @@
         <input type="vendor" class="form-control" id="vendor" name="vendor">
     </div>
     <div class="mb-3">
+      <label class="form-label" for="description">Description</label>
+      <input type="description" class="form-control" id="description" name="description">
+  </div>
+    <div class="mb-3">
         <label for="image" class="form-label">Image</label>
         <input class="form-control" type="file" id="image" name="image">
       </div>
