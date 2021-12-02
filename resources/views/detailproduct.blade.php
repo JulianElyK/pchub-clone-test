@@ -5,13 +5,13 @@
 
 <div class="header-product">
     <div class="img-product">
-        <img src="img/RAZER BLADE 15.jpg" alt="">
+        <img src="{{ asset('storage/'. $product->image) }}" alt="">
     </div>
     <div class="info-product">
-        <h3>Razer Blade Stealth 13</h3>
+        <h3>{{ $product->name }}</h3>
         <div class="konten">
             <label>Price</label>
-            <div>Rp.25.000.000</div>
+            <div>{{ $product->price }}</div>
         </div>
         <div class="konten">
             <label>Color</label>

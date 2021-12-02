@@ -45,11 +45,12 @@ Route::get('/addproducts', function () {
 
 Route::post('/addproducts', [ProductController::class, 'store']);
 
-Route::get('/detail', function () {
-    return view('detailproduct', ["title" => "Detail Product"]);
-});
+// Route::get('/detail', function () {
+//     return view('detailproduct', ["title" => "Detail Product"]);
+// });
 
 Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
 
 Route::get('/addproducts', function () {
     $level = Session::get('user');

@@ -9,14 +9,14 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select onchange="viewHarga()" id="inputangkat"class="form-select ">
-                    <option selected>--Pilih Motherboard--</option>
-                    @foreach ($product as $item)
+                @foreach ($product as $item)
                         @if ($item->category == "Motherboard")
+                <select onchange="viewHarga({{ $item->price }})" id="inputangkat"class="form-select ">
+                    <option selected>--Pilih Motherboard--</option>
                             <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
-                        @endif
-                    @endforeach
                 </select>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="quantity">
@@ -245,7 +245,7 @@
 
 <script>
     var hargaProduct = 0;
-    function viewHarga(){
+    function viewHarga(var hargaProduct){
         var hargaClick = document.getElementById("inputangkat").value;
         var quantityBarang = 1
         if (hargaClick == 1){

@@ -50,7 +50,8 @@ class ProductController extends Controller
                 'price' => 'required',
                 'vendor' => 'required',
                 'image' => 'image|file|max:3072',
-                'category' => 'required'
+                'category' => 'required',
+                'description' => 'required'
             ]);
     
             $validateData['image'] = $request->file('image')->store('product-images');
@@ -69,9 +70,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+
+        return view('detailproduct', ["title" =>  $product->name , 'product' => $product]);
     }
 
     /**

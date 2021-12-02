@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->string('image');
             $table->string('vendor');
+            $table->string('description');
             $table->timestamps();
         });
     }
