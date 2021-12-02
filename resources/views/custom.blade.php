@@ -2,6 +2,9 @@
 @section('container')
 <h1 class="judul">Custom <span style="color:#0b5ed7">PC</span></h1>
 <hr class="line">
+<script>
+    var hargaProduct = 0;
+</script>
 <div class="selection">
     <div class="product">
         <div class="category">
@@ -9,28 +12,28 @@
         </div>
         <div class="item">
             <div class="item-size">
+                <select onchange="viewHargaMotherboard(this.value)" id="insertMotherboard"class="form-select ">
+                <option selected>--Pilih Motherboard--</option>
                 @foreach ($product as $item)
-                        @if ($item->category == "Motherboard")
-                <select onchange="viewHarga({{ $item->price }})" id="inputangkat"class="form-select ">
-                    <option selected>--Pilih Motherboard--</option>
-                            <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
-                </select>
+                    @if ($item->category == "Motherboard")
+                            <option id="motherboard" value="{{ $item->price }}">{{ $item->name }}</option>
                     @endif
                 @endforeach
+                </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantity" class="banyak" type="number" style="color:white"></b>
+                <b id="quantityMotherboard" class="banyak" type="number" style="color:white"></b>
                 <div>
-                    <input type="button" value="quantityUp" onclick="addUp()">
-                    <input type="button" value="quantityDown" onclick="addDown()">
+                    <input type="button" value="quantityUp" onclick="addUpMotherboard()">
+                    <input type="button" value="quantityDown" onclick="addDownMotherboard()">
                 </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaMotherboard" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -43,10 +46,10 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaProcessor(this.value)" id="insertProcessor"class="form-select ">
                     <option selected>--Pilih Processor--</option>
                     @foreach ($product as $item)
-                        @if ($item->category == "Motherboard")
+                        @if ($item->category == "Processor")
                             <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
                         @endif
                     @endforeach
@@ -55,12 +58,16 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+                <b id="quantityProcessor" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpProcessor()">
+                    <input type="button" value="quantityDown" onclick="addDownProcessor()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaProcessor" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -73,11 +80,11 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaRam(this.value)" id="insertRam" class="form-select">
                     <option selected>--Pilih RAM--</option>
                     @foreach ($product as $item)
                     @if ($item->category == "RAM")
-                        <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
+                        <option id="ram" value="{{ $item->price }}">{{ $item->name }}</option>
                     @endif
                 @endforeach
                 </select>
@@ -85,12 +92,16 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+                <b id="quantityRam" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpRam()">
+                    <input type="button" value="quantityDown" onclick="addDownRam()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaRam" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -103,22 +114,28 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaVga(this.value)" id="insertVga"class="form-select ">
                     <option selected>--Pilih VGA--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "VGA")
+                            <option id="vga" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+            <b id="quantityVga" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpVga()">
+                    <input type="button" value="quantityDown" onclick="addDownVga()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaVga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -131,22 +148,28 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+            <select onchange="viewHargaSsd(this.value)" id="insertSsd"class="form-select ">
                     <option selected>--Pilih SSD--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "SSD")
+                            <option id="ssd" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+            <b id="quantitySsd" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpSsd()">
+                    <input type="button" value="quantityDown" onclick="addDownSsd()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaSsd" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -159,22 +182,28 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaHarddisk(this.value)" id="insertHarddisk"class="form-select ">
                     <option selected>--Pilih Hard Disk--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Hard Disk")
+                            <option id="harddisk" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+                <b id="quantityHarddisk" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpHarddisk()">
+                    <input type="button" value="quantityDown" onclick="addDownHarddisk()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaHarddisk" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -187,22 +216,28 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaKeyboard(this.value)" id="insertKeyboard"class="form-select ">
                     <option selected>--Pilih Keyboard--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Keyboard")
+                            <option id="Keyboard" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+                <b id="quantityKeyboard" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpKeyboard()">
+                    <input type="button" value="quantityDown" onclick="addDownKeyboard()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaKeyboard" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -215,22 +250,28 @@
         </div>
         <div class="item">
             <div class="item-size">
-                <select class="form-select">
+                <select onchange="viewHargaCase(this.value)" id="insertCase"class="form-select ">
                     <option selected>--Pilih Case--</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Case")
+                            <option id="Case" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <input class="banyak" type="number" min="1">
+            <b id="quantityCase" class="banyak" type="number" style="color:white"></b>
+                <div>
+                    <input type="button" value="quantityUp" onclick="addUpCase()">
+                    <input type="button" value="quantityDown" onclick="addDownCase()">
+                </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="harga" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaCase" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -244,48 +285,320 @@
 </div>
 
 <script>
-    var hargaProduct = 0;
-    function viewHarga(var hargaProduct){
-        var hargaClick = document.getElementById("inputangkat").value;
-        var quantityBarang = 1
-        if (hargaClick == 1){
-            hargaProduct = 10000;
-        }else if (hargaClick == 2){
-            hargaProduct = 15000;
-        }
-        document.getElementById("harga").innerHTML = hargaProduct;
-        document.getElementById("harga").value = hargaProduct;
-        document.getElementById("quantity").innerHTML = quantityBarang;
-        document.getElementById("quantity").value = quantityBarang;
-	}
 
-    function addUp(){
-        var updateQuantity = document.getElementById("quantity").value;
-        var updateHarga = document.getElementById("harga").value;
-        hargaProduct = 10000;
+    function viewHargaMotherboard(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaMotherboard").innerHTML = hargaProduct;
+        document.getElementById("hargaMotherboard").value = hargaProduct;
+        document.getElementById("quantityMotherboard").innerHTML = quantityBarang;
+        document.getElementById("quantityMotherboard").value = quantityBarang;
+	}
+    function viewHargaProcessor(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaProcessor").innerHTML = hargaProduct;
+        document.getElementById("hargaProcessor").value = hargaProduct;
+        document.getElementById("quantityProcessor").innerHTML = quantityBarang;
+        document.getElementById("quantityProcessor").value = quantityBarang;
+	}
+    function viewHargaRam(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaRam").innerHTML = hargaProduct;
+        document.getElementById("hargaRam").value = hargaProduct;
+        document.getElementById("quantityRam").innerHTML = quantityBarang;
+        document.getElementById("quantityRam").value = quantityBarang;
+	}
+    function viewHargaVga(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaVga").innerHTML = hargaProduct;
+        document.getElementById("hargaVga").value = hargaProduct;
+        document.getElementById("quantityVga").innerHTML = quantityBarang;
+        document.getElementById("quantityVga").value = quantityBarang;
+	}
+    function viewHargaSsd(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaSsd").innerHTML = hargaProduct;
+        document.getElementById("hargaSsd").value = hargaProduct;
+        document.getElementById("quantitySsd").innerHTML = quantityBarang;
+        document.getElementById("quantitySsd").value = quantityBarang;
+	}
+    function viewHargaHarddisk(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaHarddisk").innerHTML = hargaProduct;
+        document.getElementById("hargaHarddisk").value = hargaProduct;
+        document.getElementById("quantityHarddisk").innerHTML = quantityBarang;
+        document.getElementById("quantityHarddisk").value = quantityBarang;
+	}
+    function viewHargaKeyboard(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaKeyboard").innerHTML = hargaProduct;
+        document.getElementById("hargaKeyboard").value = hargaProduct;
+        document.getElementById("quantityKeyboard").innerHTML = quantityBarang;
+        document.getElementById("quantityKeyboard").value = quantityBarang;
+	}
+    function viewHargaCase(hargaProduct){
+        var quantityBarang = 1    
+        document.getElementById("hargaCase").innerHTML = hargaProduct;
+        document.getElementById("hargaCase").value = hargaProduct;
+        document.getElementById("quantityCase").innerHTML = quantityBarang;
+        document.getElementById("quantityCase").value = quantityBarang;
+	}
+    
+
+
+    function addUpMotherboard(){
+        var updateQuantity = document.getElementById("quantityMotherboard").value;
+        var updateHarga = document.getElementById("hargaMotherboard").value;
+        var updateStatusHarga = document.getElementById("insertMotherboard").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
-            updateHarga = updateHarga + hargaProduct;
+            updateHarga = updateHarga + updateStatusHarga;
         }
-        document.getElementById("quantity").innerHTML = updateQuantity;
-        document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateHarga;
-        document.getElementById("harga").value = updateHarga;
+        document.getElementById("quantityMotherboard").innerHTML = updateQuantity;
+        document.getElementById("quantityMotherboard").value = updateQuantity;
+        document.getElementById("hargaMotherboard").innerHTML = updateHarga;
+        document.getElementById("hargaMotherboard").value = updateHarga;
     }
-
-    function addDown(){
-        var updateQuantity = document.getElementById("quantity").value;
-        var updateHarga = document.getElementById("harga").value;
-        hargaProduct = 10000;
+    function addDownMotherboard(){
+        var updateQuantity = document.getElementById("quantityMotherboard").value;
+        var updateHarga = document.getElementById("hargaMotherboard").value;
+        var updateStatusHarga = document.getElementById("insertMotherboard").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
-            updateHarga = updateHarga - hargaProduct;
+            updateHarga = updateHarga - updateStatusHarga;
         }
-        document.getElementById("quantity").innerHTML = updateQuantity;
-        document.getElementById("quantity").value = updateQuantity;
-        document.getElementById("harga").innerHTML = updateHarga;
-        document.getElementById("harga").value = updateHarga;
+        document.getElementById("quantityMotherboard").innerHTML = updateQuantity;
+        document.getElementById("quantityMotherboard").value = updateQuantity;
+        document.getElementById("hargaMotherboard").innerHTML = updateHarga;
+        document.getElementById("hargaMotherboard").value = updateHarga;
     }
 
+
+    function addUpProcessor(){
+        var updateQuantity = document.getElementById("quantityProcessor").value;
+        var updateHarga = document.getElementById("hargaProcessor").value;
+        var updateStatusHarga = document.getElementById("insertProcessor").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityProcessor").innerHTML = updateQuantity;
+        document.getElementById("quantityProcessor").value = updateQuantity;
+        document.getElementById("hargaProcessor").innerHTML = updateHarga;
+        document.getElementById("hargaProcessor").value = updateHarga;
+    }
+    function addDownProcessor(){
+        var updateQuantity = document.getElementById("quantityProcessor").value;
+        var updateHarga = document.getElementById("hargaProcessor").value;
+        var updateStatusHarga = document.getElementById("insertProcessor").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityProcessor").innerHTML = updateQuantity;
+        document.getElementById("quantityProcessor").value = updateQuantity;
+        document.getElementById("hargaProcessor").innerHTML = updateHarga;
+        document.getElementById("hargaProcessor").value = updateHarga;
+    }
+
+
+
+    function addUpRam(){
+        var updateQuantity = document.getElementById("quantityRam").value;
+        var updateHarga = document.getElementById("hargaRam").value;
+        var updateStatusHarga = document.getElementById("insertRam").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityRam").innerHTML = updateQuantity;
+        document.getElementById("quantityRam").value = updateQuantity;
+        document.getElementById("hargaRam").innerHTML = updateHarga;
+        document.getElementById("hargaRam").value = updateHarga;
+    }
+    function addDownRam(){
+        var updateQuantity = document.getElementById("quantityRam").value;
+        var updateHarga = document.getElementById("hargaRam").value;
+        var updateStatusHarga = document.getElementById("insertRam").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityRam").innerHTML = updateQuantity;
+        document.getElementById("quantityRam").value = updateQuantity;
+        document.getElementById("hargaRam").innerHTML = updateHarga;
+        document.getElementById("hargaRam").value = updateHarga;
+    }
+
+
+    function addUpVga(){
+        var updateQuantity = document.getElementById("quantityVga").value;
+        var updateHarga = document.getElementById("hargaVga").value;
+        var updateStatusHarga = document.getElementById("insertVga").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityVga").innerHTML = updateQuantity;
+        document.getElementById("quantityVga").value = updateQuantity;
+        document.getElementById("hargaVga").innerHTML = updateHarga;
+        document.getElementById("hargaVga").value = updateHarga;
+    }
+    function addDownVga(){
+        var updateQuantity = document.getElementById("quantityVga").value;
+        var updateHarga = document.getElementById("hargaVga").value;
+        var updateStatusHarga = document.getElementById("insertVga").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityVga").innerHTML = updateQuantity;
+        document.getElementById("quantityVga").value = updateQuantity;
+        document.getElementById("hargaVga").innerHTML = updateHarga;
+        document.getElementById("hargaVga").value = updateHarga;
+    }
+
+
+    function addUpSsd(){
+        var updateQuantity = document.getElementById("quantitySsd").value;
+        var updateHarga = document.getElementById("hargaSsd").value;
+        var updateStatusHarga = document.getElementById("insertSsd").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantitySsd").innerHTML = updateQuantity;
+        document.getElementById("quantitySsd").value = updateQuantity;
+        document.getElementById("hargaSsd").innerHTML = updateHarga;
+        document.getElementById("hargaSsd").value = updateHarga;
+    }
+    function addDownSsd(){
+        var updateQuantity = document.getElementById("quantitySsd").value;
+        var updateHarga = document.getElementById("hargaSsd").value;
+        var updateStatusHarga = document.getElementById("insertSsd").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantitySsd").innerHTML = updateQuantity;
+        document.getElementById("quantitySsd").value = updateQuantity;
+        document.getElementById("hargaSsd").innerHTML = updateHarga;
+        document.getElementById("hargaSsd").value = updateHarga;
+    }
+
+
+    function addUpHarddisk(){
+        var updateQuantity = document.getElementById("quantityHarddisk").value;
+        var updateHarga = document.getElementById("hargaHarddisk").value;
+        var updateStatusHarga = document.getElementById("insertHarddisk").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityHarddisk").innerHTML = updateQuantity;
+        document.getElementById("quantityHarddisk").value = updateQuantity;
+        document.getElementById("hargaHarddisk").innerHTML = updateHarga;
+        document.getElementById("hargaHarddisk").value = updateHarga;
+    }
+    function addDownHarddisk(){
+        var updateQuantity = document.getElementById("quantityHarddisk").value;
+        var updateHarga = document.getElementById("hargaHarddisk").value;
+        var updateStatusHarga = document.getElementById("insertHarddisk").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityHarddisk").innerHTML = updateQuantity;
+        document.getElementById("quantityHarddisk").value = updateQuantity;
+        document.getElementById("hargaHarddisk").innerHTML = updateHarga;
+        document.getElementById("hargaHarddisk").value = updateHarga;
+    }
+
+
+    function addUpKeyboard(){
+        var updateQuantity = document.getElementById("quantityKeyboard").value;
+        var updateHarga = document.getElementById("hargaKeyboard").value;
+        var updateStatusHarga = document.getElementById("insertKeyboard").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityKeyboard").innerHTML = updateQuantity;
+        document.getElementById("quantityKeyboard").value = updateQuantity;
+        document.getElementById("hargaKeyboard").innerHTML = updateHarga;
+        document.getElementById("hargaKeyboard").value = updateHarga;
+    }
+    function addDownKeyboard(){
+        var updateQuantity = document.getElementById("quantityKeyboard").value;
+        var updateHarga = document.getElementById("hargaKeyboard").value;
+        var updateStatusHarga = document.getElementById("insertKeyboard").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityKeyboard").innerHTML = updateQuantity;
+        document.getElementById("quantityKeyboard").value = updateQuantity;
+        document.getElementById("hargaKeyboard").innerHTML = updateHarga;
+        document.getElementById("hargaKeyboard").value = updateHarga;
+    }
+
+
+    function addUpCase(){
+        var updateQuantity = document.getElementById("quantityCase").value;
+        var updateHarga = document.getElementById("hargaCase").value;
+        var updateStatusHarga = document.getElementById("insertCase").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+        }
+        document.getElementById("quantityCase").innerHTML = updateQuantity;
+        document.getElementById("quantityCase").value = updateQuantity;
+        document.getElementById("hargaCase").innerHTML = updateHarga;
+        document.getElementById("hargaCase").value = updateHarga;
+    }
+    function addDownCase(){
+        var updateQuantity = document.getElementById("quantityCase").value;
+        var updateHarga = document.getElementById("hargaCase").value;
+        var updateStatusHarga = document.getElementById("insertCase").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;          
+            updateHarga = updateHarga - updateStatusHarga;
+        }
+        document.getElementById("quantityCase").innerHTML = updateQuantity;
+        document.getElementById("quantityCase").value = updateQuantity;
+        document.getElementById("hargaCase").innerHTML = updateHarga;
+        document.getElementById("hargaCase").value = updateHarga;
+    }
 </script>
-  @endsection
+@endsection
