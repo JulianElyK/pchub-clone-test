@@ -149,17 +149,20 @@ class DatabaseSeeder extends Seeder
             'compability' => '1',
             'name' => 'Ram 5 GB Kignston',
             'price' => '450000',
+            'image' => '/',
             'vendor' => 'Kingston Indonesia',
-            'category' => 'RAM'
-            
+            'category' => 'RAM',
+            'description' => 'Kingston DDR2 Memori PC [5 GB/PC-6400] merupakan memory RAM PC berkapasitas 5 GB dengan chipset PC2-6400.'
         ]);
 
         Product::create([
             'compability' => '1',
             'name' => 'Processor Intel I5 11th Gen',
             'price' => '8000000',
+            'image' => '/',
             'vendor' => 'Intel Surya Indonesia',
-            'category' => 'Prosesor'
+            'category' => 'Prosesor',
+            'description' => 'The 11th Generation Intel Core i5-1135G7 is a typical 2020 mid-range laptop processor.'
         ]);
 
 
