@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
 
 
 /*
@@ -45,18 +46,20 @@ Route::get('/addproducts', function () {
 
 Route::post('/addproducts', [ProductController::class, 'store']);
 
-// Route::get('/detail', function () {
-//     return view('detailproduct', ["title" => "Detail Product"]);
-// });
+Route::get('/detail', function () {
+    return view('detailproduct', ["title" => "Detail Product"]);
+});
+
+Route::get('/profile', [CustomerController::class, 'getMember']);
 
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 Route::get('/addproducts', function () {
     $level = Session::get('user');
-    if($level == "admin"){
+    if ($level == "admin") {
         return view('addproducts', ["title" => "Add Products"]);
-    }else{
+    } else {
         return redirect()->back();
     }
 });
