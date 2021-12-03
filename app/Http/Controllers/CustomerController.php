@@ -17,6 +17,12 @@ class CustomerController extends Controller
         //
     }
 
+    public function getMember()
+    {
+        $customer = Customer::all();
+        return view('user', ['customer' => $customer, 'title' => 'Profile']);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -83,7 +89,8 @@ class CustomerController extends Controller
         //
     }
 
-    public static function getCustomer($id){
+    public static function getCustomer($id)
+    {
         $customer = Customer::where('id', $id)->first();
         dd($customer->name);
         return $customer->name;

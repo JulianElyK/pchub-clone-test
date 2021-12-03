@@ -27,13 +27,13 @@
                     @if (Session::get('id') != '')
                         <div class="member">
                             <div class="dropdown">
-                                <a class="btn btn-secondary btn-sml dropdown-toggle" href="/signout" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Session::get('name') }}
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
-                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Session::get('name') }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Cart</a></li>
+                                    <li><a class="dropdown-item" href="/signout">Logout</a></li>
                                 </ul>
                             </div>
                         </div>
