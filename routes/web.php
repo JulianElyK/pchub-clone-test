@@ -18,11 +18,11 @@ use App\Http\Controllers\CustomerController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome', ["title" => "Welcome to PCHub"]);
-// });
+Route::get('/', function () {
+    return view('welcome', ["title" => "Welcome to PCHub"]);
+});
 
-Route::get('/', [ProductController::class, 'getSample']);
+// Route::get('/', [ProductController::class, 'getSample']);
 
 
 Route::get('/product', function () {
