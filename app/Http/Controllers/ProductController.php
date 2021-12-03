@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
@@ -22,6 +23,12 @@ class ProductController extends Controller
     {
         $product = Product::all();
         return view('custom', ['product' => $product, 'title' => 'Custom Your PC']);
+    }
+
+    public function getSample()
+    {
+        $product = DB::select('SELECT * FROM products LIMIT 3');
+        return view('welcome', ['product' => $product, 'title' => 'Welcome to PCHub']);
     }
 
     /**
