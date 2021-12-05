@@ -2,6 +2,10 @@
 
 @section('container')
 {{-- detail produk (/detail). css di custom.style.css --}}
+<style>
+    <?php include "css/custom.style.css" ?>
+    <?php include "css/zay/bootstrap.min.css" ?>
+</style>
 
 <div class="header-product">
     <div class="img-product">
