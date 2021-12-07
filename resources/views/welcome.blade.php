@@ -26,7 +26,7 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/Cooler Master MasterBox 540.png" alt="">
+                                <img class="img-fluid" src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540">
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
@@ -50,7 +50,7 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/GIGABYTE GEFORCE RTX 3060 8GB.jpg" alt="">
+                                <img class="img-fluid" src="img/GIGABYTE GEFORCE RTX 3060 8GB.jpg" alt="RTX 3060">
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
@@ -71,7 +71,7 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/HYPERX FURY RGB DDR4 2X8GB.jpg" alt="">
+                                <img class="img-fluid" src="img/HYPERX FURY RGB DDR4 2X8GB.jpg" alt="HyperX Fury">
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
@@ -103,23 +103,23 @@
     <div class="main-prod-content">
         <h2> Our Products</h2>
         <div class="product1">
-            <a href="#"><img src="img/RAZER BLADE 15.jpg" alt="" width="80%"/></a>
+            <a href="#"><img src="img/RAZER BLADE 15.jpg" alt="Razer Blade 15" width="80%"/></a>
             <h4>Laptop</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/ROG Strix XG35VQ.jpg" alt="" width="80%"/></a>
+            <a href="#"><img src="img/ROG Strix XG35VQ.jpg" alt="ROG Strix XG35VQ" width="80%"/></a>
             <h4>Monitor</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/Cooler Master MasterBox 540.png" alt="" width="80%"/></a>
+            <a href="#"><img src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540" width="80%"/></a>
             <h4>&nbsp CPU</h4>
         </div>
         <div class="product1">
-            <a href="/custom"><img src="img/rakit_pc.jpg" alt="" width="80%"/></a>
+            <a href="/custom"><img src="img/rakit_pc.jpg" alt="Rakit PC" width="80%"/></a>
             <h4>&nbsp Build PC</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/ROG Centurion.jpg" alt="" width="100%"/></a>
+            <a href="#"><img src="img/ROG Centurion.jpg" alt="ROG Centurion" width="100%"/></a>
             <h4>Accessories</h4>
         </div>
         <div class="clear"></div>
