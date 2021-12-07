@@ -7,7 +7,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Action</th>
+                <th scope="col">Actiion</th>
             </thead>
             @foreach ($orders as $order)
                 @foreach ($order->DetailOrder as $detail_order)

@@ -40,23 +40,13 @@ class DetailOrderController extends Controller
     {
         $product = Product::where('id', $id)->first();
         
-        $order = Order::orderBy('id', 'desc')->first();
+        $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
         if($product->stock < $request->quantity){
             return redirect()->intended('/')->with('lowStock', 'Stock is Low, buy another product!');
         }
         $product->stock = $product->stock - $request->quantity;
         $product->save();
-        if($order->status == 0){
-            $temp_harga = ($order->total_price) + ($product->price * $request->quantity);
-            $order->total_price = $temp_harga;
-            $order->save();
-            $detail_order = new DetailOrder;
-            $detail_order->order_id = $order->id;
-            $detail_order->product_id = $id;
-            $detail_order->quantity = $request->quantity;
-            $detail_order->price = $product->price * $request->quantity;
-            $detail_order->save();
-        }else{
+        if(Order::whereNotNull('sent_at')){
             $order = new Order;
             $order->customer_id = Session::get('id');
             $order->total_price = $product->price * $request->quantity;
@@ -69,7 +59,16 @@ class DetailOrderController extends Controller
             $detail_order->quantity = $request->quantity;
             $detail_order->price = $product->price * $request->quantity;
             $detail_order->save();
-
+        }elseif($order->status == 0){
+            $temp_harga = ($order->total_price) + ($product->price * $request->quantity);
+            $order->total_price = $temp_harga;
+            $order->save();
+            $detail_order = new DetailOrder;
+            $detail_order->order_id = $order->id;
+            $detail_order->product_id = $id;
+            $detail_order->quantity = $request->quantity;
+            $detail_order->price = $product->price * $request->quantity;
+            $detail_order->save();
         }
         return redirect()->intended('/')->with('addCartSuccess', 'Add Item to Cart was Success!');
     }
