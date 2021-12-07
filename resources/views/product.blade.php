@@ -9,7 +9,11 @@
         
             <div class="card" style="width: 20rem;">
                 <div class="size-img">
+<<<<<<< HEAD
                     <img src="{{ asset('storage/' . $item->image) }}" class="card-img-top" alt="...">
+=======
+                    <img src="{{ asset('storage/'. $item->image) }}" class="card-img-top" alt="...">
+>>>>>>> a96e0a8ca1a001a73a6acd1a7cb3bdc53e3fb359
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->name }}</h5>
