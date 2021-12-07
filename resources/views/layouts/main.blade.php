@@ -42,14 +42,12 @@
 
 
 </head>
-<body style="background-color: #212529">
+<body style="background-color: #000">
     @include('partials.navbar')
 
-    <div class="container  mt-3">
-        <div class="mx-3">
-            @yield('container')
-        </div>
+    @yield('container')
 
-    </div>
+    @include('partials.footer')
+    
 </body>
 </html>
