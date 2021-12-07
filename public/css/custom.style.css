@@ -153,10 +153,13 @@ label{
 
 /* CSS product */
 .card {
-    margin: 5px;
+    margin-left: 1.5vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 .size-img {
+    padding-top: 1vw;
     height: 300px;
 }
 
@@ -167,4 +170,11 @@ label{
 #posisi {
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.list-product{
+    padding: 3vw;
+}
+.list-product-container{
+    padding: 1vw;
 }

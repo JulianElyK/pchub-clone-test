@@ -281,6 +281,7 @@
             <p class="borderHarga" >Rp  <span id="hargaTotal" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             <input type="submit" name="beli" class="btn btn-primary" value="Beli">
         </div>
+        <div class="clear"></div>
     </div>
 </div>
 
