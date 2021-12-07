@@ -26,6 +26,10 @@
         <input type="vendor" class="form-control" id="vendor" name="vendor">
     </div>
     <div class="mb-3">
+      <label class="form-label" for="stock">Stock</label>
+      <input type="stock" class="form-control" id="stock" name="stock">
+  </div>
+    <div class="mb-3">
       <label class="form-label" for="description">Description</label>
       <input type="description" class="form-control" id="description" name="description">
   </div>
