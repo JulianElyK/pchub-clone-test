@@ -12,7 +12,7 @@
       <label class="form-label" for="category">Category</label>
       <input type="category" class="form-control" id="category" name="category">
     </div>
-    <div class="input-group mb-3">
+    <div class="mb-3">
         <label class="form-label">Price</label>
         <input type="text" class="form-control" aria-label="Harga dalam Rupiah" name="price">
         <div id="priceHelp" class="form-text">Masukan Harga dalam satuan Rupiah</div>
