@@ -287,60 +287,84 @@
 <script>
 
     function viewHargaMotherboard(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaMotherboard").innerHTML = hargaProduct;
         document.getElementById("hargaMotherboard").value = hargaProduct;
         document.getElementById("quantityMotherboard").innerHTML = quantityBarang;
         document.getElementById("quantityMotherboard").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaProcessor(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaProcessor").innerHTML = hargaProduct;
         document.getElementById("hargaProcessor").value = hargaProduct;
         document.getElementById("quantityProcessor").innerHTML = quantityBarang;
         document.getElementById("quantityProcessor").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaRam(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaRam").innerHTML = hargaProduct;
         document.getElementById("hargaRam").value = hargaProduct;
         document.getElementById("quantityRam").innerHTML = quantityBarang;
         document.getElementById("quantityRam").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaVga(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaVga").innerHTML = hargaProduct;
         document.getElementById("hargaVga").value = hargaProduct;
         document.getElementById("quantityVga").innerHTML = quantityBarang;
         document.getElementById("quantityVga").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaSsd(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaSsd").innerHTML = hargaProduct;
         document.getElementById("hargaSsd").value = hargaProduct;
         document.getElementById("quantitySsd").innerHTML = quantityBarang;
         document.getElementById("quantitySsd").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaHarddisk(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaHarddisk").innerHTML = hargaProduct;
         document.getElementById("hargaHarddisk").value = hargaProduct;
         document.getElementById("quantityHarddisk").innerHTML = quantityBarang;
         document.getElementById("quantityHarddisk").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaKeyboard(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaKeyboard").innerHTML = hargaProduct;
         document.getElementById("hargaKeyboard").value = hargaProduct;
         document.getElementById("quantityKeyboard").innerHTML = quantityBarang;
         document.getElementById("quantityKeyboard").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     function viewHargaCase(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1    
         document.getElementById("hargaCase").innerHTML = hargaProduct;
         document.getElementById("hargaCase").value = hargaProduct;
         document.getElementById("quantityCase").innerHTML = quantityBarang;
         document.getElementById("quantityCase").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML += hargaProduct;
+        document.getElementById("hargaTotal").value += hargaProduct;
 	}
     
 
@@ -359,6 +383,8 @@
         document.getElementById("quantityMotherboard").value = updateQuantity;
         document.getElementById("hargaMotherboard").innerHTML = updateHarga;
         document.getElementById("hargaMotherboard").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML = updateHarga;
+        document.getElementById("hargaTotal").value = updateHarga;
     }
     function addDownMotherboard(){
         var updateQuantity = document.getElementById("quantityMotherboard").value;
@@ -374,6 +400,8 @@
         document.getElementById("quantityMotherboard").value = updateQuantity;
         document.getElementById("hargaMotherboard").innerHTML = updateHarga;
         document.getElementById("hargaMotherboard").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -391,6 +419,8 @@
         document.getElementById("quantityProcessor").value = updateQuantity;
         document.getElementById("hargaProcessor").innerHTML = updateHarga;
         document.getElementById("hargaProcessor").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownProcessor(){
         var updateQuantity = document.getElementById("quantityProcessor").value;
@@ -406,6 +436,8 @@
         document.getElementById("quantityProcessor").value = updateQuantity;
         document.getElementById("hargaProcessor").innerHTML = updateHarga;
         document.getElementById("hargaProcessor").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -424,6 +456,8 @@
         document.getElementById("quantityRam").value = updateQuantity;
         document.getElementById("hargaRam").innerHTML = updateHarga;
         document.getElementById("hargaRam").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownRam(){
         var updateQuantity = document.getElementById("quantityRam").value;
@@ -439,6 +473,8 @@
         document.getElementById("quantityRam").value = updateQuantity;
         document.getElementById("hargaRam").innerHTML = updateHarga;
         document.getElementById("hargaRam").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -456,6 +492,8 @@
         document.getElementById("quantityVga").value = updateQuantity;
         document.getElementById("hargaVga").innerHTML = updateHarga;
         document.getElementById("hargaVga").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownVga(){
         var updateQuantity = document.getElementById("quantityVga").value;
@@ -471,6 +509,8 @@
         document.getElementById("quantityVga").value = updateQuantity;
         document.getElementById("hargaVga").innerHTML = updateHarga;
         document.getElementById("hargaVga").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -488,6 +528,8 @@
         document.getElementById("quantitySsd").value = updateQuantity;
         document.getElementById("hargaSsd").innerHTML = updateHarga;
         document.getElementById("hargaSsd").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownSsd(){
         var updateQuantity = document.getElementById("quantitySsd").value;
@@ -503,6 +545,8 @@
         document.getElementById("quantitySsd").value = updateQuantity;
         document.getElementById("hargaSsd").innerHTML = updateHarga;
         document.getElementById("hargaSsd").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -520,6 +564,8 @@
         document.getElementById("quantityHarddisk").value = updateQuantity;
         document.getElementById("hargaHarddisk").innerHTML = updateHarga;
         document.getElementById("hargaHarddisk").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownHarddisk(){
         var updateQuantity = document.getElementById("quantityHarddisk").value;
@@ -535,6 +581,8 @@
         document.getElementById("quantityHarddisk").value = updateQuantity;
         document.getElementById("hargaHarddisk").innerHTML = updateHarga;
         document.getElementById("hargaHarddisk").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -552,6 +600,8 @@
         document.getElementById("quantityKeyboard").value = updateQuantity;
         document.getElementById("hargaKeyboard").innerHTML = updateHarga;
         document.getElementById("hargaKeyboard").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownKeyboard(){
         var updateQuantity = document.getElementById("quantityKeyboard").value;
@@ -567,6 +617,8 @@
         document.getElementById("quantityKeyboard").value = updateQuantity;
         document.getElementById("hargaKeyboard").innerHTML = updateHarga;
         document.getElementById("hargaKeyboard").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -584,6 +636,8 @@
         document.getElementById("quantityCase").value = updateQuantity;
         document.getElementById("hargaCase").innerHTML = updateHarga;
         document.getElementById("hargaCase").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML += updateHarga;
+        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownCase(){
         var updateQuantity = document.getElementById("quantityCase").value;
@@ -599,6 +653,8 @@
         document.getElementById("quantityCase").value = updateQuantity;
         document.getElementById("hargaCase").innerHTML = updateHarga;
         document.getElementById("hargaCase").value = updateHarga;
+        document.getElementById("hargaTotal").innerHTML -= updateHarga;
+        document.getElementById("hargaTotal").value -= updateHarga;
     }
 </script>
 @endsection
