@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
             'compability' => '1',
             'name' => 'Processor Intel I5 11th Gen',
             'price' => '8000000',
-            'image' => 'eNWl31nu2tyo5Fz9G8L0LUyWkFeuucw9ET5ISrZK.jpg',
+            'image' => 'Intel I5 11th Gen.png',
             'vendor' => 'Intel Surya Indonesia',
             'category' => 'Prosesor',
             'description' => 'The 11th Generation Intel Core i5-1135G7 is a typical 2020 mid-range laptop processor.',
