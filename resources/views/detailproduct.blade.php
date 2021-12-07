@@ -23,7 +23,7 @@
         </div>
         <div class="konten">
             <label>Stock</label>
-            <div>20</div>
+            <div>{{ $product->stock }}</div>
         </div>
         <div class="konten">
             <label>Est.Weight</label>
@@ -33,14 +33,18 @@
             <label>Warranty</label>
             <div>1 Year Distributor Warranty</div>
         </div>
-        <div class="konten-quantity">
-            <div class="konten-quantity-size">
-                <input class="banyak" type="number" min="1">
+        <form action="/detailproduct/{{ $product->id }}" method="POST">   
+            @csrf   
+            <div class="konten-quantity">
+                <div class="konten-quantity-size">
+                    <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000">
+                </div>
             </div>
-        </div>
-        <div class="konten-beli">
-            <input type="submit" name="beli" class="btn btn-primary" value="Beli">
-        </div>
+            <div class="konten-beli">
+                <button type="submit" name="beli" class="btn btn-primary" value="Beli">Beli</button>
+            </div>
+        </form>
+ 
     </div>
     <div class="desc-product">
         <label>Deskripsi</label>

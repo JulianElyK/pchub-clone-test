@@ -3,6 +3,16 @@
 @section('container')
 
 <!-- Start Banner Hero -->
+@if (session()->has('lowStock'))
+            <div class="alret alert-danger" role="alert">
+                {{ session('lowStock') }}
+            </div>
+@endif
+@if (session()->has('addCartSuccess'))
+            <div class="alert alert-success" role="alert">
+                {{ session('addCartSuccess') }}
+            </div>
+@endif
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
         <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
