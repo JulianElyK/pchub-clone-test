@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\OrderController;
 
 
 /*
@@ -70,4 +71,4 @@ Route::get('/addproducts', function () {
 
 Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
 
-
+Route::get('/cart', [OrderController::class, 'showCart']);
