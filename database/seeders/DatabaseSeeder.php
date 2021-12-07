@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
             'customer_id' => '1',
             'total_price' => 450000,
             'status' => 3
-        
+        ]);
+
         Product::create([
             'compability' => '1',
             'name' => 'Ram 5 GB Kingston',
