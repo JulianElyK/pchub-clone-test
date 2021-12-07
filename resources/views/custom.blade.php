@@ -290,83 +290,140 @@
 
     function viewHargaMotherboard(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var cekHarga = document.getElementById("hargaMotherboard").value;
+        var quantityBarang = 1;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
+        
         document.getElementById("hargaMotherboard").innerHTML = hargaProduct;
         document.getElementById("hargaMotherboard").value = hargaProduct;
         document.getElementById("quantityMotherboard").innerHTML = quantityBarang;
         document.getElementById("quantityMotherboard").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML = (hargaTotal+hargaProduct);
-        document.getElementById("hargaTotal").value = (hargaTotal+hargaProduct);
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaProcessor(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1;
+        var cekHarga = document.getElementById("hargaProcessor").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
         document.getElementById("hargaProcessor").innerHTML = hargaProduct;
         document.getElementById("hargaProcessor").value = hargaProduct;
         document.getElementById("quantityProcessor").innerHTML = quantityBarang;
         document.getElementById("quantityProcessor").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML = (hargaTotal+hargaProduct);
-        document.getElementById("hargaTotal").value = (hargaTotal+hargaProduct);
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaRam(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1;
+        var cekHarga = document.getElementById("hargaRam").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
         document.getElementById("hargaRam").innerHTML = hargaProduct;
         document.getElementById("hargaRam").value = hargaProduct;
         document.getElementById("quantityRam").innerHTML = quantityBarang;
         document.getElementById("quantityRam").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML = (hargaTotal+hargaProduct);
-        document.getElementById("hargaTotal").value = (hargaTotal+hargaProduct);
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaVga(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1  ;
+        var cekHarga = document.getElementById("hargaVga").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }  
         document.getElementById("hargaVga").innerHTML = hargaProduct;
         document.getElementById("hargaVga").value = hargaProduct;
         document.getElementById("quantityVga").innerHTML = quantityBarang;
         document.getElementById("quantityVga").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML += hargaProduct;
-        document.getElementById("hargaTotal").value += hargaProduct;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaSsd(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1    ;
+        var cekHarga = document.getElementById("hargaSsd").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }  
         document.getElementById("hargaSsd").innerHTML = hargaProduct;
         document.getElementById("hargaSsd").value = hargaProduct;
         document.getElementById("quantitySsd").innerHTML = quantityBarang;
         document.getElementById("quantitySsd").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML += hargaProduct;
-        document.getElementById("hargaTotal").value += hargaProduct;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaHarddisk(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1  ;
+        var cekHarga = document.getElementById("hargaHarddisk").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }    
         document.getElementById("hargaHarddisk").innerHTML = hargaProduct;
         document.getElementById("hargaHarddisk").value = hargaProduct;
         document.getElementById("quantityHarddisk").innerHTML = quantityBarang;
         document.getElementById("quantityHarddisk").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML += hargaProduct;
-        document.getElementById("hargaTotal").value += hargaProduct;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaKeyboard(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1   ;
+        var cekHarga = document.getElementById("hargaHarddisk").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }    
         document.getElementById("hargaKeyboard").innerHTML = hargaProduct;
         document.getElementById("hargaKeyboard").value = hargaProduct;
         document.getElementById("quantityKeyboard").innerHTML = quantityBarang;
         document.getElementById("quantityKeyboard").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML += hargaProduct;
-        document.getElementById("hargaTotal").value += hargaProduct;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     function viewHargaCase(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
-        var quantityBarang = 1    
+        var quantityBarang = 1  ;
+        var cekHarga = document.getElementById("hargaHarddisk").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }     
         document.getElementById("hargaCase").innerHTML = hargaProduct;
         document.getElementById("hargaCase").value = hargaProduct;
         document.getElementById("quantityCase").innerHTML = quantityBarang;
         document.getElementById("quantityCase").value = quantityBarang;
-        document.getElementById("hargaTotal").innerHTML += hargaProduct;
-        document.getElementById("hargaTotal").value += hargaProduct;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
 	}
     
 
@@ -375,15 +432,14 @@
         var updateQuantity = document.getElementById("quantityMotherboard").value;
         var updateHarga = document.getElementById("hargaMotherboard").value;
         var updateStatusHarga = document.getElementById("insertMotherboard").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
-        hargaTotal = parseInt(hargaTotal);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
-            document.getElementById("hargaTotal").innerHTML = (hargaTotal+updateHarga);
-            document.getElementById("hargaTotal").value = (hargaTotal+updateHarga);
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityMotherboard").innerHTML = updateQuantity;
         document.getElementById("quantityMotherboard").value = updateQuantity;
@@ -394,15 +450,14 @@
         var updateQuantity = document.getElementById("quantityMotherboard").value;
         var updateHarga = document.getElementById("hargaMotherboard").value;
         var updateStatusHarga = document.getElementById("insertMotherboard").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
-            document.getElementById("hargaTotal").innerHTML -= updateStatusHarga;
-            document.getElementById("hargaTotal").value -= updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityMotherboard").innerHTML = updateQuantity;
         document.getElementById("quantityMotherboard").value = updateQuantity;
@@ -415,15 +470,14 @@
         var updateQuantity = document.getElementById("quantityProcessor").value;
         var updateHarga = document.getElementById("hargaProcessor").value;
         var updateStatusHarga = document.getElementById("insertProcessor").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
-            document.getElementById("hargaTotal").innerHTML = (hargaTotal+updateHarga);
-            document.getElementById("hargaTotal").value = (hargaTotal+updateHarga);
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityProcessor").innerHTML = updateQuantity;
         document.getElementById("quantityProcessor").value = updateQuantity;
@@ -436,15 +490,14 @@
         var updateQuantity = document.getElementById("quantityProcessor").value;
         var updateHarga = document.getElementById("hargaProcessor").value;
         var updateStatusHarga = document.getElementById("insertProcessor").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
-            document.getElementById("hargaTotal").innerHTML -= updateStatusHarga;
-            document.getElementById("hargaTotal").value -= updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityProcessor").innerHTML = updateQuantity;
         document.getElementById("quantityProcessor").value = updateQuantity;
@@ -460,43 +513,37 @@
         var updateQuantity = document.getElementById("quantityRam").value;
         var updateHarga = document.getElementById("hargaRam").value;
         var updateStatusHarga = document.getElementById("insertRam").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
-            document.getElementById("hargaTotal").innerHTML = (hargaTotal+updateHarga);
-            document.getElementById("hargaTotal").value = (hargaTotal+updateHarga);
-            document.getElementById("hargaTotal").innerHTML -= updateStatusHarga;
-            document.getElementById("hargaTotal").value -= updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityRam").innerHTML = updateQuantity;
         document.getElementById("quantityRam").value = updateQuantity;
         document.getElementById("hargaRam").innerHTML = updateHarga;
         document.getElementById("hargaRam").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownRam(){
         var updateQuantity = document.getElementById("quantityRam").value;
         var updateHarga = document.getElementById("hargaRam").value;
         var updateStatusHarga = document.getElementById("insertRam").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1; 
+            hargaTotal = hargaTotal - updateStatusHarga;         
             updateHarga = updateHarga - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityRam").innerHTML = updateQuantity;
         document.getElementById("quantityRam").value = updateQuantity;
         document.getElementById("hargaRam").innerHTML = updateHarga;
         document.getElementById("hargaRam").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML -= updateHarga;
-        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -504,39 +551,37 @@
         var updateQuantity = document.getElementById("quantityVga").value;
         var updateHarga = document.getElementById("hargaVga").value;
         var updateStatusHarga = document.getElementById("insertVga").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityVga").innerHTML = updateQuantity;
         document.getElementById("quantityVga").value = updateQuantity;
         document.getElementById("hargaVga").innerHTML = updateHarga;
         document.getElementById("hargaVga").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownVga(){
         var updateQuantity = document.getElementById("quantityVga").value;
         var updateHarga = document.getElementById("hargaVga").value;
         var updateStatusHarga = document.getElementById("insertVga").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityVga").innerHTML = updateQuantity;
         document.getElementById("quantityVga").value = updateQuantity;
         document.getElementById("hargaVga").innerHTML = updateHarga;
         document.getElementById("hargaVga").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML -= updateHarga;
-        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -544,39 +589,37 @@
         var updateQuantity = document.getElementById("quantitySsd").value;
         var updateHarga = document.getElementById("hargaSsd").value;
         var updateStatusHarga = document.getElementById("insertSsd").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantitySsd").innerHTML = updateQuantity;
         document.getElementById("quantitySsd").value = updateQuantity;
         document.getElementById("hargaSsd").innerHTML = updateHarga;
         document.getElementById("hargaSsd").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownSsd(){
         var updateQuantity = document.getElementById("quantitySsd").value;
         var updateHarga = document.getElementById("hargaSsd").value;
         var updateStatusHarga = document.getElementById("insertSsd").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantitySsd").innerHTML = updateQuantity;
         document.getElementById("quantitySsd").value = updateQuantity;
         document.getElementById("hargaSsd").innerHTML = updateHarga;
         document.getElementById("hargaSsd").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML -= updateHarga;
-        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -584,32 +627,32 @@
         var updateQuantity = document.getElementById("quantityHarddisk").value;
         var updateHarga = document.getElementById("hargaHarddisk").value;
         var updateStatusHarga = document.getElementById("insertHarddisk").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityHarddisk").innerHTML = updateQuantity;
         document.getElementById("quantityHarddisk").value = updateQuantity;
         document.getElementById("hargaHarddisk").innerHTML = updateHarga;
         document.getElementById("hargaHarddisk").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownHarddisk(){
         var updateQuantity = document.getElementById("quantityHarddisk").value;
         var updateHarga = document.getElementById("hargaHarddisk").value;
         var updateStatusHarga = document.getElementById("insertHarddisk").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityHarddisk").innerHTML = updateQuantity;
         document.getElementById("quantityHarddisk").value = updateQuantity;
@@ -624,39 +667,37 @@
         var updateQuantity = document.getElementById("quantityKeyboard").value;
         var updateHarga = document.getElementById("hargaKeyboard").value;
         var updateStatusHarga = document.getElementById("insertKeyboard").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityKeyboard").innerHTML = updateQuantity;
         document.getElementById("quantityKeyboard").value = updateQuantity;
         document.getElementById("hargaKeyboard").innerHTML = updateHarga;
         document.getElementById("hargaKeyboard").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownKeyboard(){
         var updateQuantity = document.getElementById("quantityKeyboard").value;
         var updateHarga = document.getElementById("hargaKeyboard").value;
         var updateStatusHarga = document.getElementById("insertKeyboard").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityKeyboard").innerHTML = updateQuantity;
         document.getElementById("quantityKeyboard").value = updateQuantity;
         document.getElementById("hargaKeyboard").innerHTML = updateHarga;
         document.getElementById("hargaKeyboard").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML -= updateHarga;
-        document.getElementById("hargaTotal").value -= updateHarga;
     }
 
 
@@ -664,39 +705,37 @@
         var updateQuantity = document.getElementById("quantityCase").value;
         var updateHarga = document.getElementById("hargaCase").value;
         var updateStatusHarga = document.getElementById("insertCase").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
             updateQuantity = updateQuantity + 1;
             updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityCase").innerHTML = updateQuantity;
         document.getElementById("quantityCase").value = updateQuantity;
         document.getElementById("hargaCase").innerHTML = updateHarga;
         document.getElementById("hargaCase").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML += updateHarga;
-        document.getElementById("hargaTotal").value += updateHarga;
     }
     function addDownCase(){
         var updateQuantity = document.getElementById("quantityCase").value;
         var updateHarga = document.getElementById("hargaCase").value;
         var updateStatusHarga = document.getElementById("insertCase").value;
-        var updateTotalHarga = document.getElementById("hargaTotal").value;
-        hargaTotal = parseInt(hargaTotal);
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
             updateQuantity = updateQuantity - 1;          
             updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
         }
         document.getElementById("quantityCase").innerHTML = updateQuantity;
         document.getElementById("quantityCase").value = updateQuantity;
         document.getElementById("hargaCase").innerHTML = updateHarga;
         document.getElementById("hargaCase").value = updateHarga;
-        document.getElementById("hargaTotal").innerHTML -= updateHarga;
-        document.getElementById("hargaTotal").value -= updateHarga;
     }
 </script>
 @endsection
