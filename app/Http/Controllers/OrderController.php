@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\DetailOrder;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,6 +16,13 @@ class OrderController extends Controller
     public function index()
     {
         //
+    }
+
+    public function showCart(){
+        $order = Order::where('status', 0)->get();
+
+        //$detail_order = Order
+        return view('cart', ["title" =>  'Cart' , 'orders' => $order]);
     }
 
     /**
