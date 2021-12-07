@@ -20,4 +20,5 @@
 </div>
 
 @endforeach
+<div class="clear"></div>
 @endsection
