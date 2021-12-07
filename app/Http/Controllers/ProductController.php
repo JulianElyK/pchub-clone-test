@@ -31,6 +31,12 @@ class ProductController extends Controller
         return view('welcome', ['product' => $product, 'title' => 'Welcome to PCHub']);
     }
 
+    public function search(Request $request){
+
+        $product = Product::query()->where('name', 'like', "%{$request->search}%")->get();
+        return view('product', ['product' => $product, 'title' => 'Search For '.$request->search]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

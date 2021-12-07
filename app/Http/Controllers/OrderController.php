@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\DetailOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -19,7 +20,7 @@ class OrderController extends Controller
     }
 
     public function showCart(){
-        $order = Order::where('status', 0)->get();
+        $order = Order::where('customer_id', Session::get('id'))->where('status', 0)->get();
 
         //$detail_order = Order
         return view('cart', ["title" =>  'Cart' , 'orders' => $order]);
