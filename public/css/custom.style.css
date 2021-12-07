@@ -147,6 +147,10 @@ label{
     display: flex;
 }
 
+#upload-profil{
+    width: 25%;
+}
+
 /* CSS product */
 .card {
     margin: 5px;

@@ -22,11 +22,13 @@
             <label>No. Telp:</label>
             <div>{{ Session::get('phone') }}</div>
         </div>
-
-        @foreach ($customer as $member)
-            <p>{{$member->name}}</p>
-        @endforeach
-
     </div>
+    <form method="post" action="#" class="mb-5">
+        <div id="upload-profil" class="mb-3">
+            <label for="image" class="form-label">Ganti/Upload Foto</label>
+            <input class="form-control" type="file" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 @endsection
