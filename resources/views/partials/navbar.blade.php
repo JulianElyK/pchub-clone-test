@@ -31,6 +31,9 @@
                                     {{ Session::get('name') }}
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    @if (Session::get('user') == 'admin')
+                                        <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
+                                    @endif
                                     <li><a class="dropdown-item" href="/profile">Profile</a></li>
                                     <li><a class="dropdown-item" href="#">Cart</a></li>
                                     <li><a class="dropdown-item" href="/signout">Logout</a></li>

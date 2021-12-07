@@ -34,7 +34,7 @@ class LoginController extends Controller
             $admin = Admin::where('email', $request->email)->first();
             if($admin->password == $request->password){
                 session()->regenerate();
-                session(['id' => $admin->email]);
+                session(['id' => $admin->id]);
                 session(['name' => $admin->name]);
                 session(['user' => 'admin']);
                 
@@ -49,7 +49,7 @@ class LoginController extends Controller
             
             if($customer->password == md5($request->password)){
                 session()->regenerate();
-                session(['id' => $customer->email]);
+                session(['id' => $customer->id]);
                 session(['name' => $customer->name]);
                 session(['user' => 'customer']);
 

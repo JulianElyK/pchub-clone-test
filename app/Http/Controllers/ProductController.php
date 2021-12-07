@@ -58,7 +58,8 @@ class ProductController extends Controller
                 'vendor' => 'required',
                 'image' => 'image|file|max:3072',
                 'category' => 'required',
-                'description' => 'required'
+                'description' => 'required',
+                'stock' => 'required'
             ]);
     
             $validateData['image'] = $request->file('image')->store('product-images');

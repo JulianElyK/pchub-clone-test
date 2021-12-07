@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DetailOrderController;
 
 
 /*
@@ -66,3 +67,7 @@ Route::get('/addproducts', function () {
         return redirect()->back();
     }
 });
+
+Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
+
+
