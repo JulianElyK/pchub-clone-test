@@ -13,7 +13,7 @@
                 @foreach ($order->DetailOrder as $detail_order)
                     <tbody>
                         <th schope="row">{{ $loop->iteration }}</th>
-                        <th>{{ $detail_order->name }}</th>
+                        <th>{{ $detail_order->Product->name }}</th>
                         <th>{{ $detail_order->quantity }}</th>
                         <th>{{ $detail_order->price }}</th>
                     </tbody>
