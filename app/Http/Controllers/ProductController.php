@@ -25,6 +25,12 @@ class ProductController extends Controller
         return view('custom', ['product' => $product, 'title' => 'Custom Your PC']);
     }
 
+    public function getAllForShow()
+    {
+        $product = Product::all();
+        return view('showproducts', ['product' => $product, 'title' => 'Available Product Stock']);
+    }
+
     public function getSample()
     {
         $product = DB::select('SELECT * FROM products LIMIT 3');

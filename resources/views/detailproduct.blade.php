@@ -9,7 +9,7 @@
 
 <div class="header-product">
     <div class="img-product">
-        <img src="{{ asset('img/'. $product->image) }}" alt="">
+        <img src="{{ asset('storage/'. $product->image) }}" alt="">
     </div>
     <div class="info-product">
         <h3>{{ $product->name }}</h3>

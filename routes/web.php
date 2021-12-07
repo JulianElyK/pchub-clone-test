@@ -72,3 +72,5 @@ Route::get('/addproducts', function () {
 Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
 
 Route::get('/cart', [OrderController::class, 'showCart']);
+
+Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
