@@ -39,10 +39,13 @@ class DetailOrderController extends Controller
     public function store(Request $request, $id)
     {
         $product = Product::where('id', $id)->first();
+        
         $order = Order::orderBy('id', 'desc')->first();
         if($product->stock < $request->quantity){
             return redirect()->intended('/')->with('lowStock', 'Stock is Low, buy another product!');
         }
+        $product->stock = $product->stock - $request->quantity;
+        $product->save();
         if($order->status == 0){
             $temp_harga = ($order->total_price) + ($product->price * $request->quantity);
             $order->total_price = $temp_harga;
@@ -79,7 +82,7 @@ class DetailOrderController extends Controller
      */
     public function show(DetailOrder $detailOrder)
     {
-        //
+        
     }
 
     /**

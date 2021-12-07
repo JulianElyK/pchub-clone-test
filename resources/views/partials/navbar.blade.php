@@ -24,6 +24,26 @@
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
+                    </div>
+                    @if (Session::get('id') != '')
+                        <div class="member">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Session::get('name') }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    @if (Session::get('user') == 'admin')
+                                        <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
+                                    @endif
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="/cart">Cart</a></li>
+                                    <li><a class="dropdown-item" href="/signout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @else
+                        <div class="register">
+                            <a href="signin"><button class="btn btn-primary">Sign In</button></a>
                         </div>
                         @if (Session::get('id') != '')
                             <div class="member">
