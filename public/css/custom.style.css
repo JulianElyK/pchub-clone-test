@@ -152,8 +152,8 @@ label{
     margin: 5px;
 }
 
-.card img {
-    height: 250px;
+.size-img {
+    height: 300px;
 }
 
 .card-body {

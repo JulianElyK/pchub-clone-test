@@ -6,7 +6,9 @@
 
 <div class="list-product">
     <div class="card" style="width: 20rem;">
-        <img src="{{ asset('img/'. $item->image) }}" class="card-img-top" alt="...">
+        <div class="size-img">
+            <img src="{{ asset('img/'. $item->image) }}" class="card-img-top" alt="...">
+        </div>
         <div class="card-body">
             <h5 class="card-title">{{ $item->name }}</h5>
             <p class="card-text">{{ $item->description }}</p>
