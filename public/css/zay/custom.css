@@ -98,3 +98,27 @@
     height: 80%;
     margin-left: 10%;
 }
+
+.cari i{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.cari button{
+    /* border-radius: ; */
+    border: none;
+    padding: 0;
+    color: rgba(255,255,255,.55);
+    margin-left: 0.5vw;
+}
+
+.cari button:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.cari input{
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 0.55vw 1.5vw;
+}
