@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="konten-beli">
-                <button type="submit" name="beli" class="btn btn-primary" value="Beli">Beli</button>
+                <button type="submit" name="beli" class="btn btn-primary" value="Beli">Add to Cart</button>
             </div>
         </form>
  
