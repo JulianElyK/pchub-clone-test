@@ -39,6 +39,10 @@ class DetailOrderController extends Controller
     public function store(Request $request, $id)
     {
         $product = Product::where('id', $id)->first();
+
+        if(Session::get('id') == null){
+            return back()->with('signin_warning', 'Please SignIn Before Shop!');
+        }
         
         $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
         if($product->stock < $request->quantity){
