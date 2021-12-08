@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+<div class="container-md mt-3">
     <div class="table-responsive">
         <table class="table table-dark table-striped">
             <thead>
@@ -18,8 +19,13 @@
                         <th>{{ $detail_order->price }}</th>
                     </tbody>
                 @endforeach
-                
             @endforeach
         </table>
+        <form action="/gotopayment" method="post">
+            <div class="konten-beli">
+                <button type="button" class="btn btn-primary">Bayar</button>
+            </div>
+        </form>
     </div>
+</div>
 @endsection

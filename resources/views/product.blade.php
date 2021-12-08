@@ -9,7 +9,7 @@
         
             <div class="card" style="width: 20rem;">
                 <div class="size-img">
-                    <img src="{{ asset('storage/'. $item->image) }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/'. $item->image) }}" class="card-img-top">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->name }}</h5>
