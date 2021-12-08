@@ -37,9 +37,10 @@
                                     @if (Session::get('user') == 'admin')
                                         <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
                                         <li><a class="dropdown-item" href="/showproducts">Show Product</a></li>
+                                    @else
+                                        <li><a class="dropdown-item" href="/cart">Cart</a></li>
                                     @endif
-                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                                    <li><a class="dropdown-item" href="/cart">Cart</a></li>
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>      
                                     <li><a class="dropdown-item" href="/signout">Logout</a></li>
                                 </ul>
                             </div>

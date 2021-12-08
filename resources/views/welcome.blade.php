@@ -33,15 +33,13 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
                                     <div class="deskripsi">
-                                        <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
-                                        <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
-                                        <p>
-                                            Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).
-                                            This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website.
-                                            Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                            <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                                            <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                        <h1 class="h1">NEW RELEASE</h1>
+                                        <h1 style="font-size:2.5rem;">Cooler Master MasterBox 540</h1>
+                                        <p>A vivid, iridescent design spans the entire front panel of the MasterBox 540. Customizable ARGB strips radiate behind the transparent facade for a stunning display of light.<br>
+                                        The ARGB strips can be set to match the colour scheme of the system inside with an included controller, and will also sync to the motherboard for a limitless potential for customization.
                                         </p>
+                                        <a href="/product/4" class="btn btn-primary" style="float:right;">Shop Now</a>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
@@ -59,12 +57,14 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
                                     <div class="deskripsi">
-                                        <h1 class="h1">Proident occaecat</h1>
-                                        <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                        <h1 class="h1">NEW RELEASE</h1>
+                                        <h1 style="font-size:2.5rem;">GIGABYTE GEFORCE RTX 3060 8GB</h1>
                                         <p>
-                                            You are permitted to use this Zay CSS template for your commercial websites.
-                                            You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                        The RTX 3060 lets you play the latest games using the power of Ampere, NVIDIAs 2nd generation RTX architecture.
+                                        The WINDFORCE 3X cooling system features 3x 80mm unique blade fans, alternate spinning, 3 composite copper heat pipes direct touch GPU, 3D active fan and Screen cooling, which together provide high efficiency heat dissipation. 
                                         </p>
+                                        <a href="/product/3" class="btn btn-primary" style="float:right;">Shop Now</a>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
@@ -82,12 +82,14 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
                                     <div class="deskripsi">
-                                        <h1 class="h1">Repr in voluptate</h1>
-                                        <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                        <h1 class="h1">NEW RELEASE</h1>
+                                        <h1 style="font-size:2.5rem;">HYPERX FURY RGB DDR4 2X8GB</h1>
                                         <p>
-                                            We bring you 100% free CSS templates for your websites.
-                                            If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                        HyperX Fury Beast KF432C16BBAK2/16 is a kit of two 1G x 64-bit (8GB) DDR4-3200 CL16 SDRAM (Synchronous DRAM) 1Rx8.
+                                        HyperX FURY DDR4 RGB memberikan peningkatan kinerja dan gaya dengan kecepatan hingga 3466MHz, gaya agresif, dan pencahayaan RGB yang menjalankan modul untuk efek pencahayaan yang halus dan menakjubkan.
                                         </p>
+                                        <a href="/product/5" class="btn btn-primary" style="float:right;">Shop Now</a>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
