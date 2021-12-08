@@ -23,8 +23,8 @@
                             <form class="d-flex" action="/search" method="POST">
                                 @csrf
                                 {{-- <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" > --}}
-                                <input type="search" class="form-control me-2" id="search" name="search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
+                                <button class="btn btn-outline-success" type="submit"><i class="fal fa-search"></i></button>
                             </form>
                         </div>
                     @if (Session::get('id') != '')
