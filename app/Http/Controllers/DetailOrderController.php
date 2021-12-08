@@ -116,6 +116,10 @@ class DetailOrderController extends Controller
     public function destroy($id)
     {
         $detail_order = DetailOrder::where('id', $id)->first();
+
+        $product = Product::find($detail_order->Product->id);
+        $product->stock = $product->stock + $detail_order->quantity;
+        $product->save();
         $detail_order->delete();
         return redirect()->intended('/cart')->with('deleteCartSuccess', 'Delete Item From Cart was Success!');
     }
