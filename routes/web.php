@@ -75,4 +75,6 @@ Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
 
 Route::post('/search', [ProductController::class, 'search']);
 
+
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
+

@@ -69,6 +69,17 @@ class DatabaseSeeder extends Seeder
 
         Product::create([
             'compability' => '1',
+            'name' => 'Cooler Master MasterBox 540',
+            'price' => '1440000',
+            'image' => 'product-images/Cooler Master MasterBox 540.png',
+            'vendor' => 'Cooler Master',
+            'category' => 'Case',
+            'description' => 'A vivid, iridescent design spans the entire front panel of the MasterBox 540. Customizable ARGB strips radiate behind the transparent façade for a stunning display of light.',
+            'stock' => 50
+        ]);
+        
+        Product::create([
+            'compability' => '1',
             'name' => 'HYPERX FURY RGB DDR4 2X8GB',
             'price' => '15000000',
             'image' => 'product-images/HYPERX FURY RGB DDR4 2X8GB.jpg',
