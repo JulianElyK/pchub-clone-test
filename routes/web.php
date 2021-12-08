@@ -27,9 +27,7 @@ Route::get('/', function () {
 // Route::get('/', [ProductController::class, 'getSample']);
 
 
-Route::get('/product', function () {
-    return view('product', ["title" => "Products"]);
-});
+
 
 Route::get('/about', function () {
     return view('about', ["title" => "Products"]);
