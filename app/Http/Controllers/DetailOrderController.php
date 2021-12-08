@@ -113,8 +113,10 @@ class DetailOrderController extends Controller
      * @param  \App\Models\DetailOrder  $detailOrder
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DetailOrder $detailOrder)
+    public function destroy($id)
     {
-        //
+        $detail_order = DetailOrder::where('id', $id)->first();
+        $detail_order->delete();
+        return redirect()->intended('/cart')->with('deleteCartSuccess', 'Delete Item From Cart was Success!');
     }
 }

@@ -1,6 +1,11 @@
 @extends('layouts.main')
 @section('container')
 <div class="container-md mt-3">
+    @if (session()->has('deleteCartSuccess'))
+    <div class="alret alert-success" role="alert">
+        {{ session('deleteCartSuccess') }}
+    </div>
+@endif
     <div class="table-responsive">
         <table class="table table-dark table-striped">
             <thead>
@@ -14,9 +19,15 @@
                 @foreach ($order->DetailOrder as $detail_order)
                     <tbody>
                         <th schope="row">{{ $loop->iteration }}</th>
-                        <th>{{ $detail_order->Product->name }}</th>
-                        <th>{{ $detail_order->quantity }}</th>
-                        <th>{{ $detail_order->price }}</th>
+                        <td>{{ $detail_order->Product->name }}</th>
+                        <td>{{ $detail_order->quantity }}</th>
+                        <td>{{ $detail_order->price }}</th>
+                        <td>
+                            <form action="/detailorder/{{ $detail_order->id }}" method="post">
+                                @csrf
+                                <button class="badge bg-danger border-8" onclick="return confirm('Are Yout Sure?')">Delete</button>
+                            </form>
+                        </th>
                     </tbody>
                 @endforeach
             @endforeach
