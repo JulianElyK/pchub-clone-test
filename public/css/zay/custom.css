@@ -28,6 +28,7 @@
 }
 
 .sticky-nav{
+    padding: 0 4vw;
     background-color: #000;
     /* position: fixed;
     width: 100%;
@@ -38,7 +39,15 @@
 }
 
 .sticky-nav li{
-    font-size: 1.15rem;
+    margin: 0 1vw;
+    font-size: 1.35rem;
+}
+
+.container-header{
+    background-color: aqua;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .footer{
@@ -57,7 +66,7 @@
     margin: 1vw auto;
     max-width: 95%;
     position: relative;
-    border-top: 1px solid white;
+    border-top: 1px solid rgba(255,255,255,.55);
 }
 
 .footer-content-left, .footer-content-right{
@@ -81,4 +90,35 @@
     margin: 0;
 }
 
+.img-container{
+    height: 380px;
+}
 
+.img-container img{
+    height: 80%;
+    margin-left: 10%;
+}
+
+.cari i{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.cari button{
+    /* border-radius: ; */
+    border: none;
+    padding: 0;
+    color: rgba(255,255,255,.55);
+    margin-left: 0.5vw;
+}
+
+.cari button:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.cari input{
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 0.55vw 1.5vw;
+}

@@ -1,7 +1,7 @@
 <div class="sticky-nav">
-    <div class="container">
+    <div class="container-header">
         <header>
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="border-bottom: 3px solid #0F52BA;">
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="border-bottom: 1px solid #0F52BA;">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="img/pchub_logo.png" width="120" alt="PCHub Logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,8 +23,8 @@
                             <form class="d-flex" action="/search" method="POST">
                                 @csrf
                                 {{-- <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" > --}}
-                                <input type="search" class="form-control me-2" id="search" name="search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
+                                <button class="btn btn-outline-success" type="submit"><i class="fal fa-search"></i></button>
                             </form>
                         </div>
                     @if (Session::get('id') != '')
@@ -36,6 +36,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     @if (Session::get('user') == 'admin')
                                         <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
+                                        <li><a class="dropdown-item" href="/showproducts">Show Product</a></li>
                                     @endif
                                     <li><a class="dropdown-item" href="/profile">Profile</a></li>
                                     <li><a class="dropdown-item" href="/cart">Cart</a></li>

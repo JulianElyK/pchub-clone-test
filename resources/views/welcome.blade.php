@@ -26,7 +26,9 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540">
+                                <div class="img-container">
+                                    <img class="img-fluid" src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540">
+                                </div>
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
@@ -50,7 +52,9 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/GIGABYTE GEFORCE RTX 3060 8GB.jpg" alt="RTX 3060">
+                                <div class="img-container">
+                                    <img class="img-fluid" src="img/GIGABYTE GEFORCE RTX 3060 8GB.png" alt="RTX 3060">
+                                </div>
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
@@ -71,7 +75,9 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="img/HYPERX FURY RGB DDR4 2X8GB.jpg" alt="HyperX Fury">
+                                <div class="img-container">
+                                    <img class="img-fluid" src="img/HYPERX FURY RGB DDR4 2X8GB.png" alt="HyperX Fury">
+                                </div>
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
@@ -119,7 +125,7 @@
             <h4>&nbsp Build PC</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/ROG Centurion.jpg" alt="ROG Centurion" width="100%"/></a>
+            <a href="#"><img src="img/ROG Centurion.jpg" alt="ROG Centurion" width="107%"/></a>
             <h4>Accessories</h4>
         </div>
         <div class="clear"></div>

@@ -73,6 +73,11 @@ Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
 
 Route::get('/cart', [OrderController::class, 'showCart']);
 
+Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
+
 Route::post('/search', [ProductController::class, 'search']);
 
+<<<<<<< HEAD
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
+=======
+>>>>>>> bbe932e2b4c3d6f305f625cff7f1f84de3816677
