@@ -122,3 +122,10 @@
     border: 1px solid #000;
     padding: 0.55vw 1.5vw;
 }
+
+.container .deskripsi h1{
+    background: linear-gradient(to right, rgb(255,0,0), rgb(255,255,0), rgb(0,255,255), rgb(255,0,255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+}
