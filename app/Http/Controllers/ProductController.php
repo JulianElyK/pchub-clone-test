@@ -92,6 +92,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        if(!is_numeric($id)){
+            return redirect()->intended("/". $id);
+        }
         $product = Product::where('id', $id)->first();
 
         return view('detailproduct', ["title" =>  $product->name , 'product' => $product]);

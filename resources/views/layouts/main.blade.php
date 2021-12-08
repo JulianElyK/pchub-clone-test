@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="css/zay/slick.min.css">
 	<link rel="stylesheet" href="css/zay/templatememo.css">
 	<link rel="stylesheet" href="css/zay/templatememo.min.css">
+    @yield('style')
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     {{-- js --}}
     <script src="js/jquery.js"></script>

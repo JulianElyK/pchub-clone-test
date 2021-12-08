@@ -1,12 +1,20 @@
 @extends('layouts.main')
 
-@section('container')
+
 {{-- detail produk (/detail). css di custom.style.css --}}
 <style>
-    <?php include "css/custom.style.css" ?>
-    <?php include "css/zay/bootstrap.min.css" ?>
+    /* <?php include "css/custom.style.css" ?>
+    <?php include "css/zay/bootstrap.min.css" ?> */
+    {{ include "css/custom.style.css" }}
+    {{ include "css/zay/bootstrap.min.css" }}
 </style>
 
+@section('container')
+@if (session()->has('signin_error'))
+        <div class="alret alert-danger alertdismissible fade show" role="alert">
+                {{ session('signin_error') }}
+        </div>
+@endif
 <div class="header-product">
     <div class="img-product">
         <img src="{{ asset('storage/'. $product->image) }}" alt="">
