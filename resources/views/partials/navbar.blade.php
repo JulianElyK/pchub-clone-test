@@ -1,7 +1,7 @@
 <div class="sticky-nav">
-    <div class="container">
+    <div class="container-header">
         <header>
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="border-bottom: 3px solid #0F52BA;">
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="border-bottom: 1px solid #0F52BA;">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="img/pchub_logo.png" width="120" alt="PCHub Logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
