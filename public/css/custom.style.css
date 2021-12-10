@@ -51,10 +51,6 @@ label{
     float: left;
 }
 
-.quantity-size{
-    width: 100%;
-}
-
 .banyak{
     width: 50px;
 }
@@ -62,11 +58,6 @@ label{
 .price{
     float: left;
     width: 10%;
-}
-
-.price-size{
-    width: 80%;
-
 }
 
 .harga{
@@ -84,10 +75,6 @@ label{
 .total{
     float: right;
 }
-
-/* .header-product{
-
-} */
 
 .img-product {
     width: 300px;
@@ -177,4 +164,13 @@ label{
 }
 .list-product-container{
     padding: 1vw;
+}
+
+.qty-bar b{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.clear-right{
+    clear: right;
 }
