@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+{{-- css -> custom.style.css --}}
 <h1 class="judul">Custom <span style="color:#0b5ed7">PC</span></h1>
 <hr class="line">
 <script>
@@ -25,10 +26,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantityMotherboard" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpMotherboard()">
-                    <input type="button" value="quantityDown" onclick="addDownMotherboard()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownMotherboard()">
+                    <b id="quantityMotherboard" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpMotherboard()">
                 </div>
             </div>
         </div>
@@ -59,10 +60,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantityProcessor" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpProcessor()">
-                    <input type="button" value="quantityDown" onclick="addDownProcessor()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownProcessor()">
+                    <b id="quantityProcessor" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpProcessor()">
                 </div>
             </div>
         </div>
@@ -93,10 +94,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantityRam" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpRam()">
-                    <input type="button" value="quantityDown" onclick="addDownRam()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownRam()">
+                    <b id="quantityRam" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpRam()">
                 </div>
             </div>
         </div>
@@ -127,10 +128,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-            <b id="quantityVga" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpVga()">
-                    <input type="button" value="quantityDown" onclick="addDownVga()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownVga()">
+                    <b id="quantityVga" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpVga()">
                 </div>
             </div>
         </div>
@@ -161,10 +162,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-            <b id="quantitySsd" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpSsd()">
-                    <input type="button" value="quantityDown" onclick="addDownSsd()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownSsd()">
+                    <b id="quantitySsd" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpSsd()">
                 </div>
             </div>
         </div>
@@ -195,10 +196,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantityHarddisk" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpHarddisk()">
-                    <input type="button" value="quantityDown" onclick="addDownHarddisk()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownHarddisk()">
+                    <b id="quantityHarddisk" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpHarddisk()">
                 </div>
             </div>
         </div>
@@ -229,10 +230,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-                <b id="quantityKeyboard" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpKeyboard()">
-                    <input type="button" value="quantityDown" onclick="addDownKeyboard()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownKeyboard()">
+                    <b id="quantityKeyboard" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpKeyboard()">
                 </div>
             </div>
         </div>
@@ -263,10 +264,10 @@
         </div>
         <div class="quantity">
             <div class="quantity-size">
-            <b id="quantityCase" class="banyak" type="number" style="color:white"></b>
-                <div>
-                    <input type="button" value="quantityUp" onclick="addUpCase()">
-                    <input type="button" value="quantityDown" onclick="addDownCase()">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownCase()">
+                    <b id="quantityCase" class="banyak" type="number" style="color:white"></b>
+                    <input type="button" value="+" onclick="addUpCase()">
                 </div>
             </div>
         </div>
@@ -282,7 +283,7 @@
             <p class="borderHarga" >Rp  <span id="hargaTotal" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             <input type="submit" name="beli" class="btn btn-primary" value="Beli">
         </div>
-        <div class="clear"></div>
+        <div class="clear-right"></div>
     </div>
 </div>
 
@@ -298,7 +299,7 @@
         }else{
             hargaTotal += hargaProduct;
         }
-        
+
         document.getElementById("hargaMotherboard").innerHTML = hargaProduct;
         document.getElementById("hargaMotherboard").value = hargaProduct;
         document.getElementById("quantityMotherboard").innerHTML = quantityBarang;
@@ -349,7 +350,7 @@
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
-        }  
+        }
         document.getElementById("hargaVga").innerHTML = hargaProduct;
         document.getElementById("hargaVga").value = hargaProduct;
         document.getElementById("quantityVga").innerHTML = quantityBarang;
@@ -366,7 +367,7 @@
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
-        }  
+        }
         document.getElementById("hargaSsd").innerHTML = hargaProduct;
         document.getElementById("hargaSsd").value = hargaProduct;
         document.getElementById("quantitySsd").innerHTML = quantityBarang;
@@ -383,7 +384,7 @@
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
-        }    
+        }
         document.getElementById("hargaHarddisk").innerHTML = hargaProduct;
         document.getElementById("hargaHarddisk").value = hargaProduct;
         document.getElementById("quantityHarddisk").innerHTML = quantityBarang;
@@ -400,7 +401,7 @@
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
-        }    
+        }
         document.getElementById("hargaKeyboard").innerHTML = hargaProduct;
         document.getElementById("hargaKeyboard").value = hargaProduct;
         document.getElementById("quantityKeyboard").innerHTML = quantityBarang;
@@ -417,7 +418,7 @@
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
-        }     
+        }
         document.getElementById("hargaCase").innerHTML = hargaProduct;
         document.getElementById("hargaCase").value = hargaProduct;
         document.getElementById("quantityCase").innerHTML = quantityBarang;
@@ -425,7 +426,7 @@
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
 	}
-    
+
 
 
     function addUpMotherboard(){
@@ -453,7 +454,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -493,7 +494,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -534,8 +535,8 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1; 
-            hargaTotal = hargaTotal - updateStatusHarga;         
+            updateQuantity = updateQuantity - 1;
+            hargaTotal = hargaTotal - updateStatusHarga;
             updateHarga = updateHarga - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
             document.getElementById("hargaTotal").value = hargaTotal;
@@ -572,7 +573,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -610,7 +611,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -648,7 +649,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -688,7 +689,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
@@ -726,7 +727,7 @@
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
-            updateQuantity = updateQuantity - 1;          
+            updateQuantity = updateQuantity - 1;
             updateHarga = updateHarga - updateStatusHarga;
             hargaTotal = hargaTotal - updateStatusHarga;
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
