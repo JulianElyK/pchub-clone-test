@@ -33,7 +33,7 @@ class ProductController extends Controller
 
     public function getByID(Request $request)
     {
-        $product = Product::query()->where('id', $request->id)->get();
+        $product = Product::where('id', $request->id)->first();
         return view('editproducts', ['product' => $product, 'title' => 'Search For '.$request->id]);
     }
 
