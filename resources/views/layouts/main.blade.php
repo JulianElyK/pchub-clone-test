@@ -44,7 +44,16 @@
 
 
 </head>
-<body style="background-color: #000">
+
+@php
+    if($title == "PCHub"){
+        echo '<body style="background-color: #000">';
+    }
+    else{
+        echo '<body style="background-color: #fff">';
+    }
+@endphp
+
     @include('partials.navbar')
 
     @yield('container')

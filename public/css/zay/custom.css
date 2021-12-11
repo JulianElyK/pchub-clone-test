@@ -52,7 +52,6 @@
 
 .footer{
     font-size: 0.7rem;
-    color: rgba(255,255,255,.55);
     padding-left: 1vw;
     padding-right: 1vw;
     padding-top: 1vw;
@@ -60,13 +59,22 @@
     box-sizing: border-box;
 }
 
+.footer-light{
+    color: rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(0, 0, 0, 0.55);
+}
+
+.footer-dark{
+    color: rgba(255,255,255,.55);
+    border-top: 1px solid rgba(255,255,255,.55);
+}
+
 .footer-content{
     padding: 1vw;
     box-sizing: border-box;
     margin: 1vw auto;
-    max-width: 95%;
+    max-width: 94%;
     position: relative;
-    border-top: 1px solid rgba(255,255,255,.55);
 }
 
 .footer-content-left, .footer-content-right{
@@ -128,4 +136,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3rem;
+}
+
+.member .dropdown .dropdown-custom{
+    left: -5.175rem;
 }

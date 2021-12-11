@@ -8,7 +8,8 @@ h1{
 }
 
 .judul{
-    color: white;
+    color: rgb(0, 0, 0);
+    margin: 2rem auto;
 }
 
 .line{
@@ -16,7 +17,7 @@ h1{
 }
 
 label{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .selection{

@@ -21,7 +21,7 @@ use App\Http\Controllers\OrderController;
 */
 
 Route::get('/', function () {
-    return view('welcome', ["title" => "Welcome to PCHub"]);
+    return view('welcome', ["title" => "PCHub"]);
 });
 
 // Route::get('/', [ProductController::class, 'getSample']);
@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 
 Route::get('/about', function () {
-    return view('about', ["title" => "Products"]);
+    return view('about', ["title" => "About"]);
 });
 
 Route::get('/signin', function () {
