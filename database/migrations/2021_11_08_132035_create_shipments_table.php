@@ -16,8 +16,8 @@ class CreateShipmentsTable extends Migration
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
             $table->string('address');
-            $table->date('ship_date');
-            $table->date('arrival_date');
+            $table->date('ship_date')->nullable();
+            $table->date('arrival_date')->nullable();
             $table->foreignId('order_id');
             $table->string('type');
             $table->timestamps();
