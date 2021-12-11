@@ -2,6 +2,6 @@
 
 @section('container')
     <h1>
-        Halaman About
+        About
     </h1>
 @endsection

@@ -2,7 +2,7 @@
 @section('container')
 {{-- css -> custom.style.css --}}
 <h1 class="judul">Custom <span style="color:#0b5ed7">PC</span></h1>
-<hr class="line">
+<!-- <hr class="line"> -->
 <script>
     var hargaProduct = 0;
     var hargaTotal = 0;
