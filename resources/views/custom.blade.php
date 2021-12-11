@@ -44,14 +44,14 @@
 <div class="selection">
     <div class="product">
         <div class="category">
-            <label for="processor">Processor:</label>
+            <label for="Prosesor">Prosesor:</label>
         </div>
         <div class="item">
             <div class="item-size">
-                <select onchange="viewHargaProcessor(this.value)" id="insertProcessor"class="form-select ">
-                    <option selected>--Pilih Processor--</option>
+                <select onchange="viewHargaProsesor(this.value)" id="insertProsesor"class="form-select ">
+                    <option selected>--Pilih Prosesor--</option>
                     @foreach ($product as $item)
-                        @if ($item->category == "Processor")
+                        @if ($item->category == "Prosesor")
                             <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
                         @endif
                     @endforeach
@@ -61,15 +61,15 @@
         <div class="quantity">
             <div class="quantity-size">
                 <div class="qty-bar">
-                    <input type="button" value="-" onclick="addDownProcessor()">
-                    <b id="quantityProcessor" class="banyak" type="number" style="color:black"></b>
-                    <input type="button" value="+" onclick="addUpProcessor()">
+                    <input type="button" value="-" onclick="addDownProsesor()">
+                    <b id="quantityProsesor" class="banyak" type="number" style="color:black"></b>
+                    <input type="button" value="+" onclick="addUpProsesor()">
                 </div>
             </div>
         </div>
         <div class="price">
             <div class="price-size">
-                <p class="borderHarga" >Rp  <span id="hargaProcessor" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+                <p class="borderHarga" >Rp  <span id="hargaProsesor" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
             </div>
         </div>
     </div>
@@ -307,20 +307,20 @@
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
 	}
-    function viewHargaProcessor(hargaProduct){
+    function viewHargaProsesor(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1;
-        var cekHarga = document.getElementById("hargaProcessor").value;
+        var cekHarga = document.getElementById("hargaProsesor").value;
         if (hargaProduct != cekHarga && cekHarga != null){
             hargaTotal += hargaProduct;
             hargaTotal -= cekHarga;
         }else{
             hargaTotal += hargaProduct;
         }
-        document.getElementById("hargaProcessor").innerHTML = hargaProduct;
-        document.getElementById("hargaProcessor").value = hargaProduct;
-        document.getElementById("quantityProcessor").innerHTML = quantityBarang;
-        document.getElementById("quantityProcessor").value = quantityBarang;
+        document.getElementById("hargaProsesor").innerHTML = hargaProduct;
+        document.getElementById("hargaProsesor").value = hargaProduct;
+        document.getElementById("quantityProsesor").innerHTML = quantityBarang;
+        document.getElementById("quantityProsesor").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
 	}
@@ -467,10 +467,10 @@
     }
 
 
-    function addUpProcessor(){
-        var updateQuantity = document.getElementById("quantityProcessor").value;
-        var updateHarga = document.getElementById("hargaProcessor").value;
-        var updateStatusHarga = document.getElementById("insertProcessor").value;
+    function addUpProsesor(){
+        var updateQuantity = document.getElementById("quantityProsesor").value;
+        var updateHarga = document.getElementById("hargaProsesor").value;
+        var updateStatusHarga = document.getElementById("insertProsesor").value;
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity != null ){
@@ -480,17 +480,17 @@
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
             document.getElementById("hargaTotal").value = hargaTotal;
         }
-        document.getElementById("quantityProcessor").innerHTML = updateQuantity;
-        document.getElementById("quantityProcessor").value = updateQuantity;
-        document.getElementById("hargaProcessor").innerHTML = updateHarga;
-        document.getElementById("hargaProcessor").value = updateHarga;
+        document.getElementById("quantityProsesor").innerHTML = updateQuantity;
+        document.getElementById("quantityProsesor").value = updateQuantity;
+        document.getElementById("hargaProsesor").innerHTML = updateHarga;
+        document.getElementById("hargaProsesor").value = updateHarga;
         document.getElementById("hargaTotal").innerHTML += updateHarga;
         document.getElementById("hargaTotal").value += updateHarga;
     }
-    function addDownProcessor(){
-        var updateQuantity = document.getElementById("quantityProcessor").value;
-        var updateHarga = document.getElementById("hargaProcessor").value;
-        var updateStatusHarga = document.getElementById("insertProcessor").value;
+    function addDownProsesor(){
+        var updateQuantity = document.getElementById("quantityProsesor").value;
+        var updateHarga = document.getElementById("hargaProsesor").value;
+        var updateStatusHarga = document.getElementById("insertProsesor").value;
         updateHarga = parseInt(updateHarga);
         updateStatusHarga = parseInt(updateStatusHarga);
         if (updateQuantity > 1 ){
@@ -500,10 +500,10 @@
             document.getElementById("hargaTotal").innerHTML = hargaTotal;
             document.getElementById("hargaTotal").value = hargaTotal;
         }
-        document.getElementById("quantityProcessor").innerHTML = updateQuantity;
-        document.getElementById("quantityProcessor").value = updateQuantity;
-        document.getElementById("hargaProcessor").innerHTML = updateHarga;
-        document.getElementById("hargaProcessor").value = updateHarga;
+        document.getElementById("quantityProsesor").innerHTML = updateQuantity;
+        document.getElementById("quantityProsesor").value = updateQuantity;
+        document.getElementById("hargaProsesor").innerHTML = updateHarga;
+        document.getElementById("hargaProsesor").value = updateHarga;
         document.getElementById("hargaTotal").innerHTML -= updateHarga;
         document.getElementById("hargaTotal").value -= updateHarga;
     }
