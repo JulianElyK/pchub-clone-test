@@ -45,14 +45,11 @@
 
 </head>
 
-@php
-    if($title == "PCHub"){
-        echo '<body style="background-color: #000">';
-    }
-    else{
-        echo '<body style="background-color: #fff">';
-    }
-@endphp
+    @if($title == "PCHub")
+        <body style="background-color: #000">
+    @else
+        <body style="background-color: #fff">
+    @endif
 
     @include('partials.navbar')
     
