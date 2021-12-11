@@ -11,7 +11,6 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="name" class="form-control" id="name" name="name">
-                <div class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="category">Category</label>

@@ -28,13 +28,13 @@ class ProductController extends Controller
     public function getAllForShow()
     {
         $product = Product::all();
-        return view('showproducts', ['product' => $product, 'title' => 'Available Product Stock']);
+        return view('showproducts', ['product' => $product, 'title' => 'Available Products']);
     }
 
     public function getByID(Request $request)
     {
         $product = Product::where('id', $request->id)->first();
-        return view('editproducts', ['product' => $product, 'title' => 'Search For '.$request->id]);
+        return view('editproducts', ['product' => $product, 'title' => 'Search For Product with ID: '.$request->id]);
     }
 
     public function search(Request $request)
@@ -78,9 +78,9 @@ class ProductController extends Controller
             
             Product::create($validateData);
             
-            return redirect()->intended('/')->with('addSuccess', 'Add Product Has Succesfully');
+            return redirect()->intended('/')->with('addSuccess', 'Add Product Success!');
         }
-        return redirect()->intended('/')->with('addSuccess', 'Add prdoucts was Error');
+        return redirect()->intended('/')->with('addSuccess', 'Add Product Error!');
         
     }
 
@@ -118,9 +118,23 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
-        //
+        $model = $request->session()->get('user');
+        if($model === "admin"){
+        $products = Product::where('id',$request->id)
+            ->update([
+            'compability' => $request->compability,
+            'name' => $request->name,
+            'price' => $request->price,
+            'category' => $request->category,
+            'vendor' => $request->vendor,
+            'description' => $request->description,
+            'stock' => $request->stock,
+            ]);
+            return redirect()->intended('/')->with('addSuccess', 'Edit Product Success!');
+        }
+        return redirect()->intended('/')->with('addSuccess', 'Edit Product Error!');
     }
 
     /**
