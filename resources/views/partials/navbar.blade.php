@@ -13,7 +13,7 @@
                                 <a class="nav-link {{ ($title === "Product" ) ? 'active' : '' }}" href="product">PRODUCT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="custom">CUSTOM PC</a>
+                                <a class="nav-link {{ ($title === "Custom Your PC" ) ? 'active' : '' }}" href="custom">CUSTOM PC</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ ($title === "About") ? 'active' : ''  }}" href="about">ABOUT</a>
@@ -33,18 +33,18 @@
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Session::get('name') }}
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-custom" aria-labelledby="dropdownMenu2">
 
                                     @if (Session::get('user') == 'admin')
-                                        <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
-                                        <li><a class="dropdown-item" href="/showproducts">Show Product</a></li>
-                                        <li><a class="dropdown-item" href="/shipment">Shipment</a></li>
+                                        <li><a class="dropdown-item" href="/addproducts"><i class="fal fa-plus-circle"></i> <span class="li-words">Add Product</span></a></li>
+                                        <li><a class="dropdown-item" href="/showproducts"><i class="fal fa-eye"></i> <span class="li-words">Show Product</span></a></li>
+                                        <li><a class="dropdown-item" href="/shipment"><i class="fal fa-shipping-timed"></i> Shipment</a></li>
                                     @else
-                                        <li><a class="dropdown-item" href="/cart">Cart</a></li>
-                                        <li><a class="dropdown-item" href="/pesanan">Order</a></li>
+                                        <li><a class="dropdown-item" href="/cart"><i class="fal fa-shopping-cart"></i> Cart</a></li>
+                                        <li><a class="dropdown-item" href="/pesanan"><i class="fal fa-desktop"></i> Order</a></li>
                                     @endif
-                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                                    <li><a class="dropdown-item" href="/signout">Logout</a></li>
+                                    <li><a class="dropdown-item" href="/profile"><i class="fal fa-user-circle"></i> Profile</a></li>
+                                    <li><a class="dropdown-item" href="/signout"><i class="fal fa-sign-out"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
