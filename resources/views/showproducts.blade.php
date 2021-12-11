@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('container')
+    <div class="show-title">
+        <h1>All Product</h1>
+        <hr class="line">
+    </div>
     <div class="table-responsive">
         <table class="table table-dark table-striped">
             <thead>

@@ -33,14 +33,14 @@
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Session::get('name') }}
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
                                     @if (Session::get('user') == 'admin')
                                         <li><a class="dropdown-item" href="/addproducts">Add Product</a></li>
                                         <li><a class="dropdown-item" href="/showproducts">Show Product</a></li>
                                     @else
                                         <li><a class="dropdown-item" href="/cart">Cart</a></li>
                                     @endif
-                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>      
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
                                     <li><a class="dropdown-item" href="/signout">Logout</a></li>
                                 </ul>
                             </div>
