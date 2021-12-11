@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use DB;
 
 class ProductController extends Controller
@@ -120,21 +121,29 @@ class ProductController extends Controller
      */
     public function update(Request $request)
     {
-        $model = $request->session()->get('user');
-        if($model === "admin"){
-        $products = Product::where('id',$request->id)
-            ->update([
-            'compability' => $request->compability,
-            'name' => $request->name,
-            'price' => $request->price,
-            'category' => $request->category,
-            'vendor' => $request->vendor,
-            'description' => $request->description,
-            'stock' => $request->stock,
-            ]);
-            return redirect()->intended('/')->with('addSuccess', 'Edit Product Success!');
+        if(Session::get('user') == 'admin'){
+            $product = Product::where('id', $request->id)->first();
+            $temp_product = $product;
+            $product->compability = $request->compability;
+            $product->name = $request->name;
+            $product->price = $request->price;
+            $product->vendor = $request->vendor;
+            $product->description = $request->description;
+            $product->stock = $request->stock;
+            $product->save();
+            // $products = Product::where('id',$request->id)
+            // ->update([
+            // 'compability' => $request->compability,
+            // 'name' => $request->name,
+            // 'price' => $request->price,
+            // 'category' => $request->category,
+            // 'vendor' => $request->vendor,
+            // 'description' => $request->description,
+            // 'stock' => $request->stock,
+            // ]);
+            return redirect()->intended('/')->with('EditProductSuccess', 'Edit Product Success!');
         }
-        return redirect()->intended('/')->with('addSuccess', 'Edit Product Error!');
+        return redirect()->intended('/')->with('EditProductError', 'Edit Product Error!');
     }
 
     /**
