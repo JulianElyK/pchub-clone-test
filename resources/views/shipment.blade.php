@@ -1,5 +1,8 @@
 @extends('layouts.main')
 @section('container')
+<div class="judul">
+    <h1>Shipment</h1>
+</div>
 <div class="container-md mt-3">
     @if (session()->has('sendSuccess'))
         <div class="alret alert-success" role="alert">
