@@ -38,7 +38,7 @@
                 <input type="description" class="form-control" id="description" name="description" value="{{ $product->description }}">
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
+                <label for="image" class="form-label">Image Path: {{ $product->image }}</label>
                 <input class="form-control" type="file" id="image" name="image">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
