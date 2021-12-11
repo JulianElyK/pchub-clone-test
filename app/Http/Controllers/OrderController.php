@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\DetailOrder;
+use App\Models\Payment;
+use App\Models\Shipment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -44,7 +46,24 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
+        $payment = New Payment;
+        $payment->amount = $order->total_price;
+        $payment->method = $request->payment;
+        $payment->order_id = $order->id;
+        $payment->save();
+        $shipment = new Shipment;
+        $shipment->address = $request->address;
+        $shipment->ship_date = date("Y-m-d");
+        $tiga_hari        = mktime(0,0,0,date("n"),date("j")+7,date("Y"));
+        $shipment->arrival_date = date("Y-m-d", $tiga_hari);
+        $shipment->order_id = $order->id;
+        $shipment->type = $request->shipment;
+        $shipment->save();
+        $order->status = 1;
+        $order->save();
+        return redirect()->intended('/')->with('paymentSuccess', 'Payment An Order Was Successfully, Thanks!');
+
     }
 
     /**

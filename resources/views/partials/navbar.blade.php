@@ -39,7 +39,6 @@
                                         <li><a class="dropdown-item" href="/showproducts">Show Product</a></li>
                                     @else
                                         <li><a class="dropdown-item" href="/cart">Cart</a></li>
-                                        <li><a class="dropdown-item" href="/payment">Payment</a></li>
                                     @endif
                                     <li><a class="dropdown-item" href="/profile">Profile</a></li>      
                                     <li><a class="dropdown-item" href="/signout">Logout</a></li>
