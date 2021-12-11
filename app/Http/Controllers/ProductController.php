@@ -31,14 +31,14 @@ class ProductController extends Controller
         return view('showproducts', ['product' => $product, 'title' => 'Available Product Stock']);
     }
 
-    public function getSample()
+    public function getByID(Request $request)
     {
-        $product = DB::select('SELECT * FROM products LIMIT 3');
-        return view('welcome', ['product' => $product, 'title' => 'Welcome to PCHub']);
+        $product = Product::query()->where('id', $request->id)->get();
+        return view('editproducts', ['product' => $product, 'title' => 'Search For '.$request->id]);
     }
 
-    public function search(Request $request){
-
+    public function search(Request $request)
+    {
         $product = Product::query()->where('name', 'like', "%{$request->search}%")->get();
         return view('product', ['product' => $product, 'title' => 'Search For '.$request->search]);
     }

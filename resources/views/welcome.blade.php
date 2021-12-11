@@ -116,15 +116,15 @@
     <div class="main-prod-content">
         <h2> Our Products</h2>
         <div class="product1">
-            <a href="#"><img src="img/RAZER BLADE 15.jpg" alt="Razer Blade 15" width="80%"/></a>
+            <a href="/product"><img src="img/RAZER BLADE 15.jpg" alt="Razer Blade 15" width="80%"/></a>
             <h4>Laptop</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/ROG Strix XG35VQ.jpg" alt="ROG Strix XG35VQ" width="80%"/></a>
+            <a href="/product"><img src="img/ROG Strix XG35VQ.jpg" alt="ROG Strix XG35VQ" width="80%"/></a>
             <h4>Monitor</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540" width="80%"/></a>
+            <a href="/product"><img src="img/Cooler Master MasterBox 540.png" alt="MasterBox 540" width="80%"/></a>
             <h4>&nbsp CPU</h4>
         </div>
         <div class="product1">
@@ -132,7 +132,7 @@
             <h4>&nbsp Build PC</h4>
         </div>
         <div class="product1">
-            <a href="#"><img src="img/ROG Centurion.jpg" alt="ROG Centurion" width="107%"/></a>
+            <a href="/product"><img src="img/ROG Centurion.jpg" alt="ROG Centurion" width="107%"/></a>
             <h4>Accessories</h4>
         </div>
         <div class="clear"></div>
