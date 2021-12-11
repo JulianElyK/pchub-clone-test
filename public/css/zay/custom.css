@@ -141,6 +141,7 @@
 .member .dropdown .dropdown-custom li{
     margin: 0;
     padding: 10px;
+    overflow: hidden;
 }
 
 .member .dropdown .dropdown-custom .li-words{
@@ -152,6 +153,7 @@
     font-weight: 400;
     word-spacing: 0.5rem;
     padding: 0;
+    margin: auto 1rem;
 }
 
 .member .dropdown .dropdown-custom li:hover,
@@ -163,6 +165,6 @@
     font-size: 1.3rem;
 }
 
-.fa-eye{
+.fa-eye, .fa-edit{
     font-size: 1.1rem;
 }
