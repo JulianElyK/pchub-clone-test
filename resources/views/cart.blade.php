@@ -13,7 +13,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Actiion</th>
+                <th scope="col">Action</th>
             </thead>
             @foreach ($orders as $order)
                 @foreach ($order->DetailOrder as $detail_order)
@@ -23,7 +23,7 @@
                         <td>{{ $detail_order->quantity }}</th>
                         <td>{{ $detail_order->price }}</th>
                         <td>
-                            <form action="/detailorder/{{ $detail_order->id }}" method="post">
+                            <form action="/shipment/{{ $order->id }}" method="post">
                                 @csrf
                                 <button class="badge bg-danger border-8" onclick="return confirm('Are Yout Sure?')">Delete</button>
                             </form>
