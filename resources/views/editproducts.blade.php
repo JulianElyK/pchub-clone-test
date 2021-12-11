@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="show-title">
-        <h1>Add Product</h1>
-        <hr class="line">
+    <div class="judul">
+        <h1>Edit Product</h1>
+        <!-- <hr class="line"> -->
     </div>
     <div class="edit-product">
         <form method="post" action="editproducts" class="mb-5" enctype="multipart/form-data">

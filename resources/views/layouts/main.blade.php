@@ -55,9 +55,11 @@
 @endphp
 
     @include('partials.navbar')
-
-    @yield('container')
-
+    
+    <div class="container-main-content">
+        @yield('container')
+    </div>
+    
     @include('partials.footer')
     
 </body>
