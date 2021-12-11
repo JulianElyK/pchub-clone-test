@@ -100,4 +100,6 @@ Route::get('/searchID', function () {
     }
 });
 
-Route::post('/editproducts', [ProductController::class, 'getByID']);
+Route::get('/editproducts', [ProductController::class, 'getByID']);
+
+Route::post('/editproducts', [ProductController::class, 'update']);

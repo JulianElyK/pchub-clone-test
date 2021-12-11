@@ -6,7 +6,7 @@
         <hr class="line">
     </div>
     <div class="add-product">
-        <form method="post" action="/editproducts" class="mb-5" enctype="multipart/form-data">
+        <form method="get" action="/editproducts" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="id" class="form-label">Enter Product's ID</label>
