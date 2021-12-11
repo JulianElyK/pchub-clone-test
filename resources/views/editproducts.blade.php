@@ -6,8 +6,9 @@
         <!-- <hr class="line"> -->
     </div>
     <div class="edit-product">
-        <form method="post" action="editproducts" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/editproducts" class="mb-5" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" id="id" name="id" value="{{ $product->id }}">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="name" class="form-control" id="name" name="name" value="{{ $product->name }}">

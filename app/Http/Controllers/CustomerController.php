@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -89,10 +90,10 @@ class CustomerController extends Controller
         //
     }
 
-    public static function getCustomer($id)
+    public static function getCustomer()
     {
-        $customer = Customer::where('id', $id)->first();
-        dd($customer->name);
-        return $customer->name;
+        $customer = Customer::where('id', Session::get('id'))->first();
+       
+        return view('user', ['title' => 'Profile '.$customer->name, 'customer' => $customer]);
     }
 }

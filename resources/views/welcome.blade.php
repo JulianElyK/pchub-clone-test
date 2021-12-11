@@ -20,6 +20,16 @@
                         {{ session('paymentSuccess') }}
                     </div>
         @endif
+        @if (session()->has('EditProductSuccess'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('EditProductSuccess') }}
+                    </div>
+        @endif
+        @if (session()->has('EditProductError'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('EditProductError') }}
+                    </div>
+        @endif
         <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>

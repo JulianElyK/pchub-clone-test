@@ -12,15 +12,15 @@
         <h3>Biodata Diri</h3>
         <div class="konten">
             <label>Nama:</label>
-            <div>{{ Session::get('name') }}</div>
+            <div>{{ $customer->name }}</div>
         </div>
         <div class="konten">
             <label>Email:</label>
-            <div>{{ Session::get('email') }}</div>
+            <div>{{ $customer->email }}</div>
         </div>
         <div class="konten">
             <label>No. Telp:</label>
-            <div>{{ Session::get('phone') }}</div>
+            <div>{{ $customer->phone }}</div>
         </div>
     </div>
     <form method="post" action="#" class="mb-5">
