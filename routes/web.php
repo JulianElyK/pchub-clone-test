@@ -53,7 +53,7 @@ Route::get('/detail', function () {
     return view('detailproduct', ["title" => "Detail Product"]);
 });
 
-Route::get('/profile', [CustomerController::class, 'getMember']);
+Route::get('/profile', [CustomerController::class, 'getCustomer']);
 
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
@@ -103,3 +103,5 @@ Route::get('/searchID', function () {
 Route::get('/editproducts', [ProductController::class, 'getByID']);
 
 Route::post('/editproducts', [ProductController::class, 'update']);
+
+Route::get('/editproducts', [ProductController::class, 'getByID']);
