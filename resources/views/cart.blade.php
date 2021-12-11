@@ -25,7 +25,7 @@
                         <td>
                             <form action="/shipment/{{ $order->id }}" method="post">
                                 @csrf
-                                <button class="badge bg-danger border-8" onclick="return confirm('Are Yout Sure?')">Delete</button>
+                                <button class="badge bg-danger border-8" onclick="return confirm('Are You Sure?')">Delete</button>
                             </form>
                         </th>
                     </tbody>

@@ -25,7 +25,7 @@
                 <label for="cardnumber">Card Number</label>
                 <input type="cardnumber" id="cardnumber" name="cardnum" class="form-control" required>
             </div>
-            <h2 class="h2-regis">Select Expedision Method</h2>
+            <h2 class="h2-regis">Select Expedition Method</h2>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active">
                     <input type="radio" name="shipment" value="JNE" autocomplete="off" checked> JNE

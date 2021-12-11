@@ -75,7 +75,6 @@ Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
 
 Route::post('/search', [ProductController::class, 'search']);
 
-
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 
 Route::get('/payment', function () {
@@ -91,3 +90,14 @@ Route::post('/shipment/{id}', [OrderController::class, 'sendOrder']);
 Route::get('/pesanan', [OrderController::class, 'showPesanan']);
 
 Route::post('/order/{id}', [OrderController::class, 'hasBeenReceived']);
+
+Route::get('/searchID', function () {
+    $level = Session::get('user');
+    if ($level == "admin") {
+        return view('searchID', ["title" => "Select Product's ID"]);
+    } else {
+        return redirect()->back();
+    }
+});
+
+Route::post('/editproducts', [ProductController::class, 'getByID']);
