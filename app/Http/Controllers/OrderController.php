@@ -34,6 +34,21 @@ class OrderController extends Controller
         return view('cart', ["title" =>  'Cart' , 'orders' => $order]);
     }
 
+    public function showPesanan(){
+        $order = Order::where('customer_id', Session::get('id'))->where('status', '!=', 0)->get();
+
+
+        return view('pesanan', ["title" =>  'Order' , 'orders' => $order]);
+    }
+
+    public function hasBeenReceived($id){
+        $order = Order::where('id', $id)->first();
+        $order->status = 3;
+        $order->save();
+
+        return back()->with('itemReceived', 'Item received, Thank You');
+    }
+
     public function sendOrder($id){
         $shipment = Shipment::where('order_id', $id)->first();
         $shipment->ship_date = date("Y-m-d");

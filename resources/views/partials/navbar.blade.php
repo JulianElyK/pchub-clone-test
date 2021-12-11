@@ -40,6 +40,7 @@
                                         <li><a class="dropdown-item" href="/shipment">Shipment</a></li>
                                     @else
                                         <li><a class="dropdown-item" href="/cart">Cart</a></li>
+                                        <li><a class="dropdown-item" href="/pesanan">Order</a></li>
                                     @endif
                                     <li><a class="dropdown-item" href="/profile">Profile</a></li>      
                                     <li><a class="dropdown-item" href="/signout">Logout</a></li>

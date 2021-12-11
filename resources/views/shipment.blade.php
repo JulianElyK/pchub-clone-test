@@ -2,7 +2,7 @@
 @section('container')
 <div class="container-md mt-3">
     @if (session()->has('sendSuccess'))
-        <div class="alret alert-danger" role="alert">
+        <div class="alret alert-success" role="alert">
             {{ session('sendSuccess') }}
         </div>
     @endif

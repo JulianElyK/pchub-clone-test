@@ -87,3 +87,7 @@ Route::post('/payment', [OrderController::class, 'store']);
 Route::get('/shipment', [OrderController::class, 'getForShipment']);
 
 Route::post('/shipment/{id}', [OrderController::class, 'sendOrder']);
+
+Route::get('/pesanan', [OrderController::class, 'showPesanan']);
+
+Route::post('/order/{id}', [OrderController::class, 'hasBeenReceived']);
