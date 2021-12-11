@@ -28,7 +28,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownMotherboard()">
-                    <b id="quantityMotherboard" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityMotherboard" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpMotherboard()">
                 </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownProcessor()">
-                    <b id="quantityProcessor" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityProcessor" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpProcessor()">
                 </div>
             </div>
@@ -96,7 +96,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownRam()">
-                    <b id="quantityRam" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityRam" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpRam()">
                 </div>
             </div>
@@ -130,7 +130,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownVga()">
-                    <b id="quantityVga" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityVga" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpVga()">
                 </div>
             </div>
@@ -164,7 +164,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownSsd()">
-                    <b id="quantitySsd" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantitySsd" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpSsd()">
                 </div>
             </div>
@@ -198,7 +198,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownHarddisk()">
-                    <b id="quantityHarddisk" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityHarddisk" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpHarddisk()">
                 </div>
             </div>
@@ -232,7 +232,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownKeyboard()">
-                    <b id="quantityKeyboard" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityKeyboard" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpKeyboard()">
                 </div>
             </div>
@@ -266,7 +266,7 @@
             <div class="quantity-size">
                 <div class="qty-bar">
                     <input type="button" value="-" onclick="addDownCase()">
-                    <b id="quantityCase" class="banyak" type="number" style="color:white"></b>
+                    <b id="quantityCase" class="banyak" type="number" style="color:black"></b>
                     <input type="button" value="+" onclick="addUpCase()">
                 </div>
             </div>
