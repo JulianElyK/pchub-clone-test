@@ -39,7 +39,7 @@
                                         <li><a class="dropdown-item" href="/addproducts"><i class="fal fa-plus-circle"></i> <span class="li-words">Add Product</span></a></li>
                                         <li><a class="dropdown-item" href="/showproducts"><i class="fal fa-eye"></i> <span class="li-words">Show Product</span></a></li>
                                         <li><a class="dropdown-item" href="/shipment"><i class="fal fa-shipping-timed"></i> Shipment</a></li>
-                                        <li><a class="dropdown-item" href="/searchID"><i class="fal fa-edit"></i> <span class="li-words">Edit & Restock Product</span></a></li>
+                                        <li><a class="dropdown-item" href="/searchID"><i class="fal fa-edit"></i> <span class="li-words">Edit Product</span></a></li>
                                     @else
                                         <li><a class="dropdown-item" href="/cart"><i class="fal fa-shopping-cart"></i> Cart</a></li>
                                         <li><a class="dropdown-item" href="/pesanan"><i class="fal fa-desktop"></i> Order</a></li>
