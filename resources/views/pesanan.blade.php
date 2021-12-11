@@ -1,11 +1,11 @@
 @extends('layouts.main')
 @section('container')
 <div class="container-md mt-3">
-    @if (session()->has('deleteCartSuccess'))
+    @if (session()->has('itemReceived'))
     <div class="alret alert-success" role="alert">
-        {{ session('deleteCartSuccess') }}
+        {{ session('itemReceived') }}
     </div>
-@endif
+    @endif
     <div class="table-responsive">
         <table class="table table-dark table-striped">
             <thead>
@@ -15,20 +15,27 @@
                 <th scope="col">Action</th>
             </thead>
             @foreach ($orders as $order)
-                @foreach ($order->DetailOrder as $detail_order)
-                    <tbody>
-                        <th schope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $detail_order->Product->name }}</th>
-                        <td>{{ $detail_order->quantity }}</th>
-                        <td>{{ $detail_order->price }}</th>
-                        <td>
-                            <form action="/detailorder/{{ $detail_order->id }}" method="post">
+                <tbody>
+                    <th schope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $order->date }}</td>
+                    @if ($order->status == 0)
+                        <td>Not yet Pay the Order</td>
+                    @elseif($order->status == 1)
+                        <td>Order in Progress</td>
+                    @elseif($order->status == 2)
+                        <td>Item is in delivary</td>
+                    @else
+                        <td>Item was Received</td>
+                    @endif
+                    <td>
+                        @if ($order->status == 2)
+                            <form action="/order/{{ $order->id }}" method="post">
                                 @csrf
-                                <button class="badge bg-danger border-8" style="color: #6ECB63" onclick="return confirm('Are Yout Sure?')">Sudah Selesai</button>
+                                <button class="badge bg-success border-8" style="color: #6ECB63" onclick="return confirm('Are Yout Sure?')">Sudah Diterima</button>
                             </form>
-                        </th>
-                    </tbody>
-                @endforeach
+                        @endif
+                    </td>
+                </tbody>
             @endforeach
         </table>
         <form action="/gotopayment" method="post">

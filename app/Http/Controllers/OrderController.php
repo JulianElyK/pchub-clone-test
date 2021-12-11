@@ -7,6 +7,7 @@ use App\Models\DetailOrder;
 use App\Models\Payment;
 use App\Models\Shipment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
@@ -18,7 +19,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        
+    }
+
+    public function getForShipment(){
+        $order = Order::where('status', 1)->get();
+        return view('shipment', ["title" =>  'Shipment' , 'orders' => $order]);
     }
 
     public function showCart(){
@@ -26,6 +32,33 @@ class OrderController extends Controller
 
         //$detail_order = Order
         return view('cart', ["title" =>  'Cart' , 'orders' => $order]);
+    }
+
+    public function showPesanan(){
+        $order = Order::where('customer_id', Session::get('id'))->where('status', '!=', 0)->get();
+
+
+        return view('pesanan', ["title" =>  'Order' , 'orders' => $order]);
+    }
+
+    public function hasBeenReceived($id){
+        $order = Order::where('id', $id)->first();
+        $order->status = 3;
+        $order->save();
+
+        return back()->with('itemReceived', 'Item received, Thank You');
+    }
+
+    public function sendOrder($id){
+        $shipment = Shipment::where('order_id', $id)->first();
+        $shipment->ship_date = date("Y-m-d");
+        $tiga_hari = mktime(0,0,0,date("n"),date("j")+7,date("Y"));
+        $shipment->arrival_date = date("Y-m-d", $tiga_hari);
+        $shipment->save();
+        $order = Order::where('id', $id)->first();
+        $order->status = 2;
+        $order->save();
+        return back()->with('sendSuccess', 'Success Send the Order!');
     }
 
     /**
@@ -52,14 +85,11 @@ class OrderController extends Controller
         $payment->method = $request->payment;
         $payment->order_id = $order->id;
         $payment->save();
-        $shipment = new Shipment;
-        $shipment->address = $request->address;
-        $shipment->ship_date = date("Y-m-d");
-        $tiga_hari        = mktime(0,0,0,date("n"),date("j")+7,date("Y"));
-        $shipment->arrival_date = date("Y-m-d", $tiga_hari);
-        $shipment->order_id = $order->id;
-        $shipment->type = $request->shipment;
-        $shipment->save();
+        DB::table('shipments')->insert([
+            'address' => $request->address,
+            'order_id' => $order->id,
+            'type' => $request->shipment
+        ]);
         $order->status = 1;
         $order->save();
         return redirect()->intended('/')->with('paymentSuccess', 'Payment An Order Was Successfully, Thanks!');
