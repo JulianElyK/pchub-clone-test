@@ -20,12 +20,3 @@
         <div class="clear"></div>
     </div>
 </div>
-
-@php
-    if($title == "PCHub"){
-        echo '<body style="background-color: #000">';
-    }
-    else{
-        echo '<body style="background-color: #fff">';
-    }
-@endphp

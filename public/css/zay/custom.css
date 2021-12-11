@@ -138,6 +138,31 @@
     font-size: 3rem;
 }
 
-.member .dropdown .dropdown-custom{
-    left: -5.175rem;
+.member .dropdown .dropdown-custom li{
+    margin: 0;
+    padding: 10px;
+}
+
+.member .dropdown .dropdown-custom .li-words{
+    word-spacing: 0;
+}
+
+.member .dropdown .dropdown-custom a{
+    font-size: 1rem;
+    font-weight: 400;
+    word-spacing: 0.5rem;
+    padding: 0;
+}
+
+.member .dropdown .dropdown-custom li:hover,
+.member .dropdown .dropdown-custom a:hover{
+    background-color: rgb(176, 177, 177);
+}
+
+.fa-user-circle, .fa-sign-out, .fa-plus-circle{
+    font-size: 1.3rem;
+}
+
+.fa-eye{
+    font-size: 1.1rem;
 }
