@@ -81,3 +81,5 @@ Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 Route::get('/payment', function () {
     return view('payment', ["title" => "Payment Methods"]);
 });
+
+Route::post('/payment', [OrderController::class, 'store']);
