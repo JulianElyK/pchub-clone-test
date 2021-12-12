@@ -72,7 +72,7 @@ class OrderController extends Controller
         return view('shipment', ["title" =>  'Shipment' , 'orders' => $order]);
     }
 
-    public static function getAllorder(){
+    public static function getAllOrder(){
         $order = Order::where('customer_id', Session::get('id'))->where('status', 0)->get();
         return $order;
     }
