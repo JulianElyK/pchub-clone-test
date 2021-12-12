@@ -3,7 +3,7 @@
 @section('container')
     <div class="container-left">
         @if (session()->has('success'))
-            <div class="alert alert-danger alertdismissible fade show" role="alert">
+            <div class="alert alert-success alertdismissible fade show" role="alert">
                 {{ session('success') }}
             </div>
         @endif
