@@ -251,6 +251,142 @@
 <div class="selection">
     <div class="product">
         <div class="category">
+            <label for="mouse">Mouse:</label>
+        </div>
+        <div class="item">
+            <div class="item-size">
+                <select onchange="viewHargaMouse(this.value)" id="insertMouse"class="form-select ">
+                    <option selected>--Pilih Mouse--</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Mouse")
+                            <option id="Mouse" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="quantity-size">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownMouse()">
+                    <b id="quantityMouse" class="banyak" type="number" style="color:black"></b>
+                    <input type="button" value="+" onclick="addUpMouse()">
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="price-size">
+                <p class="borderHarga" >Rp  <span id="hargaMouse" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="selection">
+    <div class="product">
+        <div class="category">
+            <label for="Monitor">Monitor:</label>
+        </div>
+        <div class="item">
+            <div class="item-size">
+                <select onchange="viewHargaMonitor(this.value)" id="insertMonitor"class="form-select ">
+                    <option selected>--Pilih Monitor--</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Monitor")
+                            <option id="Monitor" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="quantity-size">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownMonitor()">
+                    <b id="quantityMonitor" class="banyak" type="number" style="color:black"></b>
+                    <input type="button" value="+" onclick="addUpMonitor()">
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="price-size">
+                <p class="borderHarga" >Rp  <span id="hargaMonitor" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="selection">
+    <div class="product">
+        <div class="category">
+            <label for="PSU">PSU:</label>
+        </div>
+        <div class="item">
+            <div class="item-size">
+                <select onchange="viewHargaPsu(this.value)" id="insertPsu"class="form-select ">
+                    <option selected>--Pilih PSU--</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "PSU")
+                            <option id="PSU" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="quantity-size">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownPsu()">
+                    <b id="quantityPsu" class="banyak" type="number" style="color:black"></b>
+                    <input type="button" value="+" onclick="addUpPsu()">
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="price-size">
+                <p class="borderHarga" >Rp  <span id="hargaPsu" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="selection">
+    <div class="product">
+        <div class="category">
+            <label for="Fan">Fan:</label>
+        </div>
+        <div class="item">
+            <div class="item-size">
+                <select onchange="viewHargaFan(this.value)" id="insertFan"class="form-select ">
+                    <option selected>--Pilih Fan--</option>
+                    @foreach ($product as $item)
+                        @if ($item->category == "Fan")
+                            <option id="Fan" value="{{ $item->price }}">{{ $item->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="quantity-size">
+                <div class="qty-bar">
+                    <input type="button" value="-" onclick="addDownFan()">
+                    <b id="quantityFan" class="banyak" type="number" style="color:black"></b>
+                    <input type="button" value="+" onclick="addUpFan()">
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="price-size">
+                <p class="borderHarga" >Rp  <span id="hargaFan" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="selection">
+    <div class="product">
+        <div class="category">
             <label for="case">Case:</label>
         </div>
         <div class="item">
@@ -406,7 +542,7 @@
     function viewHargaKeyboard(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1   ;
-        var cekHarga = document.getElementById("hargaHarddisk").value;
+        var cekHarga = document.getElementById("hargaKeyboard").value;
         if (hargaProduct != cekHarga && cekHarga != null){
             hargaTotal += hargaProduct;
             hargaTotal -= cekHarga;
@@ -420,10 +556,78 @@
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
 	}
+    function viewHargaMouse(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
+        var quantityBarang = 1   ;
+        var cekHarga = document.getElementById("hargaMouse").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
+        document.getElementById("hargaMouse").innerHTML = hargaProduct;
+        document.getElementById("hargaMouse").value = hargaProduct;
+        document.getElementById("quantityMouse").innerHTML = quantityBarang;
+        document.getElementById("quantityMouse").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
+	}
+    function viewHargaMonitor(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
+        var quantityBarang = 1   ;
+        var cekHarga = document.getElementById("hargaMonitor").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
+        document.getElementById("hargaMonitor").innerHTML = hargaProduct;
+        document.getElementById("hargaMonitor").value = hargaProduct;
+        document.getElementById("quantityMonitor").innerHTML = quantityBarang;
+        document.getElementById("quantityMonitor").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
+	}
+    function viewHargaPsu(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
+        var quantityBarang = 1   ;
+        var cekHarga = document.getElementById("hargaPsu").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
+        document.getElementById("hargaPsu").innerHTML = hargaProduct;
+        document.getElementById("hargaPsu").value = hargaProduct;
+        document.getElementById("quantityPsu").innerHTML = quantityBarang;
+        document.getElementById("quantityPsu").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
+	}
+    function viewHargaFan(hargaProduct){
+        hargaProduct = parseInt(hargaProduct);
+        var quantityBarang = 1   ;
+        var cekHarga = document.getElementById("hargaFan").value;
+        if (hargaProduct != cekHarga && cekHarga != null){
+            hargaTotal += hargaProduct;
+            hargaTotal -= cekHarga;
+        }else{
+            hargaTotal += hargaProduct;
+        }
+        document.getElementById("hargaFan").innerHTML = hargaProduct;
+        document.getElementById("hargaFan").value = hargaProduct;
+        document.getElementById("quantityFan").innerHTML = quantityBarang;
+        document.getElementById("quantityFan").value = quantityBarang;
+        document.getElementById("hargaTotal").innerHTML = hargaTotal;
+        document.getElementById("hargaTotal").value = hargaTotal;
+	}
     function viewHargaCase(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
         var quantityBarang = 1  ;
-        var cekHarga = document.getElementById("hargaHarddisk").value;
+        var cekHarga = document.getElementById("hargaCase").value;
         if (hargaProduct != cekHarga && cekHarga != null){
             hargaTotal += hargaProduct;
             hargaTotal -= cekHarga;
@@ -710,6 +914,158 @@
         document.getElementById("quantityKeyboard").value = updateQuantity;
         document.getElementById("hargaKeyboard").innerHTML = updateHarga;
         document.getElementById("hargaKeyboard").value = updateHarga;
+    }
+
+
+    function addUpMouse(){
+        var updateQuantity = document.getElementById("quantityMouse").value;
+        var updateHarga = document.getElementById("hargaMouse").value;
+        var updateStatusHarga = document.getElementById("insertMouse").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityMouse").innerHTML = updateQuantity;
+        document.getElementById("quantityMouse").value = updateQuantity;
+        document.getElementById("hargaMouse").innerHTML = updateHarga;
+        document.getElementById("hargaMouse").value = updateHarga;
+    }
+    function addDownMouse(){
+        var updateQuantity = document.getElementById("quantityMouse").value;
+        var updateHarga = document.getElementById("hargaMouse").value;
+        var updateStatusHarga = document.getElementById("insertMouse").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityMouse").innerHTML = updateQuantity;
+        document.getElementById("quantityMouse").value = updateQuantity;
+        document.getElementById("hargaMouse").innerHTML = updateHarga;
+        document.getElementById("hargaMouse").value = updateHarga;
+    }
+
+
+    function addUpMonitor(){
+        var updateQuantity = document.getElementById("quantityMonitor").value;
+        var updateHarga = document.getElementById("hargaMonitor").value;
+        var updateStatusHarga = document.getElementById("insertMonitor").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityMonitor").innerHTML = updateQuantity;
+        document.getElementById("quantityMonitor").value = updateQuantity;
+        document.getElementById("hargaMonitor").innerHTML = updateHarga;
+        document.getElementById("hargaMonitor").value = updateHarga;
+    }
+    function addDownMonitor(){
+        var updateQuantity = document.getElementById("quantityMonitor").value;
+        var updateHarga = document.getElementById("hargaMonitor").value;
+        var updateStatusHarga = document.getElementById("insertMonitor").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityMonitor").innerHTML = updateQuantity;
+        document.getElementById("quantityMonitor").value = updateQuantity;
+        document.getElementById("hargaMonitor").innerHTML = updateHarga;
+        document.getElementById("hargaMonitor").value = updateHarga;
+    }
+
+
+    function addUpPsu(){
+        var updateQuantity = document.getElementById("quantityPsu").value;
+        var updateHarga = document.getElementById("hargaPsu").value;
+        var updateStatusHarga = document.getElementById("insertPsu").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityPsu").innerHTML = updateQuantity;
+        document.getElementById("quantityPsu").value = updateQuantity;
+        document.getElementById("hargaPsu").innerHTML = updateHarga;
+        document.getElementById("hargaPsu").value = updateHarga;
+    }
+    function addDownPsu(){
+        var updateQuantity = document.getElementById("quantityPsu").value;
+        var updateHarga = document.getElementById("hargaPsu").value;
+        var updateStatusHarga = document.getElementById("insertPsu").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityPsu").innerHTML = updateQuantity;
+        document.getElementById("quantityPsu").value = updateQuantity;
+        document.getElementById("hargaPsu").innerHTML = updateHarga;
+        document.getElementById("hargaPsu").value = updateHarga;
+    }
+
+
+    function addUpFan(){
+        var updateQuantity = document.getElementById("quantityFan").value;
+        var updateHarga = document.getElementById("hargaFan").value;
+        var updateStatusHarga = document.getElementById("insertFan").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity != null ){
+            updateQuantity = updateQuantity + 1;
+            updateHarga = updateHarga + updateStatusHarga;
+            hargaTotal = hargaTotal + updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityFan").innerHTML = updateQuantity;
+        document.getElementById("quantityFan").value = updateQuantity;
+        document.getElementById("hargaFan").innerHTML = updateHarga;
+        document.getElementById("hargaFan").value = updateHarga;
+    }
+    function addDownFan(){
+        var updateQuantity = document.getElementById("quantityFan").value;
+        var updateHarga = document.getElementById("hargaFan").value;
+        var updateStatusHarga = document.getElementById("insertFan").value;
+        updateHarga = parseInt(updateHarga);
+        updateStatusHarga = parseInt(updateStatusHarga);
+        if (updateQuantity > 1 ){
+            updateQuantity = updateQuantity - 1;
+            updateHarga = updateHarga - updateStatusHarga;
+            hargaTotal = hargaTotal - updateStatusHarga;
+            document.getElementById("hargaTotal").innerHTML = hargaTotal;
+            document.getElementById("hargaTotal").value = hargaTotal;
+        }
+        document.getElementById("quantityFan").innerHTML = updateQuantity;
+        document.getElementById("quantityFan").value = updateQuantity;
+        document.getElementById("hargaFan").innerHTML = updateHarga;
+        document.getElementById("hargaFan").value = updateHarga;
     }
 
 
