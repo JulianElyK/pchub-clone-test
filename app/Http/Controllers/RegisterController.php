@@ -49,7 +49,7 @@ class RegisterController extends Controller
 
         Customer::create($validatedData);
 
-        return back()->with('success', 'Registration successfully, Please Log In!');
+        return back()->with('success', 'Registration success! Please login!');
     }
 
     /**

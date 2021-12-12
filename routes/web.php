@@ -78,9 +78,7 @@ Route::post('/search', [ProductController::class, 'search']);
 
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 
-Route::get('/payment', function () {
-    return view('payment', ["title" => "Payment Methods"]);
-});
+Route::get('/payment', [OrderController::class, 'showOrderSummary']);
 
 Route::post('/payment', [OrderController::class, 'store']);
 
