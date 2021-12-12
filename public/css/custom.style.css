@@ -114,8 +114,15 @@ label{
     display: flex;
 }
 
-.konten div{
-    margin-left: 2vw;
+.konten li{
+    list-style-type: none;
+}
+.detail-product-form li{
+    display: inline-block;
+}
+
+.detail-product-button {
+    margin-top: 1rem;
 }
 
 .konten-quantity {
@@ -203,4 +210,9 @@ label{
     margin-left: 6vw;
     margin-right: 6vw;
     margin-top: 3vw;
+}
+
+.detail-product-container{
+    width: 80% ;
+    margin: 1vw auto;
 }
