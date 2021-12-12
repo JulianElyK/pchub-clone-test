@@ -78,16 +78,15 @@ Route::post('/search', [ProductController::class, 'search']);
 
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 
-Route::get('/payment', function () {
-    $orders = OrderController::getAllorder();
-    return view('payment', ["title" => "Payment Methods", 'orders' => $orders]);
-});
-
 Route::get('/cart', function () {
-    $orders = OrderController::getAllorder();
+    $orders = OrderController::getAllOrder();
     return view('cart', ["title" => "Cart", 'orders' => $orders]);
 });
 
+Route::get('/payment', function () {
+    $orders = OrderController::getAllOrder();
+    return view('payment', ["title" => "Payment Methods", 'orders' => $orders]);
+});
 
 Route::post('/payment', [OrderController::class, 'store']);
 
