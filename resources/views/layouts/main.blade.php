@@ -32,7 +32,7 @@
 
 </head>
 
-    @if($title == "PCHub")
+    @if($title == "PCHub" || $title == "About")
         <body style="background-color: #000">
     @else
         <body style="background-color: #fff">
