@@ -1,5 +1,4 @@
 <?php
-require_once ('Order.php');
 
 class User
 {
@@ -7,13 +6,11 @@ class User
 	private $email;
 	private $name;
 	private $password;
-	private $m_Order;
 
-	public function _construct($email, $name, $password, $m_Order){
+	public function _construct($email, $name, $password){
 		$this->email = $email;
 		$this->name = $name;
 		$this->password = $password;
-		$this->m_Order = $m_Order;
 	}
 
 	/**
@@ -51,23 +48,3 @@ class User
 
 		return $this;
 	}
-
-	/**
-	 * Get the value of m_Order
-	 */
-	public function getMOrder()
-	{
-		return $this->m_Order;
-	}
-
-	/**
-	 * Set the value of m_Order
-	 */
-	public function setMOrder($m_Order): self
-	{
-		$this->m_Order = $m_Order;
-
-		return $this;
-	}
-}
-?>
