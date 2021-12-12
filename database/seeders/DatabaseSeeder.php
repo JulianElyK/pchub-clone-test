@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             'price' => '8000000',
             'image' => 'product-images/Intel I5 11th Gen.png',
             'vendor' => 'Intel Surya Indonesia',
-            'category' => 'Processor',
+            'category' => 'Prosesor',
             'description' => 'The 11th Generation Intel Core i5-1135G7 is a typical 2020 mid-range laptop processor.',
             'stock' => 200
         ]);
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'price' => '2300000',
             'image' => 'product-images/Intel Core i5-9400F.jpg',
             'vendor' => 'Intel Surya Indonesia',
-            'category' => 'Processor',
+            'category' => 'Prosesor',
             'description' => 'The Core i5-9400F processor from Intel has a 2.9 GHz base clock speed and a 4.1 GHz maximum boost speed.',
             'stock' => 200
         ]);
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
             'price' => '2400000',
             'image' => 'product-images/Intel Core i5-10400F.jpg',
             'vendor' => 'Intel Surya Indonesia',
-            'category' => 'Processor',
+            'category' => 'Prosesor',
             'description' => 'The Intel Core i5-10400F is a mid-range processor for desktops with six cores based on the Comet Lake architecture.',
             'stock' => 200
         ]);
