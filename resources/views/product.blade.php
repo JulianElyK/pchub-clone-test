@@ -1,6 +1,13 @@
 @extends('layouts.main')
 
 @section('container')
+<div class="judul" style="margin-bottom:-2rem">
+    @if($title=="Product")
+        <h1>Showing All Products</h1>
+    @else
+        <h1>{{ $result }}</h1>
+    @endif      
+</div>
 <div class="list-product">
     <div class="list-product-container">
         @foreach ($product as $item)

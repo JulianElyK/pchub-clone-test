@@ -9,50 +9,47 @@
                 {{ session('signin_error') }}
         </div>
 @endif
-<div class="header-product">
+<div class="detail-product-container">
     <div class="img-product">
         <img src="{{ asset('storage/'. $product->image) }}" alt="">
     </div>
     <div class="info-product">
-        <h3>{{ $product->name }}</h3>
+        <h2>{{ $product->name }}</h2>
         <div class="konten">
-            <label>Price</label>
-            <div>{{ $product->price }}</div>
-        </div>
-        <div class="konten">
-            <label>Color</label>
-            <div>Black</div>
-        </div>
-        <div class="konten">
-            <label>Stock</label>
-            <div>{{ $product->stock }}</div>
-        </div>
-        <div class="konten">
-            <label>Est.Weight</label>
-            <div>4Kg</div>
-        </div>
-        <div class="konten">
-            <label>Warranty</label>
-            <div>1 Year Distributor Warranty</div>
-        </div>
-        <form action="/detailproduct/{{ $product->id }}" method="POST">   
-            @csrf   
-            <div class="konten-quantity">
-                <div class="konten-quantity-size">
-                    <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000">
-                </div>
+            <div class="konten-label">
+                <ul>
+                    <li>Price</li>
+                    <li>Color</li>
+                    <li>Stock</li>
+                    <li>Est.Weight</li>
+                    <li>Warranty</li>
+                </ul>
             </div>
-            @if (Session::get('user') == 'customer')
-            <div class="konten-beli">
-                <button type="submit" name="beli" class="btn btn-primary" value="Beli">Add to Cart</button>
+            <div class="konten-label-value">
+                <ul>
+                    <li>: {{ $product->price }}</li>
+                    <li>: Black</li>
+                    <li>: {{ $product->stock }}</li>
+                    <li>: 4Kg</li>
+                    <li>: 1 Year Distributor Warranty</li>
+                </ul>
             </div>
-            @else
-            <div class="konten-beli">
-                <button type="submit" name="beli" class="btn btn-primary disabled" value="Beli">Add to Cart</button>
-            </div>
-            @endif
-        </form>
- 
+        </div>
+        <div class="detail-product-form">
+            <form action="/detailproduct/{{ $product->id }}" method="POST">   
+                @csrf
+                <ul> 
+                    <li>Jumlah: <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000"></li>
+                    <div class="detail-product-button">
+                        @if (Session::get('user') == 'customer')
+                            <li><button type="submit" name="beli" class="btn btn-primary" value="Beli"><i class="fal fa-shopping-cart"></i> Add to Cart</button></li>
+                        @else
+                            <li><button type="submit" name="beli" class="btn btn-primary disabled" value="Beli"><i class="fal fa-shopping-cart"></i> Add to Cart</button></li>
+                        @endif
+                    </div>
+                </ul>
+            </form>
+        </div>
     </div>
     <div class="desc-product">
         <label>Deskripsi</label>
