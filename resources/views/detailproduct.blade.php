@@ -42,9 +42,15 @@
                     <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000">
                 </div>
             </div>
+            @if (Session::get('user') == 'customer')
             <div class="konten-beli">
                 <button type="submit" name="beli" class="btn btn-primary" value="Beli">Add to Cart</button>
             </div>
+            @else
+            <div class="konten-beli">
+                <button type="submit" name="beli" class="btn btn-primary disabled" value="Beli">Add to Cart</button>
+            </div>
+            @endif
         </form>
  
     </div>

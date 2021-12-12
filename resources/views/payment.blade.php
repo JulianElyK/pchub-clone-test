@@ -44,9 +44,28 @@
             </div>
             <div class="container-right">
                 <h2 class="h2-in">Order Summary</h2>
-                    <!-- Bagian Isi Order -->
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </thead>
+                        @foreach ($orders as $order)
+                            @foreach ($order->DetailOrder as $detail_order)
+                                <tbody>
+                                    <th schope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $detail_order->Product->name }}</th>
+                                    <td>{{ $detail_order->quantity }}</th>
+                                    <td>{{ $detail_order->price }}</th>
+                                </tbody>
+                            @endforeach
+                        @endforeach
+                    </table>
+                </div>
                 <div class="form-group">
-                    <h3 class="h2-in">{{ date('l, d-m-Y'); }}</h3>
+                    <h3 class="h2-in">Current date: {{ date('l, d-m-Y'); }}</h3>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="pay" class="btn btn-primary" value="PURCHASE NOW">
