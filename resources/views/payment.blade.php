@@ -72,7 +72,7 @@
                     </table>
                     @endforeach
                 <div class="form-group">
-                    <h3 class="h2-in">{{ date('l, d-m-Y'); }}</h3>
+                    <h3 class="h2-in">Current date: {{ date('l, d-m-Y'); }}</h3>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="pay" class="btn btn-primary" value="PURCHASE NOW">

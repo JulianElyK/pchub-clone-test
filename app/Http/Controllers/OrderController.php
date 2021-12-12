@@ -50,6 +50,13 @@ class OrderController extends Controller
         return view('cart', ["title" =>  'Cart' , 'orders' => $order]);
     }
 
+    public function showOrderSummary(){
+        $order = Order::where('customer_id', Session::get('id'))->where('status', 0)->get();
+
+        //$detail_order = Order
+        return view('payment', ["title" =>  'Payment Methods' , 'orders' => $order]);
+    }
+
     public function showPesanan(){
         $order = Order::where('customer_id', Session::get('id'))->where('status', '!=', 0)->get();
 
@@ -62,7 +69,7 @@ class OrderController extends Controller
         $order->status = 3;
         $order->save();
 
-        return back()->with('itemReceived', 'Item received, Thank You');
+        return back()->with('itemReceived', 'Item received, thanks for purchasing!');
     }
 
     public function sendOrder($id){
@@ -74,7 +81,7 @@ class OrderController extends Controller
         $order = Order::where('id', $id)->first();
         $order->status = 2;
         $order->save();
-        return back()->with('sendSuccess', 'Success Send the Order!');
+        return back()->with('sendSuccess', 'Order sent succesfully.');
     }
 
     /**
@@ -108,7 +115,7 @@ class OrderController extends Controller
         ]);
         $order->status = 1;
         $order->save();
-        return redirect()->intended('/')->with('paymentSuccess', 'Payment An Order Was Successfully, Thanks!');
+        return redirect()->intended('/')->with('paymentSuccess', 'Order paid successfully.');
 
     }
 

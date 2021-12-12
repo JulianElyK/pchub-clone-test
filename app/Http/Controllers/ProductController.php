@@ -79,9 +79,9 @@ class ProductController extends Controller
             
             Product::create($validateData);
             
-            return redirect()->intended('/')->with('addSuccess', 'Add Product Success!');
+            return redirect()->intended('/')->with('addSuccess', 'Add product success.');
         }
-        return redirect()->intended('/')->with('addSuccess', 'Add Product Error!');
+        return redirect()->intended('/')->with('addSuccess', 'Add product error!');
         
     }
 
@@ -141,9 +141,9 @@ class ProductController extends Controller
             // 'description' => $request->description,
             // 'stock' => $request->stock,
             // ]);
-            return redirect()->intended('/')->with('EditProductSuccess', 'Edit Product Success!');
+            return redirect()->intended('/')->with('EditProductSuccess', 'Edit product success.');
         }
-        return redirect()->intended('/')->with('EditProductError', 'Edit Product Error!');
+        return redirect()->intended('/')->with('EditProductError', 'Edit product error!');
     }
 
     /**
