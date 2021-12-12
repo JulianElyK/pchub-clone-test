@@ -108,3 +108,7 @@ Route::post('/editproducts', [ProductController::class, 'update']);
 Route::get('/editproducts', [ProductController::class, 'getByID']);
 
 Route::get('/orderhistory', [OrderController::class, 'getAllForShow']);
+
+Route::get('/edituser', [CustomerController::class, 'getByID']);
+
+Route::post('/edituser', [CustomerController::class, 'update']);
