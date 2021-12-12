@@ -40,7 +40,7 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $product = Product::query()->where('name', 'like', "%{$request->search}%")->get();
+        $product = Product::query()->where('name', 'like', "%{$request->search}%")->orWhere('category','like', "%{$request->search}%")->get();
         return view('product', ['product' => $product, 'title' => 'Search For '.$request->search]);
     }
 

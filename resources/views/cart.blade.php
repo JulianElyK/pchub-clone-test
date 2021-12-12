@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('container')
+<div class="judul">
+    <h1>Shopping Cart</h1>
+</div>
+
 <div class="container-md mt-3">
     @if (session()->has('deleteCartSuccess'))
     <div class="alret alert-success" role="alert">
