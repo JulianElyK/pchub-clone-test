@@ -70,7 +70,7 @@ Route::get('/addproducts', function () {
 
 Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
 
-Route::get('/cart', [OrderController::class, 'showCart']);
+//Route::get('/cart', [OrderController::class, 'showCart']);
 
 Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
 
@@ -78,7 +78,16 @@ Route::post('/search', [ProductController::class, 'search']);
 
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 
-Route::get('/payment', [OrderController::class, 'showOrderSummary']);
+Route::get('/payment', function () {
+    $orders = OrderController::getAllorder();
+    return view('payment', ["title" => "Payment Methods", 'orders' => $orders]);
+});
+
+Route::get('/cart', function () {
+    $orders = OrderController::getAllorder();
+    return view('cart', ["title" => "Cart", 'orders' => $orders]);
+});
+
 
 Route::post('/payment', [OrderController::class, 'store']);
 

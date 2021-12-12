@@ -3,7 +3,7 @@
 @section('container')
     <div class="container-left">
         <h2 class="h2-regis">Select Payment Method</h2>
-        
+
         <form action="/payment" method="post">
             @csrf
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -44,13 +44,14 @@
             </div>
             <div class="container-right">
                 <h2 class="h2-in">Order Summary</h2>
-                <div class="table-responsive">
+                    @foreach ($orders as $item)
                     <table class="table table-dark table-striped">
                         <thead>
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Action</th>
                         </thead>
                         @foreach ($orders as $order)
                             @foreach ($order->DetailOrder as $detail_order)
@@ -59,11 +60,17 @@
                                     <td>{{ $detail_order->Product->name }}</th>
                                     <td>{{ $detail_order->quantity }}</th>
                                     <td>{{ $detail_order->price }}</th>
+                                    <td>
+                                        <form action="/shipment/{{ $order->id }}" method="post">
+                                            @csrf
+                                            <button class="badge bg-danger border-8" onclick="return confirm('Are You Sure?')">Delete</button>
+                                        </form>
+                                    </th>
                                 </tbody>
                             @endforeach
                         @endforeach
                     </table>
-                </div>
+                    @endforeach
                 <div class="form-group">
                     <h3 class="h2-in">Current date: {{ date('l, d-m-Y'); }}</h3>
                 </div>

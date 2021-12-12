@@ -31,10 +31,16 @@ class OrderController extends Controller
         return view('shipment', ["title" =>  'Shipment' , 'orders' => $order]);
     }
 
+    public static function getAllorder(){
+        $order = Order::where('customer_id', Session::get('id'))->where('status', 0)->get();
+        return $order;
+    }
+
     public function getAllForShow()
     {
         $order = Order::all();
         return view('orderhistory', ['orders' => $order, 'title' => 'Order History']);
+
     }
 
     public function showCart(){

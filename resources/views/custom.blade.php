@@ -7,7 +7,10 @@
     var hargaProduct = 0;
     var hargaTotal = 0;
 </script>
+<form action="/custom" method="POST">
 <div class="selection">
+
+        @csrf
     <div class="product">
         <div class="category">
             <label for="motherboard">Motherboard:</label>
@@ -281,11 +284,13 @@
         <div class="total">
             <label>Total:</label>
             <p class="borderHarga" >Rp  <span id="hargaTotal" class="harga borderHarga" type="number" style="border-right-style: hidden;"></span></p>
-            <input type="submit" name="beli" class="btn btn-primary" value="Beli">
+            <input type="hidden" id="total_harga" name="total_harga" value="123">
+            <button type="submit" name="beli" class="btn btn-primary" value="Beli">Beli</button>
         </div>
         <div class="clear-right"></div>
     </div>
 </div>
+</form>
 
 <script>
 
@@ -306,6 +311,7 @@
         document.getElementById("quantityMotherboard").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaProcessor(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
@@ -323,6 +329,7 @@
         document.getElementById("quantityProcessor").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaRam(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
@@ -340,6 +347,7 @@
         document.getElementById("quantityRam").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaVga(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
@@ -357,6 +365,7 @@
         document.getElementById("quantityVga").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaSsd(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
@@ -374,6 +383,7 @@
         document.getElementById("quantitySsd").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaHarddisk(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
@@ -391,6 +401,7 @@
         document.getElementById("quantityHarddisk").value = quantityBarang;
         document.getElementById("hargaTotal").innerHTML = hargaTotal;
         document.getElementById("hargaTotal").value = hargaTotal;
+        document.getElementById("total_harga").value = hargaTotal;
 	}
     function viewHargaKeyboard(hargaProduct){
         hargaProduct = parseInt(hargaProduct);
