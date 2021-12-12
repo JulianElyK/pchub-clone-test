@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\DetailOrder;
+use App\Models\Product;
 use App\Models\Payment;
 use App\Models\Shipment;
 use Illuminate\Http\Request;
@@ -23,7 +24,47 @@ class OrderController extends Controller
     }
 
     public function customPc(Request $request){
-        dd($request);
+        $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
+        $product = Product::where('name', 'Custom PC')->first();
+        if(is_null($order)){
+            $order = new Order;
+            $order->customer_id = Session::get('id');
+            $order->total_price = $request->total_harga + 500000;
+            $order->status = 0;
+            $order->save();
+            $order = Order::orderBy('id', 'desc')->first();
+            $detail_order = new DetailOrder;
+            $detail_order->order_id = $order->id;
+            $detail_order->product_id = $product->id;
+            $detail_order->quantity = 1;
+            $detail_order->price = $request->total_harga;
+            $detail_order->save();
+        }elseif($order->status != 0){
+            $order = new Order;
+            $order->customer_id = Session::get('id');
+            $order->total_price = $request->total_harga + 500000;
+            $order->status = 0;
+            $order->save();
+            $order = Order::orderBy('id', 'desc')->first();
+            $detail_order = new DetailOrder;
+            $detail_order->order_id = $order->id;
+            $detail_order->product_id = $product->id;
+            $detail_order->quantity = 1;
+            $detail_order->price = $request->total_harga;
+            $detail_order->save();
+        }
+        elseif($order->status == 0){
+            $temp_harga = ($order->total_price) + ($request->total_harga);
+            $order->total_price = $temp_harga;
+            $order->save();
+            $detail_order = new DetailOrder;
+            $detail_order->order_id = $order->id;
+            $detail_order->product_id = $product->id;
+            $detail_order->quantity = 1;
+            $detail_order->price = $request->total_harga;
+            $detail_order->save();
+        }
+        return redirect()->intended('/')->with('customPcSuccess', 'Custom PC was successfully, please pay you order!.');
     }
 
     public function getForShipment(){
