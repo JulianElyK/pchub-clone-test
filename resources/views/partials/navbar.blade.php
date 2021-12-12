@@ -3,7 +3,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="border-bottom: 1px solid #0F52BA;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/"><img src="img/pchub_logo.png" width="120" alt="PCHub Logo"></a>
+                    <a class="navbar-brand" href="/"><img src="/img/pchub_logo.png" width="120" alt="PCHub Logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -44,8 +44,8 @@
                                     @else
                                         <li><a class="dropdown-item" href="/cart"><i class="fal fa-shopping-cart"></i> Cart</a></li>
                                         <li><a class="dropdown-item" href="/pesanan"><i class="fal fa-desktop"></i> Order</a></li>
+                                        <li><a class="dropdown-item" href="/profile"><i class="fal fa-user-circle"></i> Profile</a></li>
                                     @endif
-                                    <li><a class="dropdown-item" href="/profile"><i class="fal fa-user-circle"></i> Profile</a></li>
                                     <li><a class="dropdown-item" href="/signout"><i class="fal fa-sign-out"></i> Logout</a></li>
                                 </ul>
                             </div>

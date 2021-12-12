@@ -2,12 +2,6 @@
 
 
 {{-- detail produk (/detail). css di custom.style.css --}}
-<style>
-    /* <?php include "css/custom.style.css" ?>
-    <?php include "css/zay/bootstrap.min.css" ?> */
-    {{ include "css/custom.style.css" }}
-    {{ include "css/zay/bootstrap.min.css" }}
-</style>
 
 @section('container')
 @if (session()->has('signin_error'))
