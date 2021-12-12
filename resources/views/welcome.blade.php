@@ -3,7 +3,7 @@
 @section('container')
 
 <div class="container  mt-3 home">
-    <div class="mx-3">   
+    <div class="mx-3">
         <!-- Start Banner Hero -->
         @if (session()->has('lowStock'))
                     <div class="alret alert-danger" role="alert">
@@ -76,7 +76,7 @@
                                         <h1 style="font-size:2.5rem;">GIGABYTE GEFORCE RTX 3060 8GB</h1>
                                         <p>
                                         The RTX 3060 lets you play the latest games using the power of Ampere, NVIDIAs 2nd generation RTX architecture.
-                                        The WINDFORCE 3X cooling system features 3x 80mm unique blade fans, alternate spinning, 3 composite copper heat pipes direct touch GPU, 3D active fan and Screen cooling, which together provide high efficiency heat dissipation. 
+                                        The WINDFORCE 3X cooling system features 3x 80mm unique blade fans, alternate spinning, 3 composite copper heat pipes direct touch GPU, 3D active fan and Screen cooling, which together provide high efficiency heat dissipation.
                                         </p>
                                         <a href="/product/3" class="btn btn-primary" style="float:right;">Shop Now</a>
                                         <div class="clear"></div>
