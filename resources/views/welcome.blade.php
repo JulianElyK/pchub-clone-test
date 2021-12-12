@@ -10,6 +10,11 @@
                         {{ session('lowStock') }}
                     </div>
         @endif
+        @if (session()->has('customPcSuccess'))
+                    <div class="alret alert-success" role="alert">
+                        {{ session('customPcSuccess') }}
+                    </div>
+        @endif
         @if (session()->has('addCartSuccess'))
                     <div class="alert alert-success" role="alert">
                         {{ session('addCartSuccess') }}

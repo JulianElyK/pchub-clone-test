@@ -45,6 +45,16 @@ class DatabaseSeeder extends Seeder
             'description' => 'Kingston DDR2 Memori PC [5 GB/PC-6400] merupakan memory RAM PC berkapasitas 5 GB dengan chipset PC2-6400.',
             'stock' => 200
         ]);
+
+        Product::create([
+            'compability' => '0',
+            'name' => 'Custom PC',
+            'price' => '0',
+            'vendor' => '-',
+            'category' => '-',
+            'description' => '-',
+            'stock' => 0
+        ]);
         Product::create([
             'compability' => '1',
             'name' => 'Processor Intel I5 11th Gen',
