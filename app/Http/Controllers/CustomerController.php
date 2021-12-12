@@ -18,11 +18,11 @@ class CustomerController extends Controller
         //
     }
 
-    public function getMember()
-    {
-        $customer = Customer::all();
-        return view('user', ['customer' => $customer, 'title' => 'Profile']);
-    }
+    // public function editMember()
+    // {
+    //     $customer = Customer::all();
+    //     return view('user', ['customer' => $customer, 'title' => 'Profile']);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -74,9 +74,15 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request)
     {
-        //
+        $customer = Customer::where('id', Session::get('id'))->first();
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->save();
+        session(['name' => $request->name]);
+        return redirect()->intended('/profile');
     }
 
     /**
@@ -93,7 +99,13 @@ class CustomerController extends Controller
     public static function getCustomer()
     {
         $customer = Customer::where('id', Session::get('id'))->first();
-       
-        return view('user', ['title' => 'Profile '.$customer->name, 'customer' => $customer]);
+
+        return view('user', ['title' => 'Profile ' . $customer->name, 'customer' => $customer]);
+    }
+
+    public function getByID()
+    {
+        $customer = Customer::where('id', Session::get('id'))->first();
+        return view('edituser', ['customer' => $customer, 'title' => 'Edit Profile ' . $customer->name]);
     }
 }
