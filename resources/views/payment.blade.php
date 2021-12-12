@@ -51,7 +51,6 @@
                             <th scope="col">Name</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Action</th>
                         </thead>
                         @foreach ($orders as $order)
                             @foreach ($order->DetailOrder as $detail_order)
@@ -60,12 +59,6 @@
                                     <td>{{ $detail_order->Product->name }}</th>
                                     <td>{{ $detail_order->quantity }}</th>
                                     <td>{{ $detail_order->price }}</th>
-                                    <td>
-                                        <form action="/shipment/{{ $order->id }}" method="post">
-                                            @csrf
-                                            <button class="badge bg-danger border-8" onclick="return confirm('Are You Sure?')">Delete</button>
-                                        </form>
-                                    </th>
                                 </tbody>
                             @endforeach
                         @endforeach
