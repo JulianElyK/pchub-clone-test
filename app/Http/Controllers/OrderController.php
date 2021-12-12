@@ -19,7 +19,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        
+
+    }
+
+    public function customPc(Request $request){
+        dd($request);
     }
 
     public function getForShipment(){

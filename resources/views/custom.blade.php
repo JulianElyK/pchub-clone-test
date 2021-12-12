@@ -52,7 +52,7 @@
                     <option selected>--Pilih Prosesor--</option>
                     @foreach ($product as $item)
                         @if ($item->category == "Prosesor")
-                            <option value="{{ $loop->iteration }}">{{ $item->name }}</option>
+                            <option value="{{ $item->price }}">{{ $item->name }}</option>
                         @endif
                     @endforeach
                 </select>
