@@ -13,9 +13,9 @@
         @foreach ($product as $item)
         {{-- css ada di custom.style.css --}}
 
-        
+        @if($item->compability!=0)
             <div class="card" style="width: 20rem;">
-                <div class="size-img">
+                <div class="size-img" style="overflow: hidden;">
                     <img src="{{ asset('storage/'. $item->image) }}" class="card-img-top">
                 </div>
                 <div class="card-body">
@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+        @endif
 
         @endforeach
         <div class="clear"></div>

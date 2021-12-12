@@ -198,6 +198,50 @@ class DatabaseSeeder extends Seeder
             'stock' => 50
         ]);
 
+        Product::create([
+            'compability' => '1',
+            'name' => 'Hardisk Seagate 1TB SATA 35 PC',
+            'price' => '475000',
+            'image' => 'product-images/Hardisk_Seagate_1_TB_SATA_35_PC.jpg',
+            'vendor' => 'Seagate',
+            'category' => 'Hard Disk',
+            'description' => 'HDD kuat tahan banting!!!',
+            'stock' => 100
+        ]);
+
+        Product::create([
+            'compability' => '1',
+            'name' => 'RAZER BASILISK V3',
+            'price' => '1150000',
+            'image' => 'product-images/RAZER BASILISK V3.jpg',
+            'vendor' => 'Razer',
+            'category' => 'Mouse',
+            'description' => 'Highly customizable gaming mouse featuring 10+1 programmable buttons, an intelligent Razer™ HyperScroll tilt wheel, and a heavy dose of Razer Chroma™ RGB.',
+            'stock' => 200
+        ]);
+
+        Product::create([
+            'compability' => '1',
+            'name' => 'ROG Centurion',
+            'price' => '4325000',
+            'image' => 'product-images/ROG Centurion.jpg',
+            'vendor' => 'Asus',
+            'category' => 'Accessories',
+            'description' => 'ROG Centurion true 7.1 gaming headset with 10 discrete drivers, digital microphone, Hi-Fi-grade headphone amplifier, and USB audio station',
+            'stock' => 50
+        ]);
+
+        Product::create([
+            'compability' => '1',
+            'name' => 'RAZER ENKI - QUARTZ',
+            'price' => '6400000',
+            'image' => 'product-images/RAZER ENKI - QUARTZ.jpeg',
+            'vendor' => 'Razer',
+            'category' => 'Accessories',
+            'description' => 'Through a combination of its unique 110° extended shoulder arches and 21” ultrawide seat base, the Razer Enki gaming chair ensures optimal weight distribution for long-lasting comfort during gaming marathons.',
+            'stock' => 50
+        ]);
+
         Admin::create([
             'email' => 'admin@gmail.com',
             'name' => 'admin',
