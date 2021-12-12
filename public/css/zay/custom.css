@@ -170,3 +170,58 @@
 .fa-eye, .fa-edit{
     font-size: 1.1rem;
 }
+
+.container-about{
+    color: #fff;
+    height: 300px;
+    width: 70%;
+    margin: 2vw auto;
+    position: relative;
+}
+
+.about-photo-container{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.about-photo{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 50px auto;
+    border-radius: 50%;
+    border: 1px solid #ffffff6e;
+    box-shadow: 0px 0px 15px #fff;
+    box-sizing: border-box;
+}
+
+.about-desc-container{
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.about-desc-container h1{
+    padding-top: 0.5rem;
+    padding-left: 1.5vw;
+    text-align: left;
+}
+
+.about-desc{
+    width: 100%;
+    border-top: 2px solid white;
+}
+
+.about-desc li{
+    list-style-type: none;
+}
+
+.about-desc ul{
+    margin: 0;
+    padding: 2vw;
+}

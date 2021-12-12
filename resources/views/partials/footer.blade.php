@@ -1,6 +1,6 @@
 <div class="footer">
     @php
-        if($title == "PCHub"){
+        if($title == "PCHub" || $title == "About"){
             echo '<div class="footer-content footer-dark">';
         }
         else{
