@@ -35,13 +35,22 @@ class ProductController extends Controller
     public function getByID(Request $request)
     {
         $product = Product::where('id', $request->id)->first();
-        return view('editproducts', ['product' => $product, 'title' => 'Search For Product with ID: '.$request->id]);
+        return view('editproducts', ['product' => $product, 'title' => 'Search for Product with ID '.$request->id]);
     }
 
     public function search(Request $request)
     {
         $product = Product::query()->where('name', 'like', "%{$request->search}%")->orWhere('category','like', "%{$request->search}%")->get();
-        return view('product', ['product' => $product, 'title' => 'Search For '.$request->search]);
+        return view('product', ['product' => $product, 'title' => 'Search for '.$request->search, 'result' => 'Showing result for: "'.$request->search.'"']);
+    }
+
+    public function searchCategory($id)
+    {
+        if($id=="product" || $id=="custom" || $id=="about"){
+            return redirect()->intended("/". $id);
+        }
+        $product = Product::query()->where('category','like', "%{$id}%")->get();
+        return view('product', ['product' => $product, 'title' => 'Search For '.$id, 'result' => 'Showing result for: "'.$id.'"']);
     }
 
     /**
