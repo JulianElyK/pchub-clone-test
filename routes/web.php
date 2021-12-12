@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
+use Illuminate\Support\Facades\Session;
 
 
 /*
