@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('container')
-<div class="judul">
-    <h1>Shipment</h1>
-</div>
-<div class="container-md mt-3">
+    <div class="judul">
+        <h1>Order History</h1>
+        <!-- <hr class="line"> -->
+    </div>
     @if (session()->has('sendSuccess'))
         <div class="alert alert-success" role="alert">
             {{ session('sendSuccess') }}
@@ -16,7 +16,9 @@
                 <th scope="col">Name</th>
                 <th scope="col">Date Order</th>
                 <th scope="col">Price</th>
-                <th scope="col">Action</th>
+                <th scope="col">Status*</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Date Modified</th>
             </thead>
             @foreach ($orders as $order)
                 <tbody>
@@ -24,15 +26,12 @@
                     <td>{{ $order->Customer->name }}</th>
                     <td>{{ $order->date }}</th>
                     <td>{{ $order->total_price }}</th>
-                    <td>
-                        <form action="/shipment/{{ $order->id }}" method="post">
-                            @csrf
-                            <button class="badge bg-success border-8"">Send</button>
-                        </form>
-                    </th>
+                    <td>{{ $order->status }}</th>
+                    <td>{{ $order->created_at }}</th>
+                    <td>{{ $order->updated_at }}</th>
                 </tbody>
             @endforeach
         </table>
+        <p>*0: still on cart, 1: paid and confirmed, 2: confirmed by admin, 3: received</p>
     </div>
-</div>
 @endsection
