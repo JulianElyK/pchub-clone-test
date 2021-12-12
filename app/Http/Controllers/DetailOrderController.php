@@ -41,12 +41,12 @@ class DetailOrderController extends Controller
         $product = Product::where('id', $id)->first();
 
         if(Session::get('id') == null){
-            return back()->with('signin_warning', 'Please SignIn Before Shop!');
+            return back()->with('signin_warning', 'Sign in to purchase.');
         }
         
         $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
         if($product->stock < $request->quantity){
-            return redirect()->intended('/')->with('lowStock', 'Stock is Low, buy another product!');
+            return redirect()->intended('/')->with('lowStock', 'Stock is empty, choose another product!');
         }
         $product->stock = $product->stock - $request->quantity;
         $product->save();
@@ -88,7 +88,7 @@ class DetailOrderController extends Controller
             $detail_order->price = $product->price * $request->quantity;
             $detail_order->save();
         }
-        return redirect()->intended('/')->with('addCartSuccess', 'Add Item to Cart was Success!');
+        return redirect()->intended('/')->with('addCartSuccess', 'Item added to cart.');
     }
 
     /**
@@ -139,6 +139,6 @@ class DetailOrderController extends Controller
         $product->stock = $product->stock + $detail_order->quantity;
         $product->save();
         $detail_order->delete();
-        return redirect()->intended('/cart')->with('deleteCartSuccess', 'Delete Item From Cart was Success!');
+        return redirect()->intended('/cart')->with('deleteCartSuccess', 'Item removed from cart.');
     }
 }

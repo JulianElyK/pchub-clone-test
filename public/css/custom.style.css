@@ -94,7 +94,7 @@ label{
 
 .info-product {
     float: left;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 2vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
@@ -103,7 +103,7 @@ label{
 
 .desc-product{
     clear: left;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 4vw;
     margin-top: 2vw;
     margin-right: 2vw;

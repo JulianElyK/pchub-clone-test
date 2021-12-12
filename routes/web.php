@@ -70,7 +70,7 @@ Route::get('/addproducts', function () {
 
 Route::post('/detailproduct/{id}', [DetailOrderController::class, 'store']);
 
-Route::get('/cart', [OrderController::class, 'showCart']);
+//Route::get('/cart', [OrderController::class, 'showCart']);
 
 Route::get('/showproducts', [ProductController::class, 'getAllForShow']);
 
@@ -78,8 +78,14 @@ Route::post('/search', [ProductController::class, 'search']);
 
 Route::post('/detailorder/{id}', [DetailOrderController::class, 'destroy']);
 
+Route::get('/cart', function () {
+    $orders = OrderController::getAllOrder();
+    return view('cart', ["title" => "Cart", 'orders' => $orders]);
+});
+
 Route::get('/payment', function () {
-    return view('payment', ["title" => "Payment Methods"]);
+    $orders = OrderController::getAllOrder();
+    return view('payment', ["title" => "Payment Methods", 'orders' => $orders]);
 });
 
 Route::post('/payment', [OrderController::class, 'store']);
@@ -108,6 +114,8 @@ Route::post('/editproducts', [ProductController::class, 'update']);
 Route::get('/editproducts', [ProductController::class, 'getByID']);
 
 Route::get('/orderhistory', [OrderController::class, 'getAllForShow']);
+
+Route::post('/custom', [OrderController::class, 'customPc']);
 
 Route::get('/edituser', [CustomerController::class, 'getByID']);
 

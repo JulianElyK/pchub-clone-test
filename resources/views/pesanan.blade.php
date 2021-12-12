@@ -38,11 +38,6 @@
                 </tbody>
             @endforeach
         </table>
-        <form action="/gotopayment" method="post">
-            <div class="konten-beli">
-                <a href="/payment"><button type="button" class="btn btn-primary">Bayar</button></a>
-            </div>
-        </form>
     </div>
 </div>
 @endsection
