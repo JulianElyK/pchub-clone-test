@@ -38,6 +38,7 @@
                                     @if (Session::get('user') == 'admin')
                                         <li><a class="dropdown-item" href="/addproducts"><i class="fal fa-plus-circle"></i> <span class="li-words">Add Product</span></a></li>
                                         <li><a class="dropdown-item" href="/showproducts"><i class="fal fa-eye"></i> <span class="li-words">Show Product</span></a></li>
+                                        <li><a class="dropdown-item" href="/orderhistory"><i class="fal fa-history"></i> <span class="li-words">Order History</span></a></li>
                                         <li><a class="dropdown-item" href="/shipment"><i class="fal fa-shipping-timed"></i> Shipment</a></li>
                                         <li><a class="dropdown-item" href="/searchID"><i class="fal fa-edit"></i> <span class="li-words">Edit Product</span></a></li>
                                     @else
