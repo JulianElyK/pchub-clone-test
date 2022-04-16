@@ -43,7 +43,7 @@ class DetailOrderController extends Controller
         if(Session::get('id') == null){
             return back()->with('signin_warning', 'Sign in to purchase.');
         }
-        
+
         $order = Order::orderBy('id', 'desc')->where('customer_id', Session::get('id'))->first();
         if($product->stock < $request->quantity){
             return redirect()->intended('/')->with('lowStock', 'Stock is empty, choose another product!');
@@ -99,7 +99,7 @@ class DetailOrderController extends Controller
      */
     public function show(DetailOrder $detailOrder)
     {
-        
+
     }
 
     /**
