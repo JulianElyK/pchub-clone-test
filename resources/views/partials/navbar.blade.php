@@ -24,7 +24,7 @@
                                 @csrf
                                 {{-- <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" > --}}
                                 <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
-                                <button class="btn btn-outline-success" type="submit"><i class="fal fa-search"></i></button>
+                                <button id="btn-search" class="btn btn-outline-success" type="submit"><i class="fal fa-search"></i></button>
                             </form>
                         </div>
                     @if (Session::get('id') != '')
@@ -42,9 +42,9 @@
                                         <li><a class="dropdown-item" href="/shipment"><i class="fal fa-shipping-timed"></i> Shipment</a></li>
                                         <li><a class="dropdown-item" href="/searchID"><i class="fal fa-edit"></i> <span class="li-words">Edit Product</span></a></li>
                                     @else
-                                        <li><a class="dropdown-item" href="/cart"><i class="fal fa-shopping-cart"></i> Cart</a></li>
-                                        <li><a class="dropdown-item" href="/pesanan"><i class="fal fa-desktop"></i> Order</a></li>
-                                        <li><a class="dropdown-item" href="/profile"><i class="fal fa-user-circle"></i> Profile</a></li>
+                                        <li><a id="cart" class="dropdown-item" href="/cart"><i class="fal fa-shopping-cart"></i> Cart</a></li>
+                                        <li><a id="order" class="dropdown-item" href="/pesanan"><i class="fal fa-desktop"></i> Order</a></li>
+                                        <li><a id="profile" class="dropdown-item" href="/profile"><i class="fal fa-user-circle"></i> Profile</a></li>
                                     @endif
                                     <li><a class="dropdown-item" href="/signout"><i class="fal fa-sign-out"></i> Logout</a></li>
                                 </ul>

@@ -27,7 +27,7 @@
                     <td>
                         <form action="/shipment/{{ $order->id }}" method="post">
                             @csrf
-                            <button class="badge bg-success border-8"">Send</button>
+                            <button id="shipment-{{ $order->id }}" class="badge bg-success border-8"">Send</button>
                         </form>
                     </th>
                 </tbody>
