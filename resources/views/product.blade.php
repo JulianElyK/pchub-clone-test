@@ -6,7 +6,7 @@
         <h1>Showing All Products</h1>
     @else
         <h1>{{ $result }}</h1>
-    @endif      
+    @endif
 </div>
 <div class="list-product">
     <div class="list-product-container">
@@ -22,7 +22,7 @@
                     <h5 class="card-title">{{ $item->name }}</h5>
                     <p class="card-text">{{ $item->description }}</p>
                     <div id="posisi" class="position-absolute bottom-0 end-0">
-                        <a href="/product/{{ $item->id }}" class="btn btn-primary">Lihat Produk</a>
+                        <a href="/product/{{ $item->id }}" id="product-{{ $item->id }}" class="btn btn-primary">Lihat Produk</a>
                     </div>
                 </div>
             </div>

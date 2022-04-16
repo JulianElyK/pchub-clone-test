@@ -33,12 +33,12 @@
             <form action="/detailproduct/{{ $product->id }}" method="POST">
                 @csrf
                 <ul>
-                    <li>Jumlah: <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000"></li>
+                    <li>Jumlah: <input type="number" class="banyak" id="quantity" name="quantity" min="1" max="1000" value="1"></li>
                     <div class="detail-product-button">
                         @if (Session::get('user') == 'customer')
-                            <li><button type="submit" name="beli" class="btn btn-primary" value="Beli"><i class="fal fa-shopping-cart"></i> Add to Cart</button></li>
+                            <li><button type="submit" id="beli" name="beli" class="btn btn-primary" value="Beli"><i class="fal fa-shopping-cart"></i>Add to Cart</button></li>
                         @else
-                            <li><button type="submit" name="beli" class="btn btn-primary disabled" value="Beli"><i class="fal fa-shopping-cart"></i> Add to Cart</button></li>
+                            <li><button type="submit" name="beli" class="btn btn-primary disabled" value="Beli"><i class="fal fa-shopping-cart"></i>Add to Cart</button></li>
                         @endif
                     </div>
                 </ul>

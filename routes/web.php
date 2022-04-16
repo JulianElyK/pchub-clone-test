@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
+use App\Models\DetailOrder;
 use Illuminate\Support\Facades\Session;
 
 
@@ -93,6 +94,7 @@ Route::post('/payment', [OrderController::class, 'store']);
 Route::get('/shipment', [OrderController::class, 'getForShipment']);
 
 Route::post('/shipment/{id}', [OrderController::class, 'sendOrder']);
+// Route::delete('/shipment/{id}', [DetailOrder::class, 'destroy']);
 
 Route::get('/pesanan', [OrderController::class, 'showPesanan']);
 

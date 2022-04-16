@@ -27,9 +27,9 @@
                         <td>{{ $detail_order->quantity }}</th>
                         <td>{{ $detail_order->price }}</th>
                         <td>
-                            <form action="/shipment/{{ $order->id }}" method="post">
+                            <form action="/detailorder/{{ $detail_order->id }}" method="post">
                                 @csrf
-                                <button class="badge bg-danger border-8" onclick="return confirm('Are You Sure?')">Delete</button>
+                                <button id="detailorder-{{ $detail_order->id }}" class="badge bg-danger border-8">Delete</button>
                             </form>
                         </th>
                     </tbody>
