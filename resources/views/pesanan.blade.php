@@ -31,7 +31,7 @@
                         @if ($order->status == 2)
                             <form action="/order/{{ $order->id }}" method="post">
                                 @csrf
-                                <button class="badge bg-success border-8" style="color: #6ECB63" onclick="return confirm('Are Yout Sure?')">Sudah Diterima</button>
+                                <button class="badge bg-success border-8" style="color: #6ECB63">Sudah Diterima</button>
                             </form>
                         @endif
                     </td>
