@@ -18,7 +18,7 @@ test.afterAll(async () => {
   await browser.close();
 });
   
-test.describe('Edit Profile from Login', () => {
+test.describe('Search test', () => {
   test('Search product', async () => {
     await page.locator('#search').type('geforce rtx');
     await page.keyboard.press('Enter');
